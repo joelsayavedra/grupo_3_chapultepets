@@ -1,7 +1,13 @@
 :root{
-    --Verde: #64e100;
+    /* --Verde: #64e100;
     --Azul: #0064E1;
+    --Rosa: #e10064; */
+
+    --fondo-header: #2b5f00;
+    --letra-header:aliceblue;
+    --sombreado-header: #0064E1;
     --Rosa: #e10064;
+
 }
 
 *{
@@ -11,6 +17,75 @@
 }
 
 /* header */
+header{
+    background-color: var(--fondo-header);
+    display: flex;
+    flex-wrap: wrap;
+    color: var(--letra-header)
+}
+
+.upper-header-bar{
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.logo-container{
+    width: 30%;
+    align-self: center;
+}
+
+.logo-container img{
+    width: 100%;
+}
+
+.upper-nav-bar-container{
+    width: 60%;
+}
+
+.upper-nav-bar-element{
+    width: 30%;
+    align-self: stretch;
+    align-content: center;
+    text-align: center;
+    border: red 2px dotted;
+}
+
+.upper-nav-bar-element img{
+    width: 50px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.upper-nav-bar,
+.search-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.search-form input{
+    width: 60%;
+}
+
+.lower-bar{
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+.lower-bar li{
+    padding: 1rem;
+}
+
+.lower-bar li:hover{
+    background-color: var(--sombreado-header);
+}
+
+.upper-nav-bar-element:hover{
+    background-color: var(--sombreado-header);
+}
 
 /* index */
 
