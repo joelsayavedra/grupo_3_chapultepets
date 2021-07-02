@@ -50,51 +50,43 @@
     </header>
 
     <!-- Configuración del main -->
-    <main>
+    <main class="register">
         <div>
             <img src="/img/logo_placeholder.png" alt="">
         </div>
-        <div>
-            <p>Campos con * son requeridos</p>
+        <form>
             <p>
-                <label for="nombreDePersona">*Nombre(s)): </label>
-                <input type="text" name="nombreDePersona" id=""  placeholder="Eduardo" class="">
+                <input type="text" name="nombreDePersona" id=""  placeholder="Nombre(s)" class="" required>
             </p>
 
             <p>
-                <label for="apellidoDePersona">*Apellido(s)): </label>
-                <input type="text" name="apellidoDePersona" id=""  placeholder="Sandoval" class="">
+                <input type="text" name="apellidoDePersona" id=""  placeholder="Apellido(s)" class="" required> 
             </p>
 
             <p>
-                <label for="nombreDeUsuario">*Nombre de usuario: </label>
-                <input type="text" name="nombreDeUsuario" id=""  placeholder="Perrito_panzón" class="">
+                <input type="text" name="nombreDeUsuario" id=""  placeholder="Nombre de usuario" class="" required>
             </p>
 
             <p>
-                <label for="contraseña">*Contraseña: </label>
-                <input type="password" name="contraseña" id="" class="">
+                <input type="password" name="Contraseña"  placeholder="Contraseña" id="" class="" required>
             </p>
 
             <p>
-                <label for="confirmacionContraseña">*Confirmar contraseña: </label>
-                <input type="password" name="confirmacionContraseña" id="" class="">
+                <input type="password" name="confirmacionContraseña" placeholder="Confirmar contraseña" id="" class="" required>
             </p>
 
             <p>
-                <label for="email">*Dirección de correo electrónico: </label>
-                <input type="email" name="email" id="" placeholder="todochikito@gmail.com" class="">
+                <input type="email" name="email" id="" placeholder="Correo electrónico" class="" required>
             </p>
 
             <p>
-                <label for="numeroTelefonico">*Numéro Telefónico (10 Dígitos): </label>
-                <input type="number" name="numeroTelefonico" id="" placeholder="012 345 1234" class="">
+                <input type="text" name="numeroTelefonico" id="" placeholder="Numéro Telefónico (10 Dígitos)" class="" required>
             </p>
 
             <p>
                 <button type="submit" class="">Registrar</button>
             </p>
-        </div>
+        </form>
     </main>
     <!-- Configuración del Pie de página -->
     <footer>

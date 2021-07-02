@@ -138,18 +138,31 @@ main.login div.cuerpo{
     align-items: center;
 }
 /* register */
+main.register form p{
+    margin: 30px 30px;
+}
 
-main.register form.formulario input.nombre:valid{
+main.register form input{
+    width: 100%;
+}
+
+main.register form{
+    margin: 30px;
+    border:  solid #000000 1px;
+    border-radius: 10%;
+}
+
+main.register form input.nombre:valid{
     transition: all 1s;
     background-color: lightgreen;
 }
 
-main.register form.formulario input.contraseña:valid{
+main.register form input.contraseña:valid{
     transition: all 1s;
     background-color: lightgreen;
 }
 
-main.register form.formulario input.contraseña:invalid{
+main.register form input.contraseña:invalid{
     transition: all 1s;
     background-color: #ff7f7f;
 }
