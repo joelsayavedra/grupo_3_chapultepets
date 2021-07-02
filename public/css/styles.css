@@ -182,24 +182,27 @@ main.register form input.contraseña:invalid{
 
 /* footer */
 footer {
-    font-size: 13px;
+    font-size: 12px;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: flex-start;
 }
 
 footer div{
+    margin-left: 15px;
     display: block;
 }
 
 /* login */
 
-main form.formulario input{
+main.login form.formulario input{
     width: 70%;
 }
 
 /* register */
-
+main.register form input{
+    width: 70%;
+}
 /* Carrito de compras */
 
 }
@@ -211,8 +214,6 @@ main form.formulario input{
 /* index */
 
 /* detalle producto  */
-
-
 
 /* footer */
 
