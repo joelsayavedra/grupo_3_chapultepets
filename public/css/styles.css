@@ -7,6 +7,7 @@
     --letra-header:black;
     --sombreado-header: #0064E1;
     --Rosa: #e10064;
+    --fondo-main: white(255, 253, 225);
 }
 
 *{
@@ -45,10 +46,10 @@ header{
 
 .upper-nav-bar-element{
     width: 30%;
-    align-self: stretch;
-    align-content: center;
+    height: 100px;
     text-align: center;
     border: red 2px dotted;
+    position: relative;
 }
 
 .upper-nav-bar-element img{
@@ -108,9 +109,9 @@ footer A{
 
 
 /* index */
-
 main{
     padding: 15px;
+    background-color: var(--fondo-main);
 }
 
 .home-logo-bar{
@@ -143,6 +144,21 @@ main{
 .product-window article{
     width: 45%;
     margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-window article h4,
+.product-window article p.product-rating-stars{
+    width: 90%;
+    text-align: center;
+}
+
+.product-window article p.product-price,
+.product-window article p.product-brand{
+    width: 45%;
+    text-align: center;
 }
 
 .product-window img{
@@ -150,7 +166,18 @@ main{
 }
 
 .recommendation-bar{
-    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 15px 0;
+}
+
+.recommendation-bar img{
+    width: 18%;
+}
+
+.page-changer{
+    text-align: center;
 }
 
 /* detalle producto  */
@@ -255,6 +282,22 @@ main.register form input{
 /* header */
 
 /* index */
+
+.home-logo-bar li{
+    width: 12%;
+}
+
+.home-logo-bar p{
+    display: block;
+}
+
+.product-window article{
+    width: 22.5%;
+}
+
+.recommendation-bar img{
+    width: 15%;
+}
 
 /* detalle producto  */
 
