@@ -3,8 +3,8 @@
     --Azul: #0064E1;
     --Rosa: #e10064; */
 
-    --fondo-header: #2b5f00;
-    --letra-header:aliceblue;
+    --fondo-header: white;
+    --letra-header:black;
     --sombreado-header: #0064E1;
     --Rosa: #e10064;
 }
@@ -109,6 +109,50 @@ footer A{
 
 /* index */
 
+main{
+    padding: 15px;
+}
+
+.home-logo-bar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 15px 0px;
+}
+
+.home-logo-bar li{
+    width: 15%;
+    text-align: center;
+}
+
+.home-logo-bar img{
+    width: 100%;
+}
+
+.home-logo-bar p{
+    display: none;
+}
+
+.product-window{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product-window article{
+    width: 45%;
+    margin-bottom: 15px;
+}
+
+.product-window img{
+    width: 100%;
+}
+
+.recommendation-bar{
+    
+}
+
 /* detalle producto  */
 
 /* login */
@@ -137,6 +181,7 @@ main.login div.cuerpo{
     flex-direction: column;
     align-items: center;
 }
+
 /* register */
 main.register form p{
     margin: 30px 30px;
@@ -177,8 +222,6 @@ main.register form input.contraseña:invalid{
 /* index */
 
 /* detalle producto  */
-
-
 
 /* footer */
 footer {
