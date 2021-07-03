@@ -7,13 +7,20 @@
     --letra-header:black;
     --sombreado-header: #0064E1;
     --Rosa: #e10064;
-    --fondo-main: white(255, 253, 225);
+    --fondo-main: white;
+    --fondo-botones-carrusel: rgba(255, 255, 255, 0.25);
+    --fondo-descripcion-carrusel: rgba(255, 255, 255, 0.25);
 }
 
 *{
     box-sizing:border-box;
     margin: 0;
     padding: 0;
+}
+
+main{
+    padding: 15px;
+    background-color: var(--fondo-main);
 }
 
 /* header */
@@ -46,27 +53,57 @@ header{
 
 .upper-nav-bar-element{
     width: 30%;
-    height: 100px;
     text-align: center;
-    border: red 2px dotted;
-    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.upper-nav-bar-element div{
+    align-self: center;
 }
 
 .upper-nav-bar-element img{
     width: 50px;
     border-radius: 50%;
-    padding: 5px;
+    padding: 5px 5px 0px 5px;
 }
 
 .upper-nav-bar,
 .search-form{
     display: flex;
     flex-wrap: wrap;
+}
+
+.upper-nav-bar{
     justify-content: space-around;
 }
 
+.search-form{
+    justify-content: center;
+}
+
+
 .search-form input{
     width: 60%;
+    padding: 3px;
+}
+
+.search-form button{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 30%;
+    max-width: 120px;
+}
+
+.search-form button p{
+    display: none;
+}
+
+.search-form button p,
+.search-form button i{
+    align-self: center;
 }
 
 .lower-bar{
@@ -107,11 +144,40 @@ footer A{
     color: #000000;
 }
 
-
 /* index */
-main{
-    padding: 15px;
-    background-color: var(--fondo-main);
+
+.carousel{
+    position: relative;
+}
+
+.carousel p,
+.carousel button{
+    position: absolute;
+}
+
+
+.carousel button.carousel-left-button,
+.carousel button.carousel-right-button{
+
+    top: 50%;
+    transform: translate(0,-50%);
+    border: none;
+    background-color: var(--fondo-botones-carrusel);
+}
+
+.carousel button.carousel-left-button{
+    left: 0;
+}
+
+.carousel button.carousel-right-button{
+    right: 0;
+}
+
+.carousel p{
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    background-color: var(--fondo-descripcion-carrusel);
 }
 
 .home-logo-bar{
@@ -244,69 +310,89 @@ main.register form input.contraseña:invalid{
 
 @media (min-width: 361px){
 
-/* header */
+    /* header */
 
-/* index */
+    /* index */
 
-/* detalle producto  */
+    /* detalle producto  */
 
-/* footer */
-footer {
-    font-size: 12px;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
+    /* footer */
+    footer {
+        font-size: 12px;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
 
-footer div{
-    margin-left: 15px;
-    display: block;
-}
+    footer div{
+        margin-left: 15px;
+        display: block;
+    }
 
-/* login */
+    /* login */
 
-main.login form.formulario input{
-    width: 70%;
-}
+    main.login form.formulario input{
+        width: 70%;
+    }
 
-/* register */
-main.register form input{
-    width: 70%;
-}
-/* Carrito de compras */
+    /* register */
+    main.register form input{
+        width: 70%;
+    }
+    /* Carrito de compras */
 
 }
 
 @media (min-width: 720px){
 
-/* header */
+    /* header */
 
-/* index */
+    /* index */
 
-.home-logo-bar li{
-    width: 12%;
+    .search-form button p{
+        display: block;
+    }
+
+    .home-logo-bar li{
+        width: 12%;
+    }
+
+    .home-logo-bar p{
+        display: block;
+    }
+
+    .product-window article{
+        width: 22.5%;
+    }
+
+    .recommendation-bar img{
+        width: 15%;
+    }
+
+    /* detalle producto  */
+
+    /* footer */
+
+    /* login */
+
+    /* register */
+
+    /* Carrito de compras */
 }
 
-.home-logo-bar p{
-    display: block;
-}
+@media (min-width: 1200px){
 
-.product-window article{
-    width: 22.5%;
-}
+    /* header */
 
-.recommendation-bar img{
-    width: 15%;
-}
+    /* index */
 
-/* detalle producto  */
+    /* detalle producto  */
 
-/* footer */
+    /* footer */
 
-/* login */
+    /* login */
 
-/* register */
+    /* register */
 
-/* Carrito de compras */
-
+    /* Carrito de compras */
 }
