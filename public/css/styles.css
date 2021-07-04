@@ -10,6 +10,7 @@
     --fondo-main: white;
     --fondo-botones-carrusel: rgba(255, 255, 255, 0.25);
     --fondo-descripcion-carrusel: rgba(255, 255, 255, 0.25);
+    --presio: red;
 }
 
 *{
@@ -19,7 +20,7 @@
 }
 
 main{
-    padding: 15px;
+    margin: 15px;
     background-color: var(--fondo-main);
 }
 
@@ -28,7 +29,9 @@ header{
     background-color: var(--fondo-header);
     display: flex;
     flex-wrap: wrap;
-    color: var(--letra-header)
+    color: var(--letra-header);
+    margin: 15px;
+    padding-top: 15px;
 }
 
 .upper-header-bar{
@@ -44,7 +47,9 @@ header{
 }
 
 .logo-container img{
+    object-fit: contain;
     width: 100%;
+    max-height: 95px;
 }
 
 .upper-nav-bar-container{
@@ -79,10 +84,10 @@ header{
     justify-content: space-around;
 }
 
+div.upper-nav-bar,
 .search-form{
-    justify-content: center;
+    justify-content: flex-end;
 }
-
 
 .search-form input{
     width: 60%;
@@ -247,6 +252,52 @@ footer A{
 }
 
 /* detalle producto  */
+.product-presentation-image{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.product-presentation-image img{
+    width: 90%;
+}
+
+.product-presentation{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-presentation-image{
+    width: 100%;
+}
+
+.product-presentation-text{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    align-self: start;
+}
+
+.product-presentation-text h4{
+    text-align: center;
+    width: 100%;
+}
+
+.product-presentation-text P,
+.product-presentation-text form{
+    text-align: center;
+    width: 48%;
+}
+
+.product-presentation-resume{
+    margin-left: 15px;
+    width: 100%;
+}
+
+.product-presentation-price{
+    color: var(--presio);
+}
 
 /* login */
 main.login form.formulario{
@@ -370,6 +421,13 @@ main.register form input.contraseña:invalid{
     }
 
     /* detalle producto  */
+    .product-presentation-image{
+        width: 58%;
+    }
+
+    .product-presentation-text{
+        width: 38%;
+    }
 
     /* footer */
 
@@ -383,6 +441,9 @@ main.register form input.contraseña:invalid{
 @media (min-width: 1200px){
 
     /* header */
+    .upper-nav-bar-element{
+        width: 25%;
+    }
 
     /* index */
 
