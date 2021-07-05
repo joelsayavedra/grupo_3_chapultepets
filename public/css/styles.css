@@ -11,6 +11,7 @@
     --fondo-botones-carrusel: rgba(255, 255, 255, 0.25);
     --fondo-descripcion-carrusel: rgba(255, 255, 255, 0.25);
     --presio: red;
+    --estrellas: orange;
 }
 
 *{
@@ -22,6 +23,10 @@
 main{
     margin: 15px;
     background-color: var(--fondo-main);
+}
+
+.stars{
+    color: var(--estrellas);
 }
 
 /* header */
@@ -252,6 +257,13 @@ footer A{
 }
 
 /* detalle producto  */
+
+.main-product-detail{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .product-presentation-image{
     text-align: center;
     margin-bottom: 10px;
@@ -297,6 +309,12 @@ footer A{
 
 .product-presentation-price{
     color: var(--presio);
+}
+
+.product-presentation,
+.product-detail,
+.opinions-section{
+    margin-bottom: 15px;
 }
 
 /* login */
@@ -425,8 +443,18 @@ main.register form input.contraseña:invalid{
         width: 58%;
     }
 
+
     .product-presentation-text{
         width: 38%;
+    }
+
+    .product-presentation,
+    .product-detail{
+        max-width: 90%;
+    }
+
+    .opinions-section{
+        max-width: 60%;
     }
 
     /* footer */
