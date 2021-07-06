@@ -1,81 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-        <link href="/css/normalize.css" rel="stylesheet"><!--Archivo normalize.css, descargada de internet-->
-        <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
-        <link href="/css/styles.css" rel="stylesheet">
-        <title>ChapultePets - Inicio</title>
-    </head>
-
-<body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="/css/normalize.css" rel="stylesheet"><!--Archivo normalize.css, descargada de internet-->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <link href="/css/styles.css" rel="stylesheet">
+    <title>ChapultePets - Registro</title>
+</head>
+<body class="register">
     <!-- Codificación de la cabecera -->
-    <header class="register">
-        <div>
-            <a href="/">
-                <img src="/img/logo_placeholder.png" alt="">
-             </a>
-        </div>
-    </header>
+
 
     <!-- Configuración del main -->
     <main class="register">
-        <div>
-            <img src="/img/logo_placeholder.png" alt="">
-        </div>
         <form>
+            <div class="logo-container">
+                <a href="/">
+                    <img src="/img/logo_placeholder.png" alt="" class="main-logo">
+                </a>
+            </div>
+            <p>Encuentra tus productos favoritos con una cuenta personalizada.</p>
             <p>
-                <input type="text" name="nombreDePersona" id=""  placeholder="Nombre(s)" class="" required>
+                <input type="text" name="nombreDePersona" id=""  placeholder="Nombre(s)" class="" style="height: 30px; width: 100%;" required>
             </p>
 
             <p>
-                <input type="text" name="apellidoDePersona" id=""  placeholder="Apellido(s)" class="" required> 
+                <input type="text" name="apellidoDePersona" id=""  placeholder="Apellido(s)" class="" style="height: 30px; width: 100%;" required> 
             </p>
 
             <p>
-                <input type="text" name="nombreDeUsuario" id=""  placeholder="Nombre de usuario" class="" required>
+                <input type="text" name="nombreDeUsuario" id=""  placeholder="Nombre de usuario" class="nombreDeUsuario" style="height: 30px; width: 100%;" required>
             </p>
 
             <p>
-                <input type="password" name="Contraseña"  placeholder="Contraseña" id="" class="" required>
+                <input type="password" name="contraseña" minlength="6" placeholder="Contraseña" id="" class="contraseña" style="height: 30px; width: 100%;" required>
             </p>
 
             <p>
-                <input type="password" name="confirmacionContraseña" placeholder="Confirmar contraseña" id="" class="" required>
+                <input type="password" name="confirmacionContraseña" minlength="6" placeholder="Confirmar contraseña" id="" class="confirmarContraseña" style="height: 30px; width: 100%;" required>
             </p>
 
             <p>
-                <input type="email" name="email" id="" placeholder="Correo electrónico" class="" required>
+                <input type="email" name="email" id="" placeholder="Correo electrónico" class="correo" style="height: 30px; width: 100%;" required>
             </p>
 
             <p>
-                <input type="text" name="numeroTelefonico" id="" placeholder="Numéro Telefónico (10 Dígitos)" class="" required>
+                <input type="number" name="numeroTelefonico" id="" min="10"  placeholder="Numéro Telefónico (10 Dígitos)" class="tel" style="height: 30px; width: 100%;" required>
             </p>
 
             <p>
-                <button type="submit" class="">Registrar</button>
+                <button type="submit" class="" style="height: 30px; width: 100%;">Registrar</button>
             </p>
         </form>
     </main>
     <!-- Configuración del Pie de página -->
-    <footer class="register">
-        <div> 
-            <p>Contacto</p>
+    <footer class="formulario">
+        <div class="cabeza"> 
+            <h2><p>Contacto</p></h2>
         
-            <p>Legales</p>
+            <h2><p>Legales</p></h2>
         
-            <p>Ligas adicionales</p>
+            <h2><p>Adicionales</p></h2>
         </div>
         <!-- Redes sociales -->
         <div>
-            <h2>Nuestras redes</h2>
-            <p><A href=/#><i class="fab fa-twitter"></i></A> 
-            <A href=/#><i class="fab fa-facebook"></i></A>
-            <A href=/#><i class="fab fa-instagram"></i></A></p>
+            <div>
+                <h2>Nuestras redes</h2>
+            </div>
+            <div class="redes">
+                <A href=/#><i class="fab fa-twitter"></i></A> 
+                <A href=/#><i class="fab fa-facebook"></i></A>
+                <A href=/#><i class="fab fa-instagram"></i></A>
+             </div>
         </div>
     </footer>
 </body>

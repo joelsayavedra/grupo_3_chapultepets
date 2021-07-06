@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    
     <header>
         <div class="upper-header-bar">
             <div class="logo-container">
@@ -23,122 +24,179 @@
             <div  class="upper-nav-bar-container">
                 <div  class="upper-nav-bar">
                     <div class="upper-nav-bar-element">
-                        <p><i class="fas fa-envelope"></i></p>
-                        <h4>Registro</h4>
+                        <div>
+                            <p><i class="fas fa-envelope"></i></p>
+                            <h4>Registro</h4>
+                        </div>
                     </div>
                     <div class="upper-nav-bar-element">
-                        <p><i class="fas fa-shopping-cart"></i></p>
-                        <h4>Mi carrito</h4>
+                        <div>
+                            <p><i class="fas fa-shopping-cart"></i></p>
+                            <h4>Mi carrito</h4>
+                        </div>
                     </div>
                     <div class="upper-nav-bar-element">
-                        <img src="/img/Portrait_Placeholder.png" alt="">
-                        <h4>Mi perfil</h4>
+                        <div>
+                            <img src="/img/Portrait_Placeholder.png" alt="">
+                            <h4>Mi perfil</h4>
+                        </div>
                     </div>
                 </div>
             
                 <form action="" class="search-form">
                     <input type="text">
-                    <button>Buscar <i class="fas fa-search"></i></button>
+                    <button>
+                        <p>Buscar&nbsp;&nbsp;</p> 
+                        <i class="fas fa-search"></i>
+                    </button>
                 </form>
             </div>
         </div>
 
-        
         <ul class="lower-bar">
             <li>Búsqueda por mascota</li>
             <li>Marcas</li>
             <li>Categorías</li>
         </ul>
-        
-
     </header>
 
     <main>
-        <p>--------------------</p>
-        <p>inicio del main</p>
-        <p>--------------------</p>
-        <div>
-            <p>Espacio para el carrusel</p>
+        <form class="carousel">
             <img src="img/banner_placeholder.png" alt="" width=100%>
-        </div>
+            <button class="carousel-left-button">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <button class="carousel-right-button">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+            <p>Descripción del carrusel</p>
+        </form>
 
         <!-- div para todo lo que va debajo del carrusel :v -->
         <div>
             <!-- Div de categorías -->
-            <div>
-                <ul>
-                    <li>logo categoría 1</li>
-                    <li>logo categoría 2</li>
-                    <li>logo categoría 3</li>
-                    <li>logo categoría 4</li>
-                </ul>
-            </div>
+            
+            <ul class="home-logo-bar">
+                <li>
+                    <img src="img/logo2_placeholder.jpg" alt="">
+                    <p>logo categoría 1</p>
+                </li>
+                <li>
+                    <img src="img/logo2_placeholder.jpg" alt="">
+                    <p>logo categoría 2</p>
+                </li>
+                <li>
+                    <img src="img/logo2_placeholder.jpg" alt="">
+                    <p>logo categoría 3</p>
+                </li>
+                <li>
+                    <img src="img/logo2_placeholder.jpg" alt="">
+                    <p>logo categoría 4</p>
+                </li>
+                <li>
+                    <img src="img/logo2_placeholder.jpg" alt="">
+                    <p>logo categoría 5</p>
+                </li>
+                <li>
+                    <img src="img/logo2_placeholder.jpg" alt="">
+                    <p>logo categoría 6</p>
+                </li>
+            </ul>
+            
             <!-- Div de muestra de artículos -->
-            <div>
+            <div class="product-window">
+
+
                 <article>
-                    <img src="/img/general_placeholder.png" alt="" width=25%>
+                    <img src="/img/general_placeholder.png" alt="">
                     <h4>Nombre del producto</h4>
                     <!-- casillero de estrellas -->
-                    <p>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
+                    <p class="product-rating-stars">
+                        <i class="fas fa-star stars"></i>
+                        <i class="fas fa-star stars"></i>
+                        <i class="fas fa-star-half-alt stars"></i>
+                        <i class="far fa-star stars"></i>
+                        <i class="far fa-star stars"></i>
                         (19)
                     </p>
-                    <p>$00.00</p>
-                    <p>Marca</p>
+                    <p class="product-price">$00.00</p>
+                    <p class="product-brand">Marca</p>
                 </article>
+                
                 <article>
-                    <img src="/img/general_placeholder.png" alt="" width=25%>
+                    <img src="/img/general_placeholder.png" alt="">
                     <h4>Nombre del producto</h4>
                     <!-- casillero de estrellas -->
-                    <p>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
+                    <p class="product-rating-stars">
+                        <i class="fas fa-star stars"></i>
+                        <i class="fas fa-star stars"></i>
+                        <i class="fas fa-star-half-alt stars"></i>
+                        <i class="far fa-star stars"></i>
+                        <i class="far fa-star stars"></i>
                         (19)
                     </p>
-                    <p>$00.00    Marca</p>
+                    <p class="product-price">$00.00</p>
+                    <p class="product-brand">Marca</p>
                 </article>
+
                 <article>
-                    <img src="/img/general_placeholder.png" alt="" width=25%>
+                    <img src="/img/general_placeholder.png" alt="">
                     <h4>Nombre del producto</h4>
                     <!-- casillero de estrellas -->
-                    <p>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
+                    <p class="product-rating-stars">
+                        <i class="fas fa-star stars"></i>
+                        <i class="fas fa-star stars"></i>
+                        <i class="fas fa-star-half-alt stars"></i>
+                        <i class="far fa-star stars"></i>
+                        <i class="far fa-star stars"></i>
                         (19)
                     </p>
-                    <p>$00.00</p>
-                    <p>Marca</p>
+                    <p class="product-price">$00.00</p>
+                    <p class="product-brand">Marca</p>
                 </article>
+
+                <article>
+                    <img src="/img/general_placeholder.png" alt="">
+                    <h4>Nombre del producto</h4>
+                    <!-- casillero de estrellas -->
+                    <p class="product-rating-stars">
+                        <i class="fas fa-star stars"></i>
+                        <i class="fas fa-star stars"></i>
+                        <i class="fas fa-star-half-alt stars"></i>
+                        <i class="far fa-star stars"></i>
+                        <i class="far fa-star stars"></i>
+                        (19)
+                    </p>
+                    <p class="product-price">$00.00</p>
+                    <p class="product-brand">Marca</p>
+                </article>
+                
+                
+                
+                
             </div>
             <!-- div de recomendaciones -->
-            <div>
-                <img src="/img/general_placeholder.png" alt=""  width=19%>
-                <img src="/img/general_placeholder.png" alt=""  width=19%>
-                <img src="/img/general_placeholder.png" alt=""  width=19%>
-                <img src="/img/general_placeholder.png" alt=""  width=19%>
-                <img src="/img/general_placeholder.png" alt=""  width=19%>
+            <div class="recommendation-bar">
+                <img src="/img/general_placeholder.png" alt="" >
+                <img src="/img/general_placeholder.png" alt="" >
+                <img src="/img/general_placeholder.png" alt="" >
+                <img src="/img/general_placeholder.png" alt="" >
+                <img src="/img/general_placeholder.png" alt="" >
             </div>
-            <div>
+
+            <!-- div de cambi de página -->
+            <div class="page-changer">
                 <a href=""><i class="fas fa-arrow-left"></i> Anterior </a>
                 <a href="">1 </a>
                 <a href="">2 </a>
                 <a href="">3 </a>
                 <a href="">4 </a>
                 <a href="">5 </a>
-                <a href="">Siguiente <i class="fas fa-arrow-right"></i> </a>
+                <a href="">Siguiente <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </main>
+
 <!-- Configuración del Pie de página -->
     <footer>
         <div> 
