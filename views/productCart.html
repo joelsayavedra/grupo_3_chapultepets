@@ -59,10 +59,10 @@
     </header>
 
     <!-- Configuración del main -->
-    <main>
+    <main class="cart">
         <h2>Carrito de Compras</h2>
         <div>
-            <div>
+            <div class="leyenda">
                 <p>_________________________________________</p>
                 <div>
                     <p>Artículo</p>
@@ -72,104 +72,137 @@
                 </div>
                 <p>_________________________________________</p>
             </div>
-            <div>
-                <img src="/img/logo2_placeholder.jpg" alt="">
-                <p>NombreProducto</p>
-                <p>$0.00</p>
+            <article>
                 <div>
-                    <select name ="cantidadProducto">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="1">6</option>
-                        <option value="2">7</option>
-                        <option value="3">8</option>
-                        <option value="4">9</option>
-                    </select>
-                    <button>
-                        <button type="erase">Eliminar</button>
-                    </button>
+                    <div class="articulo">
+                        <div class="logo_cart">  
+                            <img src="/img/general2_placeholder.jpg" alt="" width="100%">
+                        </div>
+                        <div class="info">
+                            <div class="detalles">
+                                <p>NombreProducto</p>
+                                <p class="etiquetaPrecio">$0.00</p>
+                            </div>
+                            <div class="detallesCant">
+                                <form>
+                                    <select name ="cantidadProducto">
+                                        <option value="0">Cantidad</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                    </select>
+                                </form>
+                                <p class="etiquetaPrecio">$0.00</p>
+                            </div>
+                            <div class="botonEliminar">
+                                <button type="submit">Eliminar Producto</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="articulo">
+                        <div class="logo_cart">  
+                            <img src="/img/general2_placeholder.jpg" alt="" width="100%">
+                        </div>
+                        <div class="info">
+                            <div class="detalles">
+                                <p>NombreProducto</p>
+                                <p class="etiquetaPrecio">$0.00</p>
+                            </div>
+                            <div class="detallesCant">
+                                <form>
+                                    <select name ="cantidadProducto">
+                                        <option value="0">Cantidad</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                    </select>
+                                </form>
+                                <p class="etiquetaPrecio">$0.00</p>
+                            </div>
+                            <div class="botonEliminar">
+                                <button type="submit">Eliminar Producto</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="articulo">
+                        <div class="logo_cart">  
+                            <img src="/img/general2_placeholder.jpg" alt="" width="100%">
+                        </div>
+                        <div class="info">
+                            <div class="detalles">
+                                <p>NombreProducto</p>
+                                <p class="etiquetaPrecio">$0.00</p>
+                            </div>
+                            <div class="detallesCant">
+                                <form>
+                                    <select name ="cantidadProducto">
+                                        <option value="0">Cantidad</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                    </select>
+                                </form>
+                                <p class="etiquetaPrecio">$0.00</p>
+                            </div>
+                            <div class="botonEliminar">
+                                <button type="submit">Eliminar Producto</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p>$0.00</p>
-            </div>
+                <div class="desyres">
+                    <div class="descuenton">
+                        <h2>Aplicar código de descuento</h2>
+                        <div>
+                            <input type="text" name="descuento" placeholder="Introducir código" id="" class=""  style="height: 30px;">
+                            <button type="submit">Aplicar Descuento</button>
+                        </div>
+                    </div>
 
-            <div>
-                <img src="/img/logo2_placeholder.jpg" alt="">
-                <p>NombreProducto</p>
-                <p>$0.00</p>
-                <div>
-                    <select name ="cantidadProducto">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="1">6</option>
-                        <option value="2">7</option>
-                        <option value="3">8</option>
-                        <option value="4">9</option>
-                    </select>
-                    <button>
-                        <button type="erase">Eliminar</button>
-                    </button>
+                    <div class="resumen">
+                        <h2>Resumen</h2>
+
+                        <div class="subtotal">
+                            <p>Subtotal</p>
+                            <p>$0.00</p>
+                        </div>
+
+                        <div class="impuestos">
+                            <p>Impuestos</p>
+                            <p>$0.00</p>
+                        </div>
+
+                        <div class="total">
+                            <p>Total</p>
+                            <p>$0.00</p>
+                        </div>
+
+                        <button type="submit" style="width: 100%;">Comprar Ahora</button>
+                    </div>
                 </div>
-                <p>$0.00</p>
-            </div>
+            </article>
 
-            <div>
-                <img src="/img/logo2_placeholder.jpg" alt="">
-                <p>NombreProducto</p>
-                <p>$0.00</p>
-                <div>
-                    <select name ="cantidadProducto">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="1">6</option>
-                        <option value="2">7</option>
-                        <option value="3">8</option>
-                        <option value="4">9</option>
-                    </select>
-                    <button>
-                        <button type="erase">Eliminar</button>
-                    </button>
-                </div>
-                <p>$0.00</p>
-            </div>
-
-            <h2>Aplicar código de descuento</h2>
-            <div>
-                <input type="text" name="descuento" placeholder="Introducir código de descuento" id="" class="">
-                <button type="submit">Aplicar Descuento</button>
-            </div>
-        </div>
-
-        <div>
-            <h2>Resumen</h2>
-            <p>________________________</p>
-            <div>
-                <p>Subtotal</p>
-                <p>$0.00</p>
-            </div>
-            <div>
-                <p>Impuestos</p>
-                <p>$0.00</p>
-            </div>
-            <p>___________________________</p>
-            <div>
-                <p>Total</p>
-                <p>$0.00</p>
-            </div>
-            <button type="submit">Comprar Ahora</button>
-        </div>
-        
     </main>
     <!-- Configuración del Pie de página -->
-    <footer>
+    <footer class="cart">
         <div> 
             <h2>Contacto</h2>
             <p><A href=/#>Quienes somos</A></p>

@@ -501,9 +501,97 @@ footer.formulario div div.redes{
 }
 
 /* Carrito de compras */
+main.cart{
+    font-size: 14px;
+}
+main.cart .resumen{
+    font-size: 14px;
+}
+main.cart article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+main.cart h2{
+    margin-bottom: 20px;
+}
 
-@media (min-width: 375px){
+main.cart div.leyenda{
+    display:none;
+}
+ main.cart .logo_cart{
+    width: 100%;
+    max-width: 325px;
+    min-width: 250px;
+}
+
+main.cart .detalles{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+main.cart .detallesCant{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+main.cart .botonEliminar button{
+    height: 30px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+main.cart .descuenton{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+main.cart .resumen{
+    font-size: 14px;
+    width: 100%;
+    max-width: 325px;
+    min-width: 250px;
+    background-color: var(--contrasteLogin);
+    margin: 0 auto;
+    border:  solid #E1E1E1 1px;
+    border-radius: 5px;
+    padding: 17px;
+}
+
+main.cart .subtotal{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    border-top: solid #000000 1px;
+}
+
+main.cart .impuestos{
+    justify-content: space-between;
+    display: flex;
+    padding-bottom: 5px;
+    border-bottom: solid #000000 1px;
+}
+
+main.cart .total{
+    padding-top: 10px;
+    justify-content: space-between;
+    display: flex;
+    padding-bottom: 10px;
+    
+}
+
+footer.cart{
+    margin-top: 50px;
+}
+
+@media (min-width: 400px){
 
     /* header */
 
@@ -569,7 +657,32 @@ footer.formulario div div.redes{
         margin-bottom: 0px;
     }
     /* Carrito de compras */
+    main.cart{
+        font-size: 16px;
+    }
 
+    main.cart .resumen{
+        font-size: 16px;
+    }
+
+    main.cart .logo_cart{
+        max-width: 275px;
+        margin: 10px;
+    }
+    main.cart .articulo{
+        display:flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    main.cart .info{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    main.cart .etiquetaPrecio{
+        margin-left: 10px;
+    }
+  
 }
 
 @media (min-width: 720px){
@@ -662,6 +775,37 @@ footer.formulario div div.redes{
     }
 
     /* Carrito de compras */
+    main.cart{
+        font-size: 18px;
+    }
+    main.cart .resumen{
+        font-size: 18px;
+    }
+    main.cart .desyres{
+        align-self: flex-start;
+    }
+    main.cart .logo_cart{
+        max-width: 325px;
+        margin: 10px;
+    }
+    main.cart article{
+        width: 100%;
+        max-width: 1000px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    main.cart .articulo{
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+        max-width: 600px;
+        min-width: 520px;
+        margin-right: 20px;
+    }
+
+    main.cart .resumen{
+        min-width: 300px;
+    }
 }
 
 @media (min-width: 1200px){
@@ -713,4 +857,39 @@ footer.formulario div div.redes{
     }
 
     /* Carrito de compras */
+    main.cart{
+        font-size: 20px;
+    }
+    main.cart .resumen{
+        min-width: 350px;
+    }
+    main.cart .botonEliminar button{
+        width: 70%;
+    }
+    main.cart .info{
+        width: 500px;
+    }
+    main.cart .detalles{
+        width: auto;
+        max-width: none;
+        max-width: none;
+    }
+    main.cart .logo_cart{
+        width: 1000px;
+        margin-right: 30px;;
+    }
+
+    main.cart .articulo{
+        justify-content: space-between;
+        width: auto;
+        max-width: none;
+        min-width: none;
+    }
+
+    main.cart article{
+        justify-content: space-between;
+        width: auto;
+        max-width: none;
+        min-width: none;
+    }
 }
