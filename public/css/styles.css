@@ -323,30 +323,88 @@ footer A{
 
 /* login */
 
-main.login form.formulario{
-    margin: 20px;
-    border:  solid #000000 1px;
-    border-radius: 10%;
+body.login{
+    background-color: var(--contrasteLogin);
+}
+main.login{
+    background-color: var(--contrasteLogin);
 }
 
-main.login form.formulario p{
-    margin: 20px 20px;
-}
-
-main.login form.formulario input{
+main.login div.logo-container{
     width: 100%;
+    margin-bottom: 30px;
 }
 
-main.login form.formulario p.finale{
+main.login form.formulario p input{
+    margin-bottom: 20px;
+    height: 30px;
+    background-color: var(--contrasteLogin);
+}
+
+main.login form.formulario p button{
+    height: 30px;
+}
+
+main.login form.formulario p button:hover{
+    transition: all .5s;
+    background-color: #0022AA;
+    color: #ffffff;
+}
+
+main.login form p.contra{
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+main.login form{
+    font-size: 14px;
+    width: 250px;
+    background-color: var(--fondoLogin);
+    margin: 0 auto;
+    border:  solid #E1E1E1 1px;
+    border-radius: 5px;
+    padding: 17px;
+}
+
+main.login div.reg{
+    font-size: 14px;
+    width: 250px;
+    background-color: var(--fondoLogin);
+    margin: 0 auto;
+    margin-top:10px;
+    border:  solid #E1E1E1 1px;
+    border-radius: 5px;
+    padding: 17px;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer.for{
+    font-size: 12px;
+    width: 375x;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-main.login div.cuerpo{
+footer.for div.cabeza{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+
+footer.for div.cabeza h2{
+    margin-bottom: 10px;
+}
+
+footer.for div div.redes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 /* register */
@@ -363,6 +421,15 @@ main.register form p{
 main.register div.logo-container{
     width: 100%;
 }
+main.register form p input{
+    height: 30px;
+    background-color: var(--contrasteLogin);
+}
+
+main.register form p button{
+    height: 30px;
+}
+
 main.register form{
     font-size: 14px;
     width: 300px;
@@ -409,6 +476,7 @@ main.register form button:hover{
     background-color: #ff7f7f;
 }  */
 footer.formulario{
+    font-size: 12px;
     width: 300px;
     display: flex;
     flex-direction: column;
@@ -458,13 +526,32 @@ footer.formulario div div.redes{
 
     /* login */
 
-    main.login form.formulario input{
-        width: 70%;
+    main.login form{
+        width: 300px;
+    }
+    main.login div.reg{
+        width: 300px;
     }
 
+    footer.for{
+        width: auto;
+    }
+    footer.for div.cabeza{
+        width: 300px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 20px;
+    }
+    
+    footer.for div.cabeza h2{
+        margin-bottom: 0px;
+    }
+
+   
     /* register */
     main.register form{
-        width: 400px;
+        width: 375px;
     }
    
     footer.formulario{
@@ -536,8 +623,36 @@ footer.formulario div div.redes{
     }
     
     /* login */
+    main.login form p input{
+        height: 40px;
+    }
+
+    main.login form p button{
+        height: 40px;
+    }
+
+    main.login form{
+        width: 350px;
+        font-size: 16px;
+    }
+
+    main.login div.reg{
+        width: 350px;
+        font-size: 16px;
+    }
+
+    footer.for div.cabeza{
+        width: 350px;
+    }
 
     /* register */
+    main.register form.formulario p input{
+        height: 40px;
+    }
+
+    main.register form.formulario p button{
+        height: 40px;
+    }
     main.register form{
         width: 450px;
         font-size: 16px;
@@ -565,8 +680,31 @@ footer.formulario div div.redes{
         font-size: 18px;
     }
     /* login */
+    main.login form p input{
+        height: 50px;
+    }
+
+    main.login form p button{
+        height: 50px;
+    }
+
+    main.login form{
+        font-size: 18px;
+    }
+
+    main.login div.reg{
+        font-size: 18px;
+    }
 
     /* register */
+    main.register form p input{
+        height: 50px;
+    }
+
+    main.register form p button{
+        height: 50px;
+    }
+
     main.register form{
         font-size: 18px;
     }

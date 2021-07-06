@@ -10,56 +10,60 @@
     <link href="/css/styles.css" rel="stylesheet">
     <title>ChapultePets - Login</title>
 </head>
-<body>
+<body  class= "login">
     <!-- Codificación de la cabecera -->
-    <header>
-         <div class="logo-container">
-            <a href="/">
-                <img src="/img/logo_placeholder.png" alt="" class="main-logo">
-            </a>
-        </div>
-    </header>
 
     <!-- Configuración del main -->
     <main class="login">
-        <div>
-            <img src="/img/logo2_placeholder.png" alt="">
-        </div>
-        <div class="cuerpo">
-            <H2>Inicio de sesión</H2>
-            <p>   _______________    </p>
-            <form class="formulario">
-                <p>
-                    <input type="text" name="nombreDeUsuario" id=""  placeholder="Nombre de Usuario" class="nombre" style="height: 30px" required>
-                </p>
-                <p>
-                    <input type="password"  name="contraseña" id="" class="contraseña" placeholder="Contraseña" style="height: 30px" required>
-                </p>
-                <p class= "finale">
-                    <A href=/#>¿Olvidaste la contraseña?</A>
-                    <button type="submit" class="" style="height: 30px;">Entrar</button>
-                </p>
-            </form>
-            <p>   _______________    </p>
+        <form class="formulario">
+            <div class="logo-container">
+                <a href="/">
+                    <img src="/img/logo_placeholder.png" alt="" class="main-logo">
+                </a>
+            </div>
+
+            <p>
+                <input type="text" name="nombreDeUsuario" id=""  placeholder="Nombre de Usuario" class="nombre" style="width: 100%;" required>
+             </p>
+
+            <p>
+                <input type="password"  name="contraseña" id="" class="contraseña" placeholder="Contraseña" style="width: 100%;" required>
+            </p>
+
+             <p class="contra">
+                 <A href=/#>¿Olvidaste la contraseña?</A>
+            </p>
+
+            <p>
+                <button type="submit" class="" style="width: 100%;">Iniciar Sesión</button>
+            </p>
+
+
+        </form>
+        <div class="reg">
             <p>¿Eres nuevo?</p>
-            <A href=/#>Crear nueva cuenta</A>
+            <p><A href=/register>Crear nueva cuenta</A></p>
         </div>
     </main>
     <!-- Configuración del Pie de página -->
-    <footer class="login">
-        <div> 
-            <p>Contacto</p>
+    <footer class="for">
+        <div class="cabeza"> 
+            <h2><p>Contacto</p></h2>
         
-            <p>Legales</p>
+            <h2><p>Legales</p></h2>
         
-            <p>Ligas adicionales</p>
+            <h2><p>Adicionales</p></h2>
         </div>
         <!-- Redes sociales -->
         <div>
-            <h2>Nuestras redes</h2>
-            <p><A href=/#><i class="fab fa-twitter"></i></A> 
-            <A href=/#><i class="fab fa-facebook"></i></A>
-            <A href=/#><i class="fab fa-instagram"></i></A></p>
+            <div>
+                <h2>Nuestras redes</h2>
+            </div>
+            <div class="redes">
+                <A href=/#><i class="fab fa-twitter"></i></A> 
+                <A href=/#><i class="fab fa-facebook"></i></A>
+                <A href=/#><i class="fab fa-instagram"></i></A>
+             </div>
         </div>
     </footer>
 </body>
