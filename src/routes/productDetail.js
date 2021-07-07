@@ -1,9 +1,9 @@
-const express= required ('express');
+const express= require ('express');
 const router = express.Router();
-const productController=('./controller/productControllers');
+const indexController= require ('../controllers/indexController.js');
 
 //Ruta raíz de los productos
 
-router.get('/productDetail', productController.productDetail);
+router.get('/productDetail', indexController.productDetail);
 
 module.exports= router;
