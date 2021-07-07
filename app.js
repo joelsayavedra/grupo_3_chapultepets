@@ -3,6 +3,8 @@ const path=require('path');
 
 const app = express();
 
+app.set("view engine", "ejs");
+
 const publicPath = path.resolve(__dirname,'./public');
 app.use(express.static(publicPath));
 
@@ -11,21 +13,21 @@ app.listen(process.env.PORT || 3000,()=>{
 });
 
 app.get('/',(req,res)=>{
-    res.sendFile(path.resolve(__dirname,'./views/index.html'));
+    res.render('index');
 });
 
 app.get('/login',(req,res)=>{
-    res.sendFile(path.resolve(__dirname,'./views/login.html'));
+    res.render('login');
 });
 
 app.get('/productcart',(req,res)=>{
-    res.sendFile(path.resolve(__dirname,'./views/productCart.html'));
+    res.render('productCart');
 });
 
 app.get('/productdetail',(req,res)=>{
-    res.sendFile(path.resolve(__dirname,'./views/productDetail.html'));
+    res.render('productDetail');
 });
 
 app.get('/register',(req,res)=>{
-    res.sendFile(path.resolve(__dirname,'./views/register.html'));
+    res.render('register');
 });
