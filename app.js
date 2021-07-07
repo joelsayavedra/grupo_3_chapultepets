@@ -7,6 +7,9 @@ const rutasProductDetail=require('./src/routes/productDetail.js');
 const rutasProductCart=require('./src/routes/productCart.js');
 const rutasRegister=require('./src/routes/register.js');
 
+const rutasProductCreate=require('./src/routes/productCreate.js');
+const rutasProductEdit=require('./src/routes/productEdit.js');
+
 const app = express();
 
 app.set("view engine", "ejs");
@@ -21,6 +24,9 @@ app.listen(process.env.PORT || 3000,()=>{
 
 app.use('/', rutasIndex);
 app.use('/login', rutasLogin);
-app.use('/productDetail', rutasProductDetail);
-app.use('/productCart', rutasProductCart);
+app.use('/productdetail', rutasProductDetail);
+app.use('/productcart', rutasProductCart);
 app.use('/register', rutasRegister);
+
+app.use('/productcreate', rutasProductCreate);
+app.use('/productedit', rutasProductEdit);

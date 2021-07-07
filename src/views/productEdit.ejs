@@ -1,12 +1,67 @@
 <%- include("./partials/head") %> 
+<head>
+    <title>ChapultePets - Editar Producto</title>
+</head>
 
 <body>
-    <%- include("./partials/header") %>
-
     <main>
+        <main class="crear">
+            <form>
+                <div class="logo-container">
+                    <a href="/">
+                        <img src="/img/logo_placeholder.png" alt="" class="main-logo">
+                    </a>
+                </div>
+                <p class="mensaje">Registro de un nuevo producto</p>
+                <p>
+                    <input type="text" name="nombreArticulo" id=""  placeholder="Nombre del Artículo" class="" style="width: 100%;" required>
+                </p>
+    
+                <p>
+                    <input type="text" name="idArticulo" id=""  placeholder="Ingrese el ID del artículo" class="" style="width: 100%;" required> 
+                </p>
+    
+                <p>
+                    <input type="text" name="categoría" id=""  placeholder="Categoría artículo" class="categoría" style="width: 100%;" required>
+                </p>
+                
+                <p>
+                    <input type="number" name="precio" id="" max="10"  placeholder="Precio en pesos mexicanos" class="tel" style="height: 30px; width: 100%;" required>
+                </p>
+    
+                <label for="CategoriaAnimal">Categoría Animal:</label>
+                <select name="CategoriaAnimal" id="" style="width: 100%;">
+                    <option value="perro">Perro</option>
+                    <option value="gato">Gato</option>
+                    <option value="ave">Ave</option>
+                    <option value="roedor">Roedor</option>
+                    <option value="reptil">Reptil</option>
+                </select>
+    
+                <label for="CategoriaTamaño">Tamaño:</label>
+                <select name="CategoriaTamaño" id="" style="width: 100%;">
+                    <option value="pequeño">Pequeño</option>
+                    <option value="mediano">Mediano</option>
+                    <option value="grande">Grande</option>
+                </select>
+                
         
+                <p class="foto">
+                    <label >Foto del artículo: </label>
+                    <input type="file" name="avatar" accept=".jpg" multiple   placeholder="Foto" style="width: 100%;" required>
+                </p>
+    
+                <p>
+                    <textarea name="descripcion" id=""  placeholder="Descripción" class="" style="width: 100%;" required></textarea> 
+                </p>
+    
+                <p>
+                    <button type="submit" class="" style="width: 100%;">Subir producto</button>
+                </p>
+            </form>
+        </main>
     </main>
-
-    <%- include("./partials/footer") %> 
+    <!-- Configuración del Pie de página -->
+    <%- include("./partials/footerFormularioAdmin") %>
 </body>
 </html>
