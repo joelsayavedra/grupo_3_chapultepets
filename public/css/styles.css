@@ -678,6 +678,51 @@ main.crear form .ID:valid{
 
 /* Edición */
 
+main.editar form{
+    font-size: 14px;
+    width: 300px;
+    background-color: var(--fondoLogin);
+    margin: 0 auto;
+    border:  solid #E1E1E1 1px;
+    border-radius: 5px;
+    padding: 17px;
+    margin-top: 50px;
+}
+
+main.editar form button:hover{
+    transition: all .5s;
+    background-color: #0022AA;
+    border:solid #0022AA 1px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+body.editar, main.editar{
+    background-color: var(--contrasteLogin);
+}
+
+main.editar .mensaje{
+    margin: 10px 0px 10px 0px;
+}
+
+main.editar .logo-container{
+    width: 100%;
+}
+main.editar input{
+    height: 25px;
+    margin-bottom: 10px;
+}
+
+main.editar select{
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+main.editar textarea{
+    height: 40px;
+    margin-bottom: 10px;
+}
+
 footer.admin{
     font-size: 12px;
     width: 300px;
@@ -803,6 +848,25 @@ footer.admin div.cabeza{
     }
 
     /* Edición */
+
+    main.editar form{
+        width: 375px;
+    }
+    main.editar form p input{
+        height: 35px;
+    }
+
+    main.editar form p button{
+        height: 35px;
+    }
+
+    main.editar textarea{
+        height: 50px;
+    }
+
+    main.editar select{
+        height: 35px;
+    }
 
     footer.admin{
         display: flex;
@@ -966,6 +1030,27 @@ footer.admin div.cabeza{
     }
 
     /* Edición */
+
+    main.editar form p input{
+        height: 40px;
+    }
+
+    main.editar form p button{
+        height: 40px;
+    }
+    main.editar form{
+        width: 450px;
+        font-size: 16px;
+    }
+
+    main.editar textarea{
+        height: 70px;
+    }
+
+    main.editar select{
+        height: 40px;
+    }
+
     footer.admin div.cabeza{
         width: 450px;
     }
@@ -1074,6 +1159,21 @@ footer.admin div.cabeza{
     }
 
     /* Edición */
+
+    main.editar form p input{
+        height: 50px;
+    }
+
+    main.editar form p button{
+        height: 50px;
+    }
+
+    main.editar form{
+        font-size: 18px;
+    }
+    main.editar select{
+        height: 50px;
+    }
 
     footer.admin div.cabeza{
         width: 450px;

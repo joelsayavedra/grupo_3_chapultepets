@@ -1,65 +1,66 @@
 <%- include("./partials/head") %> 
 <head>
-    <title>ChapultePets - Editar Producto</title>
+    <title>ChapultePets - Registrar Producto</title>
 </head>
 
-<body>
-    <main>
-        <main class="crear">
-            <form>
-                <div class="logo-container">
-                    <a href="/">
-                        <img src="/img/logo_placeholder.png" alt="" class="main-logo">
-                    </a>
-                </div>
-                <p class="mensaje">Registro de un nuevo producto</p>
-                <p>
-                    <input type="text" name="nombreArticulo" id=""  placeholder="Nombre del Artículo" class="" style="width: 100%;" required>
-                </p>
+<body class="editar">
+
+    <!-- Configuración del main -->
+    <main class="editar">
+        <form>
+            <div class="logo-container">
+                <a href="/">
+                    <img src="/img/logo_placeholder.png" alt="" class="main-logo">
+                </a>
+            </div>
+            <p class="mensaje">Edición de un producto existente</p>
+
+            <p>
+                <input type="text" name="idArticulo" id=""  placeholder="Ingrese ID existente" class="ID" style="width: 100%;" required> 
+            </p>
+
+            <p>
+                <input type="text" name="nombreArticulo" id=""  placeholder="Cambiar nombre" class="nombreArt" style="width: 100%;">
+            </p>
+
+            <p>
+                <input type="text" name="categoría" id=""  placeholder=" Cambiar Categoría artículo" class="categoriaArt" style="width: 100%;">
+            </p>
+            
+            <p>
+                <input type="number" name="precio" id="" max="10"  placeholder="Cambiar Precio" class="precio" style="height: 30px; width: 100%;">
+            </p>
+
+            <label for="CategoriaAnimal">Cambiar categoría Animal:</label>
+            <select name="CategoriaAnimal" id="" style="width: 100%;">
+                <option value="perro">Perro</option>
+                <option value="gato">Gato</option>
+                <option value="ave">Ave</option>
+                <option value="roedor">Roedor</option>
+                <option value="reptil">Reptil</option>
+            </select>
+
+            <label for="CategoriaTamaño">Cambiar tamaño:</label>
+            <select name="CategoriaTamaño" id="" style="width: 100%;">
+                <option value="pequeño">Pequeño</option>
+                <option value="mediano">Mediano</option>
+                <option value="grande">Grande</option>
+            </select>
+            
     
-                <p>
-                    <input type="text" name="idArticulo" id=""  placeholder="Ingrese el ID del artículo" class="" style="width: 100%;" required> 
-                </p>
-    
-                <p>
-                    <input type="text" name="categoría" id=""  placeholder="Categoría artículo" class="categoría" style="width: 100%;" required>
-                </p>
-                
-                <p>
-                    <input type="number" name="precio" id="" max="10"  placeholder="Precio en pesos mexicanos" class="tel" style="height: 30px; width: 100%;" required>
-                </p>
-    
-                <label for="CategoriaAnimal">Categoría Animal:</label>
-                <select name="CategoriaAnimal" id="" style="width: 100%;">
-                    <option value="perro">Perro</option>
-                    <option value="gato">Gato</option>
-                    <option value="ave">Ave</option>
-                    <option value="roedor">Roedor</option>
-                    <option value="reptil">Reptil</option>
-                </select>
-    
-                <label for="CategoriaTamaño">Tamaño:</label>
-                <select name="CategoriaTamaño" id="" style="width: 100%;">
-                    <option value="pequeño">Pequeño</option>
-                    <option value="mediano">Mediano</option>
-                    <option value="grande">Grande</option>
-                </select>
-                
-        
-                <p class="foto">
-                    <label >Foto del artículo: </label>
-                    <input type="file" name="avatar" accept=".jpg" multiple   placeholder="Foto" style="width: 100%;" required>
-                </p>
-    
-                <p>
-                    <textarea name="descripcion" id=""  placeholder="Descripción" class="" style="width: 100%;" required></textarea> 
-                </p>
-    
-                <p>
-                    <button type="submit" class="" style="width: 100%;">Subir producto</button>
-                </p>
-            </form>
-        </main>
+            <p class="foto">
+                <label >Cambiar Foto del artículo: </label>
+                <input type="file" name="avatar" accept=".jpg" multiple   placeholder="Foto" style="width: 100%;" required>
+            </p>
+
+            <p>
+                <textarea name="descripcion" id=""  placeholder="Descripción nueva" class="" style="width: 100%;" required></textarea> 
+            </p>
+
+            <p>
+                <button type="submit" class="" style="width: 100%;">Registrar cambio </button>
+            </p>
+        </form>
     </main>
     <!-- Configuración del Pie de página -->
     <%- include("./partials/footerFormularioAdmin") %>
