@@ -9,6 +9,9 @@ const rutasRegister=require('./routes/register');
 
 const app = express();
 
+const publicPath = path.resolve(__dirname,'./public');
+app.use(express.static(publicPath));
+
 app.set("view engine", "ejs");
 app.set("views", "./src/views")
 
