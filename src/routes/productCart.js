@@ -4,6 +4,6 @@ const indexController= require ('../controllers/indexController.js');
 
 //Ruta raíz de los productos
 
-router.get('/productCart', indexController.productCart);
+router.get('/', indexController.productCart);
 
 module.exports= router;
