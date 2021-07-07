@@ -1,62 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link href="/css/normalize.css" rel="stylesheet"><!--Archivo normalize.css, descargada de internet-->
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
-    <link href="/css/styles.css" rel="stylesheet">
-    <title>ChapultePets - Carrito</title>
-</head>
+<%- include("./partials/head") %> 
+
 <body>
     <!-- Codificación de la cabecera -->
-    <header>
-        <div class="upper-header-bar">
-            <div class="logo-container">
-                <a href="/">
-                    <img src="/img/logo_placeholder.png" alt="" class="main-logo">
-                </a>
-            </div>
-            <div  class="upper-nav-bar-container">
-                <div  class="upper-nav-bar">
-                    <div class="upper-nav-bar-element">
-                        <div>
-                            <p><i class="fas fa-envelope"></i></p>
-                            <a href="/register"> <h4>Registro</h4> </a>
-                        </div>
-                    </div>
-                    <div class="upper-nav-bar-element">
-                        <div>
-                            <p><i class="fas fa-shopping-cart"></i></p>
-                            <a href="/productcart"><h4>Mi carrito</h4></a>
-                        </div>
-                    </div>
-                    <div class="upper-nav-bar-element">
-                        <div>
-                            <img src="/img/Portrait_Placeholder.png" alt="">
-                            <a href="/login"><h4>Mi perfil</h4></a>
-                        </div>
-                    </div>
-                </div>
-            
-                <form action="" class="search-form">
-                    <input type="text">
-                    <button>
-                        <p>Buscar&nbsp;&nbsp;</p> 
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-
-        <ul class="lower-bar">
-            <li>Búsqueda por mascota</li>
-            <li>Marcas</li>
-            <li>Categorías</li>
-        </ul>
-    </header>
+    <%- include("./partials/header") %>
 
     <!-- Configuración del main -->
     <main class="cart">
@@ -202,32 +148,7 @@
 
     </main>
     <!-- Configuración del Pie de página -->
-    <footer class="cart">
-        <div> 
-            <h2>Contacto</h2>
-            <p><A href=/#>Quienes somos</A></p>
-            <p><A href=/#>Preguntas frecuentes</A></p>
+    <%- include("./partials/footer") %> 
 
-        </div>
-        <div>
-            <h2>Legales</h2>
-            <p><A href=/#>Términos de servicio</A></p>
-            <p><A href=/#>Avisos de privacidad</A></p>
-
-        </div>
-        <div>
-            <h2>Ligas adicionales</h2>
-            <p><A href=/#>Devoluciones</A></p>
-            <p><A href=/#>Pagos</A></p>
-            <p><A href=/#>Envíos y Entregas</A></p>
-        </div>
-        <!-- Redes sociales -->
-        <div>
-            <h2>Nuestras redes</h2>
-            <p><A href=/#><i class="fab fa-twitter"></i></A> 
-            <A href=/#><i class="fab fa-facebook"></i></A>
-            <A href=/#><i class="fab fa-instagram"></i></A></p>
-        </div>
-    </footer>
 </body>
 </html>
