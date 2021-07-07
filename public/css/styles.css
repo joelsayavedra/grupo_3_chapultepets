@@ -43,6 +43,10 @@ header{
     padding-top: 15px;
 }
 
+header A{
+    text-decoration: none;
+    color: #000000;
+}
 .upper-header-bar{
     width: 100vw;
     display: flex;
