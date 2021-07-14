@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "nombreUsuario": "Mat Lam Tam",
+        "nombrePila": "Julissa",
+        "apellido": "Coatman",
+        "email": "jcoatman0@tuttocitta.it",
+        "password": "vMoI9NZfH3",
+        "telefono": "KJNoWA4iJ"
+    },
+    {
+        "id": 2,
+        "nombreUsuario": "Trippledex",
+        "nombrePila": "Dacia",
+        "apellido": "Vakhrushin",
+        "email": "dvakhrushin1@japanpost.jp",
+        "password": "D8rTXD9U",
+        "telefono": "y34Lxz"
+    },
+    {
+        "id": 3,
+        "nombreUsuario": "Bitwolf",
+        "nombrePila": "Damiano",
+        "apellido": "Bloore",
+        "email": "dbloore2@smugmug.com",
+        "password": "e467qMu",
+        "telefono": "RBCB9f1g3G"
+    },
+    {
+        "id": 4,
+        "nombreUsuario": "Konklab",
+        "nombrePila": "Jonis",
+        "apellido": "Mattam",
+        "email": "jmattam3@blogs.com",
+        "password": "zUdnHGG9",
+        "telefono": "RW4GaVhC98O2"
+    },
+    {
+        "id": 5,
+        "nombreUsuario": "Tin",
+        "nombrePila": "Nyssa",
+        "apellido": "Blandamore",
+        "email": "nblandamore4@hc360.com",
+        "password": "DcVHeExPKP",
+        "telefono": "jw4NBTc06or"
+    },
+    {
+        "id": 6,
+        "nombreUsuario": "Bamity",
+        "nombrePila": "Lavinie",
+        "apellido": "Divine",
+        "email": "ldivine5@fema.gov",
+        "password": "ltiNz3QEB2tW",
+        "telefono": "UVe3YFPU"
+    },
+    {
+        "id": 7,
+        "nombreUsuario": "Bamity",
+        "nombrePila": "Inna",
+        "apellido": "Wennington",
+        "email": "iwennington6@imgur.com",
+        "password": "c4qbYd1dZ",
+        "telefono": "dTH9eOeJSllr"
+    },
+    {
+        "id": 8,
+        "nombreUsuario": "Solarbreeze",
+        "nombrePila": "Vale",
+        "apellido": "Morrott",
+        "email": "vmorrott7@ibm.com",
+        "password": "9DEfn2kHw",
+        "telefono": "KOhSV58ciO4"
+    },
+    {
+        "id": 9,
+        "nombreUsuario": "Asoka",
+        "nombrePila": "Ody",
+        "apellido": "Temporal",
+        "email": "otemporal8@list-manage.com",
+        "password": "QFQSKd0",
+        "telefono": "kq4cC0s"
+    },
+    {
+        "id": 10,
+        "nombreUsuario": "Wrapsafe",
+        "nombrePila": "Buffy",
+        "apellido": "Teaz",
+        "email": "bteaz9@cbc.ca",
+        "password": "Um9XHXG",
+        "telefono": "CuDxJ51M"
+    }
+]
