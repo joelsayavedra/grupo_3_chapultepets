@@ -351,7 +351,7 @@ main.login{
 
 main.login div.logo-container{
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 main.login form.formulario p input{
@@ -372,6 +372,7 @@ main.login form.formulario button:hover{
 }
 
 main.login form p.contra{
+    margin-top: 30px;
     margin-bottom: 10px;
     text-align: center;
 }
@@ -379,17 +380,18 @@ main.login form p.contra{
 
 main.login form{
     font-size: 14px;
-    width: 250px;
+    width: 225px;
     background-color: var(--fondoLogin);
     margin: 0 auto;
     border:  solid #E1E1E1 1px;
     border-radius: 5px;
     padding: 17px;
+    
 }
 
 main.login div.reg{
     font-size: 14px;
-    width: 250px;
+    width: 225px;
     background-color: var(--fondoLogin);
     margin: 0 auto;
     margin-top:10px;
@@ -619,7 +621,7 @@ footer.cart{
 /* Creación */
 main.crear form{
     font-size: 14px;
-    width: 300px;
+    width: 275x;
     background-color: var(--fondoLogin);
     margin: 0 auto;
     border:  solid #E1E1E1 1px;
@@ -646,20 +648,21 @@ main.crear .mensaje{
 
 main.crear .logo-container{
     width: 100%;
+    margin-bottom: 20px;
 }
 main.crear input{
     height: 25px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 main.crear select{
     height: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 main.crear textarea{
     height: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 main.crear form .nombreArt:valid{
@@ -684,7 +687,7 @@ main.crear form .ID:valid{
 
 main.editar form{
     font-size: 14px;
-    width: 300px;
+    width: 275px;
     background-color: var(--fondoLogin);
     margin: 0 auto;
     border:  solid #E1E1E1 1px;
@@ -711,20 +714,21 @@ main.editar .mensaje{
 
 main.editar .logo-container{
     width: 100%;
+    margin-bottom: 20px;
 }
 main.editar input{
     height: 25px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 main.editar select{
     height: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 main.editar textarea{
     height: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 footer.admin{
@@ -737,6 +741,7 @@ footer.admin div.cabeza{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 20px;
     margin-bottom: 0px;
 }
 
@@ -764,10 +769,10 @@ footer.admin div.cabeza{
     /* login */
 
     main.login form{
-        width: 300px;
+        width: 275px;
     }
     main.login div.reg{
-        width: 300px;
+        width: 275px;
     }
 
     footer.for{
@@ -788,7 +793,7 @@ footer.admin div.cabeza{
    
     /* register */
     main.register form{
-        width: 375px;
+        width: 350px;
     }
    
     footer.formulario{
@@ -833,7 +838,7 @@ footer.admin div.cabeza{
     }
     /* Creación */
     main.crear form{
-        width: 375px;
+        width: 325px;
     }
     main.crear form p input{
         height: 35px;
@@ -854,7 +859,7 @@ footer.admin div.cabeza{
     /* Edición */
 
     main.editar form{
-        width: 375px;
+        width: 325px;
     }
     main.editar form p input{
         height: 35px;
@@ -950,12 +955,12 @@ footer.admin div.cabeza{
     }
 
     main.login form{
-        width: 350px;
+        width: 300px;
         font-size: 16px;
     }
 
     main.login div.reg{
-        width: 350px;
+        width: 300px;
         font-size: 16px;
     }
 
@@ -972,7 +977,7 @@ footer.admin div.cabeza{
         height: 40px;
     }
     main.register form{
-        width: 450px;
+        width: 425px;
         font-size: 16px;
     }
     footer.formulario div.cabeza{
@@ -1021,7 +1026,7 @@ footer.admin div.cabeza{
         height: 40px;
     }
     main.crear form{
-        width: 450px;
+        width: 425px;
         font-size: 16px;
     }
 
@@ -1043,7 +1048,7 @@ footer.admin div.cabeza{
         height: 40px;
     }
     main.editar form{
-        width: 450px;
+        width: 425px;
         font-size: 16px;
     }
 
@@ -1056,7 +1061,7 @@ footer.admin div.cabeza{
     }
 
     footer.admin div.cabeza{
-        width: 450px;
+        width: 425px;
     }
 }
 
@@ -1188,6 +1193,6 @@ footer.admin div.cabeza{
     }
 
     footer.admin div.cabeza{
-        width: 450px;
+        width: 400px;
     }
 }

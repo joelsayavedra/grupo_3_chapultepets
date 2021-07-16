@@ -1,47 +1,51 @@
-<%- include("./partials/head") %> 
-<head>
-    <title>ChapultePets - Login</title>
-</head>
+<%- include("./partials/head") %>
 
-<body  class= "login">
-    <!-- Codificación de la cabecera -->
+    <head>
+        <title>ChapultePets - Login</title>
+    </head>
 
-    <!-- Configuración del main -->
-    <main class="login">
-        <form class="formulario">
-            <div class="logo-container">
-                <a href="/">
-                    <img src="/img/logo_placeholder.png" alt="" class="main-logo">
-                </a>
+    <body class="login">
+        <!-- Codificación de la cabecera -->
+
+        <!-- Configuración del main -->
+        <main class="login">
+            <form class="formulario">
+                <div class="logo-container">
+                    <a href="/">
+                        <img src="/img/logo_mobile.png" alt="" class="main-logo">
+                    </a>
+                </div>
+
+                <p>
+                    <input type="text" name="nombreDeUsuario" id="" placeholder="Nombre de Usuario" class="nombre"
+                        style="width: 100%;" required>
+                </p>
+
+                <p>
+                    <input type="password" name="contraseña" id="" class="contraseña" placeholder="Contraseña"
+                        style="width: 100%;" required>
+                </p>
+
+                <p class="contra">
+                    <A href=/#>¿Olvidaste la contraseña?</A>
+                </p>
+
+                <p>
+                    <button type="submit" class="" style="width: 100%;">Iniciar Sesión</button>
+                </p>
+
+
+            </form>
+            <div class="reg">
+                <p>¿Eres nuevo?</p>
+                <p><A href=/register>Crear nueva cuenta</A></p>
             </div>
+        </main>
 
-            <p>
-                <input type="text" name="nombreDeUsuario" id=""  placeholder="Nombre de Usuario" class="nombre" style="width: 100%;" required>
-             </p>
+        <!-- Configuración del Pie de página -->
+        <footer class="for">
+            <%- include("./partials/footerFormularioUsuario") %>
+        </footer>
+    </body>
 
-            <p>
-                <input type="password"  name="contraseña" id="" class="contraseña" placeholder="Contraseña" style="width: 100%;" required>
-            </p>
-
-             <p class="contra">
-                 <A href=/#>¿Olvidaste la contraseña?</A>
-            </p>
-
-            <p>
-                <button type="submit" class="" style="width: 100%;">Iniciar Sesión</button>
-            </p>
-
-
-        </form>
-        <div class="reg">
-            <p>¿Eres nuevo?</p>
-            <p><A href=/register>Crear nueva cuenta</A></p>
-        </div>
-    </main>
-    
-    <!-- Configuración del Pie de página -->
-    <footer class="for">
-        <%- include("./partials/footerFormularioUsuario") %>
-    </footer>
-</body>
-</html>
+    </html>

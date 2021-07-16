@@ -1,57 +1,67 @@
-<%- include("./partials/head") %> 
+<%- include("./partials/head") %>
 
-<head>
-    <title>ChapultePets - Registro</title>
-</head>
+    <head>
+        <title>ChapultePets - Registro</title>
+    </head>
 
-<body class="register">
+    <body class="register">
 
-    <!-- Configuración del main -->
-    <main class="register">
-        <form>
-            <div class="logo-container">
-                <a href="/">
-                    <img src="/img/logo_placeholder.png" alt="" class="main-logo">
-                </a>
-            </div>
-            <p>Encuentra tus productos favoritos con una cuenta personalizada.</p>
-            <p>
-                <input type="text" name="nombreDePersona" id=""  placeholder="Nombre(s)" class="" style="width: 100%;" required>
-            </p>
+        <!-- Configuración del main -->
+        <main class="register">
+            <form>
+                <div class="logo-container">
+                    <a href="/">
+                        <img src="/img/logo_mobile.png" alt="" class="main-logo">
+                    </a>
+                </div>
+                <p>Encuentra tus productos favoritos con una cuenta personalizada.</p>
+                <p>
+                    <input type="text" name="nombreDePersona" id="" placeholder="Nombre(s)" class=""
+                        style="width: 100%;" required>
+                </p>
 
-            <p>
-                <input type="text" name="apellidoDePersona" id=""  placeholder="Apellido(s)" class="" style="width: 100%;" required> 
-            </p>
+                <p>
+                    <input type="text" name="apellidoDePersona" id="" placeholder="Apellido(s)" class=""
+                        style="width: 100%;" required>
+                </p>
 
-            <p>
-                <input type="text" name="nombreDeUsuario" id=""  placeholder="Nombre de usuario" class="nombreDeUsuario" style="width: 100%;" required>
-            </p>
+                <p>
+                    <input type="text" name="nombreDeUsuario" id="" placeholder="Nombre de usuario"
+                        class="nombreDeUsuario" style="width: 100%;" required>
+                </p>
 
-            <p>
-                <input type="password" name="contraseña" minlength="6" placeholder="Contraseña" id="" class="contraseña" style=" width: 100%;" required>
-            </p>
+                <p>
+                    <input type="password" name="contraseña" minlength="6" placeholder="Contraseña" id=""
+                        class="contraseña" style=" width: 100%;" required>
+                </p>
 
-            <p>
-                <input type="password" name="confirmacionContraseña" minlength="6" placeholder="Confirmar contraseña" id="" class="confirmarContraseña" style="width: 100%;" required>
-            </p>
+                <p>
+                    <input type="password" name="confirmacionContraseña" minlength="6"
+                        placeholder="Confirmar contraseña" id="" class="confirmarContraseña" style="width: 100%;"
+                        required>
+                </p>
 
-            <p>
-                <input type="email" name="email" id="" placeholder="Correo electrónico" class="correo" style="width: 100%;" required>
-            </p>
+                <p>
+                    <input type="email" name="email" id="" placeholder="Correo electrónico" class="correo"
+                        style="width: 100%;" required>
+                </p>
 
-            <p>
-                <input type="number" name="numeroTelefonico" id="" min="10"  placeholder="Numéro Telefónico (10 Dígitos)" class="tel" style="height: 30px; width: 100%;" required>
-            </p>
+                <p>
+                    <input type="number" name="numeroTelefonico" id="" min="10"
+                        placeholder="Numéro Telefónico (10 Dígitos)" class="tel" style="height: 30px; width: 100%;"
+                        required>
+                </p>
 
-            <p>
-                <button type="submit" class="" style="width: 100%;">Registrar</button>
-            </p>
-        </form>
-    </main>
-    <!-- Configuración del Pie de página -->
-    <footer class="formulario">
-    <%- include("./partials/footerFormularioUsuario") %> 
-    </footer>
+                <p>
+                    <button type="submit" class="" style="width: 100%;">Registrar</button>
+                </p>
+            </form>
+        </main>
+        <!-- Configuración del Pie de página -->
+        <footer class="formulario">
+            <%- include("./partials/footerFormularioUsuario") %>
+        </footer>
 
-</body>
-</html>
+    </body>
+
+    </html>
