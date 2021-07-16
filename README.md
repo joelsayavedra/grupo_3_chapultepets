@@ -38,3 +38,16 @@
         <p>La página de detalles del producto es sencilla pero completa, y en general el diseño gráfico de la página es simple pero agradable a la vista, no satura con demasiadas imágenes.</p>
     </li>
 </ol>
+
+
+<h2>Enlaces de Trello</h2>
+<ol>
+    <li>Sprint 1</li>
+    <p>https://trello.com/b/YNlFlPea/grupo-3-sprint-1</p>
+    <li>Sprint 2</li>
+    <p>https://trello.com/b/XFFnpXX3/grupo-3-sprint-2</p>
+    <li>Sprint 3</li>
+    <p>https://trello.com/b/ugjV8SPt/grupo-3-sprint-3</p>
+    <li>Sprint 4</li>
+    <p>https://trello.com/b/LnlNPn4x/grupo-3-sprint-4</p>
+</ol>
