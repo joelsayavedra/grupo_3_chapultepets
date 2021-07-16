@@ -65,6 +65,10 @@ header A{
     max-height: 95px;
 }
 
+.main-logo-desktop{
+    display: none;
+}
+
 .upper-nav-bar-container{
     width: 60%;
 }
@@ -1061,6 +1065,14 @@ footer.admin div.cabeza{
     /* header */
     .upper-nav-bar-element{
         width: 25%;
+    }
+
+    .main-logo-desktop{
+        display: block;
+    }
+
+    .main-logo-mobile{
+        display: none;
     }
 
     /* index */
