@@ -78,5 +78,15 @@
         "rating":5,
         "reviewsAmount":1000,
         "price":100
+    },
+    {
+        "id":8,
+        "name": "",
+        "image":"default.jpg",
+        "description":"",
+        "category": "",
+        "rating":5,
+        "reviewsAmount":1000,
+        "price":100
     }
 ]

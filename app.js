@@ -1,14 +1,17 @@
 const express = require('express');
 const path=require('path');
 
-const rutasIndex=require('./src/routes/index.js');
-const rutasLogin=require('./src/routes/login.js');
-const rutasProductDetail=require('./src/routes/productDetail.js');
-const rutasProductCart=require('./src/routes/productCart.js');
-const rutasRegister=require('./src/routes/register.js');
+const indexRouter=require('./src/routes/index.js');
+const usersRouter=require('./src/routes/users.js');
+const productsRouter=require('./src/routes/products.js');
 
-const rutasProductCreate=require('./src/routes/productCreate.js');
-const rutasProductEdit=require('./src/routes/productEdit.js');
+
+// const rutasLogin=require('./src/routes/login.js');
+// const rutasProductDetail=require('./src/routes/productDetail.js');
+// const rutasProductCart=require('./src/routes/productCart.js');
+// const rutasRegister=require('./src/routes/register.js');
+// const rutasProductCreate=require('./src/routes/productCreate.js');
+// const rutasProductEdit=require('./src/routes/productEdit.js');
 
 const app = express();
 
@@ -22,11 +25,13 @@ app.listen(process.env.PORT || 3000,()=>{
     console.log("corriendo servidor en el puerto 3000");
 });
 
-app.use('/', rutasIndex);
-app.use('/login', rutasLogin);
-app.use('/productdetail', rutasProductDetail);
-app.use('/productcart', rutasProductCart);
-app.use('/register', rutasRegister);
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/products', productsRouter);
 
-app.use('/productcreate', rutasProductCreate);
-app.use('/productedit', rutasProductEdit);
+// app.use('/login', rutasLogin);
+// app.use('/productdetail', rutasProductDetail);
+// app.use('/productcart', rutasProductCart);
+// app.use('/register', rutasRegister);
+// app.use('/productcreate', rutasProductCreate);
+// app.use('/productedit', rutasProductEdit);
