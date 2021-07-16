@@ -1,37 +1,27 @@
 const express = require('express');
 const path=require('path');
 
+//Require de los ruteadores
 const indexRouter=require('./src/routes/index.js');
 const usersRouter=require('./src/routes/users.js');
 const productsRouter=require('./src/routes/products.js');
 
-
-// const rutasLogin=require('./src/routes/login.js');
-// const rutasProductDetail=require('./src/routes/productDetail.js');
-// const rutasProductCart=require('./src/routes/productCart.js');
-// const rutasRegister=require('./src/routes/register.js');
-// const rutasProductCreate=require('./src/routes/productCreate.js');
-// const rutasProductEdit=require('./src/routes/productEdit.js');
-
 const app = express();
 
+//Configuración del motor de vistas
 app.set("view engine", "ejs");
 app.set("views", "./src/views")
 
+//Configuración de la carpeta pública "public"
 const publicPath = path.resolve(__dirname,'./public');
 app.use(express.static(publicPath));
 
+//Configuración del puerto
 app.listen(process.env.PORT || 3000,()=>{
     console.log("corriendo servidor en el puerto 3000");
 });
 
+//Implementación de los ruteadores
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
-
-// app.use('/login', rutasLogin);
-// app.use('/productdetail', rutasProductDetail);
-// app.use('/productcart', rutasProductCart);
-// app.use('/register', rutasRegister);
-// app.use('/productcreate', rutasProductCreate);
-// app.use('/productedit', rutasProductEdit);

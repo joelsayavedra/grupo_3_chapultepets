@@ -1,18 +1,14 @@
+const fs = require('fs');
+const path = require('path');
+
+const productsFilePath = path.join(__dirname, '../database/products.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 const controller = {
     index: function(req,res){
-        res.render('index');
-    },
-    login: function(req,res){
-        res.render('login');
-    },
-    productCart: function(req,res){
-        res.render('productCart');  
-    },
-    productDetail: function(req,res){
-        res.render('productDetail');
-    },
-    register: function(req,res){
-        res.render('register');
+        res.render('index',{
+            products:products,
+        });
     },
 };
 

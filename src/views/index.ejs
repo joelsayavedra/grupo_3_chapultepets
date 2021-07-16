@@ -54,60 +54,33 @@
             <!-- Div de muestra de artículos -->
             <div class="product-window">
 
+                <% for(let i=0;i<products.length;i++){ %> 
+                    <article>
+                        <img src="/img/products/<%= products[i].image %> " alt="">
+                        <h4><%= products[i].name %> </h4>
+                        <!-- casillero de estrellas -->
+                        <p class="product-rating-stars">
 
-                <article>
-                    <img src="/img/general_placeholder.png" alt="">
-                    <h4>Nombre del producto</h4>
-                    <!-- casillero de estrellas -->
-                    <p class="product-rating-stars">
-                        <i class="fas fa-star stars"></i>
-                        <i class="fas fa-star stars"></i>
-                        <i class="fas fa-star-half-alt stars"></i>
-                        <i class="far fa-star stars"></i>
-                        <i class="far fa-star stars"></i>
-                        (19)
-                    </p>
-                    <p class="product-price">$00.00</p>
-                    <p class="product-brand">Marca</p>
-                </article>
-                
-                <article>
-                    <img src="/img/general_placeholder.png" alt="">
-                    <h4>Nombre del producto</h4>
-                    <!-- casillero de estrellas -->
-                    <p class="product-rating-stars">
-                        <i class="fas fa-star stars"></i>
-                        <i class="fas fa-star stars"></i>
-                        <i class="fas fa-star-half-alt stars"></i>
-                        <i class="far fa-star stars"></i>
-                        <i class="far fa-star stars"></i>
-                        (19)
-                    </p>
-                    <p class="product-price">$00.00</p>
-                    <p class="product-brand">Marca</p>
-                </article>
+                            <%- include("./partials/rating_stars",{
+                                rating : products[i].rating 
+                            }) %> 
 
-                <article>
-                    <img src="/img/general_placeholder.png" alt="">
-                    <h4>Nombre del producto</h4>
-                    <!-- casillero de estrellas -->
-                    <p class="product-rating-stars">
-                        <i class="fas fa-star stars"></i>
-                        <i class="fas fa-star stars"></i>
-                        <i class="fas fa-star-half-alt stars"></i>
-                        <i class="far fa-star stars"></i>
-                        <i class="far fa-star stars"></i>
-                        (19)
-                    </p>
-                    <p class="product-price">$00.00</p>
-                    <p class="product-brand">Marca</p>
-                </article>
+                            <%= products[i].rating %> 
 
-                <article>
+                            (<%= products[i].reviewsAmount %> )
+                        </p>
+                        <p class="product-price">$<%= products[i].price %> </p>
+                        <p class="product-brand"><%= products[i].brand %> </p>
+                    </article>
+                <% } %> 
+                
+                <!-- <article>
                     <img src="/img/general_placeholder.png" alt="">
-                    <h4>Nombre del producto</h4>
+                    <h4>Nombre del producto</h4> -->
+
                     <!-- casillero de estrellas -->
-                    <p class="product-rating-stars">
+
+                    <!-- <p class="product-rating-stars">
                         <i class="fas fa-star stars"></i>
                         <i class="fas fa-star stars"></i>
                         <i class="fas fa-star-half-alt stars"></i>
@@ -117,10 +90,7 @@
                     </p>
                     <p class="product-price">$00.00</p>
                     <p class="product-brand">Marca</p>
-                </article>
-                
-                
-                
+                </article>                        -->
                 
             </div>
             <!-- div de recomendaciones -->

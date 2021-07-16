@@ -1,92 +1,101 @@
 [
     {
         "id":1,
-        "name": "Rueda para hámster LEE'S",
+        "name": "Rueda para hámster",
         "image":"rueda_hamster.jpg",
         "description":"Corre, eddie, corre!",
         "category": "recommended",
-        "rating":4.5,
+        "rating":0.1,
         "reviewsAmount":456,
-        "price":149
+        "price":149,
+        "brand": "LEE'S"
     },
     {
         "id":2,
-        "name": "",
+        "name": "Producto",
         "image":"default.jpg",
         "description":"",
         "category": "",
-        "rating":5,
+        "rating":0.6,
         "reviewsAmount":1000,
-        "price":100
+        "price":100,
+        "brand": "Genérico"
     },
     {
         "id":3,
-        "name": "",
+        "name": "Producto",
         "image":"default.jpg",
         "description":"",
         "category": "",
-        "rating":5,
+        "rating":1.1,
         "reviewsAmount":1000,
-        "price":100
+        "price":100,
+        "brand": "Genérico"
     },
     {
         "id":4,
-        "name": "",
+        "name": "Producto",
         "image":"default.jpg",
         "description":"",
         "category": "",
-        "rating":5,
+        "rating":1.6,
         "reviewsAmount":1000,
-        "price":100
+        "price":100,
+        "brand": "Genérico"
     },
     {
         "id":5,
-        "name": "",
+        "name": "Producto",
         "image":"default.jpg",
         "description":"",
         "category": "",
-        "rating":5,
+        "rating":2.1,
         "reviewsAmount":1000,
-        "price":100
+        "price":100,
+        "brand": "Genérico"
     },
     {
         "id":6,
-        "name": "",
+        "name": "Producto",
         "image":"default.jpg",
         "description":"",
         "category": "",
-        "rating":5,
+        "rating":2.6,
         "reviewsAmount":1000,
-        "price":100
+        "price":100,
+        "brand": "Genérico"
     },
     {
         "id":7,
-        "name": "",
+        "name": "Producto",
         "image":"default.jpg",
         "description":"",
         "category": "",
-        "rating":5,
+        "rating":3.1,
         "reviewsAmount":1000,
-        "price":100
+        "price":100,
+        "brand": "Genérico"
     },
     {
         "id":7,
-        "name": "",
+        "name": "Producto",
         "image":"default.jpg",
         "description":"",
         "category": "",
-        "rating":5,
+        "rating":3.6,
         "reviewsAmount":1000,
-        "price":100
+        "price":100,
+        "brand": "Genérico"
     },
     {
         "id":8,
-        "name": "",
+        "name": "Producto",
         "image":"default.jpg",
         "description":"",
         "category": "",
-        "rating":5,
+        "rating":4.76,
         "reviewsAmount":1000,
-        "price":100
+        "price":100,
+        "brand": "Genérico"
     }
 ]
