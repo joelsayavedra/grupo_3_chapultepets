@@ -1,0 +1,82 @@
+[
+    {
+        "id":1,
+        "name": "Rueda para hámster LEE'S",
+        "image":"rueda_hamster.jpg",
+        "description":"Corre, eddie, corre!",
+        "category": "recommended",
+        "rating":4.5,
+        "reviewsAmount":456,
+        "price":149
+    },
+    {
+        "id":2,
+        "name": "",
+        "image":"default.jpg",
+        "description":"",
+        "category": "",
+        "rating":5,
+        "reviewsAmount":1000,
+        "price":100
+    },
+    {
+        "id":3,
+        "name": "",
+        "image":"default.jpg",
+        "description":"",
+        "category": "",
+        "rating":5,
+        "reviewsAmount":1000,
+        "price":100
+    },
+    {
+        "id":4,
+        "name": "",
+        "image":"default.jpg",
+        "description":"",
+        "category": "",
+        "rating":5,
+        "reviewsAmount":1000,
+        "price":100
+    },
+    {
+        "id":5,
+        "name": "",
+        "image":"default.jpg",
+        "description":"",
+        "category": "",
+        "rating":5,
+        "reviewsAmount":1000,
+        "price":100
+    },
+    {
+        "id":6,
+        "name": "",
+        "image":"default.jpg",
+        "description":"",
+        "category": "",
+        "rating":5,
+        "reviewsAmount":1000,
+        "price":100
+    },
+    {
+        "id":7,
+        "name": "",
+        "image":"default.jpg",
+        "description":"",
+        "category": "",
+        "rating":5,
+        "reviewsAmount":1000,
+        "price":100
+    },
+    {
+        "id":7,
+        "name": "",
+        "image":"default.jpg",
+        "description":"",
+        "category": "",
+        "rating":5,
+        "reviewsAmount":1000,
+        "price":100
+    }
+]

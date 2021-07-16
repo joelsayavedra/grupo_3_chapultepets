@@ -179,8 +179,16 @@ footer p{
 }
 /* index */
 
+body.index h1{
+    margin-left: 2vw;
+}
+
 .carousel{
     position: relative;
+}
+
+.carousel img{
+    width: 100%;
 }
 
 .carousel p,
@@ -191,11 +199,11 @@ footer p{
 
 .carousel button.carousel-left-button,
 .carousel button.carousel-right-button{
-
     top: 50%;
     transform: translate(0,-50%);
     border: none;
     background-color: var(--fondo-botones-carrusel);
+    font-size: 3vw;
 }
 
 .carousel button.carousel-left-button{
