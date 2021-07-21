@@ -8,36 +8,72 @@
 
         <!-- Configuración del main -->
         <main class="editar">
-            <form>
+            <form action="/products/edit/<%=producto.id%>" method="POST" enctype="multipart/form-data">
                 <div class="logo-container">
                     <a href="/">
                         <img src="/img/logo_mobile.png" alt="" class="main-logo">
                     </a>
                 </div>
-                <p class="mensaje">Edición de un producto existente</p>
+                <p class="mensaje">Edición de un producto existente: <%= producto.name %> </p>
 
-                <p>
+                <!-- <p>
                     <input type="text" name="idArticulo" id="" placeholder="Ingrese ID existente" class="ID"
                         style="width: 100%;" required>
+                </p> -->
+
+                <p>
+                    <input 
+                    type="text" 
+                    name="name" 
+                    placeholder="Cambiar nombre" 
+                    class="nombreArt"
+                    style="width: 100%;"
+                    value="<%=producto.name%>"
+                    >
                 </p>
 
                 <p>
-                    <input type="text" name="nombreArticulo" id="" placeholder="Cambiar nombre" class="nombreArt"
-                        style="width: 100%;">
+                    <label for="category">Categoría: </label>
+                    <input 
+                    type="text" 
+                    name="category" 
+                    placeholder=" Cambiar Categoría artículo"
+                    class="categoriaArt" 
+                    style="width: 100%;"
+                    value="<%=producto.category%>"
+                    >
                 </p>
 
                 <p>
-                    <input type="text" name="categoría" id="" placeholder=" Cambiar Categoría artículo"
-                        class="categoriaArt" style="width: 100%;">
+                    <label for="price">Precio: </label>
+                    <input 
+                    type="number" 
+                    name="price" 
+                    min="0" 
+                    step="0.01"
+                    placeholder="Cambiar Precio" 
+                    class="precio"
+                    style="height: 30px; width: 100%;"
+                    required
+                    value=<%=producto.price%>>
                 </p>
 
                 <p>
-                    <input type="number" name="precio" id="" max="10" placeholder="Cambiar Precio" class="precio"
-                        style="height: 30px; width: 100%;">
+                    <label for="brand">Marca: </label>
+                    <input 
+                    type="text" 
+                    name="brand" 
+                    placeholder=" Cambiar marca del artículo"
+                    class="categoriaArt" 
+                    style="width: 100%;"
+                    value="<%=producto.brand%>"
+                    >
                 </p>
 
-                <label for="CategoriaAnimal">Cambiar categoría Animal:</label>
-                <select name="CategoriaAnimal" id="" style="width: 100%;">
+                <!-- <label for="CategoriaAnimal">Cambiar categoría Animal:</label>
+                <select name="CategoriaAnimal"
+                style="width: 100%;"
+                >
                     <option value="perro">Perro</option>
                     <option value="gato">Gato</option>
                     <option value="ave">Ave</option>
@@ -50,18 +86,31 @@
                     <option value="pequeño">Pequeño</option>
                     <option value="mediano">Mediano</option>
                     <option value="grande">Grande</option>
-                </select>
+                </select> -->
 
-
-                <p class="foto">
-                    <label>Cambiar Foto del artículo: </label>
-                    <input type="file" name="avatar" accept=".jpg" multiple placeholder="Foto" style="width: 100%;"
-                        required>
+                <p>
+                    <label for="description">Descripción del artículo: </label>
+                    <textarea 
+                    name="description" 
+                    placeholder="Descripción nueva" 
+                    class="" 
+                    style="width: 100%;"
+                    required><%= producto.description %></textarea>
                 </p>
 
                 <p>
-                    <textarea name="descripcion" id="" placeholder="Descripción nueva" class="" style="width: 100%;"
-                        required></textarea>
+                    <label>Imagen de producto actual: </label>
+                    <img
+                    src="/img/products/<%=producto.image%>"
+                    alt="Imagen de producto actual"
+                    style="width: 100%"
+                    >
+                </p>
+
+                <p class="foto">
+                    <label for="avatar">Cambiar Foto del artículo: </label>
+                    <input type="file" name="avatar" accept=".jpg" multiple placeholder="Foto" style="width: 100%;"
+                    >
                 </p>
 
                 <p>

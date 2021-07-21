@@ -7,7 +7,17 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controller = {
     edit: function(req,res){
-        res.render('productEdit');
+        let id=req.params.id;
+        let producto = products.find(function(objeto){
+            return objeto.id==id;
+        });
+
+        res.render('productEdit',{
+            producto: producto,
+            id: id
+        });
+
+        // res.send(producto);
     },
     create: function(req,res){
         res.render('productCreate');
@@ -39,6 +49,38 @@ const controller = {
         products.push(producto);
 		fs.writeFileSync(productsFilePath,JSON.stringify(products, null, 2));
 
+        res.redirect("/");
+    },
+    update:function(req,res){
+        //Obtención del id del producto, extraído de la url
+        let id = req.params.id;
+
+        //Obtención del producto de la base de datos, en forma de objeto
+        let editedProduct = products.find(function(objeto){
+            return objeto.id==id;
+        });
+
+        //Sobreescritura de valores de los campos en el objeto recién creado
+        editedProduct.name=req.body.name;
+        editedProduct.price = req.body.price;
+        editedProduct.category = req.body.category;
+        editedProduct.brand = req.body.brand;
+        editedProduct.description = req.body.description;
+        if(req.file){
+            editedProduct.image = req.file.filename;
+        };
+
+        //obtención del índice del producto en el array de products.json
+        let productIndex = products.findIndex(object=>object.id==id);
+
+        //Edición del array products
+        if(productIndex!=-1){
+			products.splice(productIndex,1,editedProduct);
+		};
+
+        //Escritura del array modificado en el archivo products.json
+        fs.writeFileSync(productsFilePath,JSON.stringify(products, null, 2 /*Para guardar en formato más legible*/));
+		
         res.redirect("/");
     }
 };
