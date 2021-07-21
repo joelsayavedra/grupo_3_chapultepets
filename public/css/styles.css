@@ -313,6 +313,19 @@ body.index h1{
     text-align: center;
 }
 
+body.index article p.product-rating-stars, 
+body.index article p.product-price,
+body.index article p.product-brand{
+    opacity: 0%;
+}
+
+body.index article:hover p.product-rating-stars, 
+body.index article:hover p.product-price,
+body.index article:hover p.product-brand{
+    transition: all 1s;
+    opacity: 100%;
+}
+
 /* detalle producto  */
 
 .main-product-detail{
@@ -786,7 +799,7 @@ footer.admin div.cabeza{
         width: 80%;
     }
     .upper-nav-bar-container{
-        font-size: 16px;
+        font-size: 14px;
     }
     header #fasCart{
         font-size: 25px;
@@ -967,7 +980,10 @@ footer.admin div.cabeza{
     }
 
     .upper-nav-bar-container{
-        font-size: 18px;
+        font-size: 16px;
+    }
+    .search-form input{
+        height: 30px;
     }
 
     /* index */
@@ -1139,10 +1155,26 @@ footer.admin div.cabeza{
 @media (min-width: 1200px){
 
     /* header */
-    .upper-nav-bar-element{
-        width: 25%;
+
+
+    .upper-nav-bar-container{
+        font-size: 18px;
     }
 
+    header #fasCart{
+        font-size: 32px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    header #fasRegister{
+        font-size: 32px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .upper-nav-bar-element img{
+        width: 50px;
+        margin-bottom: 10px;
+    }
 
     /* index */
 
