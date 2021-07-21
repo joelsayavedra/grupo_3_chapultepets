@@ -16,6 +16,7 @@
     --contrasteLogin: #f4f4f4;
     --formularioValido: lightgreen;
     --formularioNoValido: #ff7f7f;
+    --fondoTransiciones: #0022AA;
 }
 
 *{
@@ -50,12 +51,12 @@ header A{
 .upper-header-bar{
     width: 100vw;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .logo-container{
-    width: 30%;
+    width: 100%;
     align-self: center;
 }
 
@@ -70,15 +71,19 @@ header A{
 }
 
 .upper-nav-bar-container{
-    width: 60%;
+    width: 100%;
+    font-size: 14px;
+    background-color: var(--fondoLogin);
+    padding: 17px;
+    margin: 0 auto;
+    align-self: center;
 }
 
 .upper-nav-bar-element{
-    width: 30%;
     text-align: center;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    align-self: flex-start;
+    margin-bottom: 10px;
 }
 
 .upper-nav-bar-element div{
@@ -86,24 +91,23 @@ header A{
 }
 
 .upper-nav-bar-element img{
-    width: 50px;
+    margin-top: 10px;
+    width: 40px;
     border-radius: 50%;
     padding: 5px 5px 0px 5px;
 }
 
-.upper-nav-bar,
-.search-form{
+form.search-form{
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .upper-nav-bar{
-    justify-content: space-around;
-}
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
 
-div.upper-nav-bar,
-.search-form{
-    justify-content: flex-end;
 }
 
 .search-form input{
@@ -144,6 +148,28 @@ div.upper-nav-bar,
 
 .upper-nav-bar-element:hover{
     background-color: var(--sombreado-header);
+}
+
+header #fasCart{
+    text-align: center;
+    font-size: 20px;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+header #fasRegister{
+    text-align: center;
+    font-size: 20px;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 5px;
 }
 
 /* footer */
@@ -285,6 +311,19 @@ body.index h1{
 
 .page-changer{
     text-align: center;
+}
+
+body.index article p.product-rating-stars, 
+body.index article p.product-price,
+body.index article p.product-brand{
+    opacity: 0%;
+}
+
+body.index article:hover p.product-rating-stars, 
+body.index article:hover p.product-price,
+body.index article:hover p.product-brand{
+    transition: all 1s;
+    opacity: 100%;
 }
 
 /* detalle producto  */
@@ -706,8 +745,8 @@ main.editar form{
 
 main.editar form button:hover{
     transition: all .5s;
-    background-color: #0022AA;
-    border:solid #0022AA 1px;
+    background-color: var(--fondoTransiciones);
+    border:solid var(--fondoTransiciones) 1px;
     border-radius: 5px;
     color: #ffffff;
 }
@@ -756,7 +795,21 @@ footer.admin div.cabeza{
 @media (min-width: 400px){
 
     /* header */
-
+    .upper-nav-bar{
+        width: 80%;
+    }
+    .upper-nav-bar-container{
+        font-size: 14px;
+    }
+    header #fasCart{
+        font-size: 25px;
+    }
+    header #fasRegister{
+        font-size: 25px;
+    }
+    .upper-nav-bar-element img{
+        width: 42px;
+    }
     /* index */
 
     /* detalle producto  */
@@ -765,13 +818,22 @@ footer.admin div.cabeza{
     footer {
         font-size: 14px;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: space-around;
         align-items: flex-start;
     }
 
     footer div{
         margin-left: 15px;
         display: block;
+    }
+
+    footer div h2:hover{
+        transition: all .5s;
+        color: var(--fondoTransiciones);;
+    }
+    footer div A:hover{
+        transition: all .5s;
+        color: var(--fondoTransiciones);;
     }
 
     /* login */
@@ -906,6 +968,23 @@ footer.admin div.cabeza{
 @media (min-width: 720px){
 
     /* header */
+    .main-logo-desktop{
+        display: block;
+    }
+
+    .main-logo-mobile{
+        display: none;
+    }
+    .upper-header-bar{
+        flex-direction: row;
+    }
+
+    .upper-nav-bar-container{
+        font-size: 16px;
+    }
+    .search-form input{
+        height: 30px;
+    }
 
     /* index */
 
@@ -1076,16 +1155,25 @@ footer.admin div.cabeza{
 @media (min-width: 1200px){
 
     /* header */
-    .upper-nav-bar-element{
-        width: 25%;
+
+
+    .upper-nav-bar-container{
+        font-size: 18px;
     }
 
-    .main-logo-desktop{
-        display: block;
+    header #fasCart{
+        font-size: 32px;
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
-
-    .main-logo-mobile{
-        display: none;
+    header #fasRegister{
+        font-size: 32px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .upper-nav-bar-element img{
+        width: 50px;
+        margin-bottom: 10px;
     }
 
     /* index */
