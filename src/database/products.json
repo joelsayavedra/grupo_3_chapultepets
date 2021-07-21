@@ -12,14 +12,14 @@
     },
     {
         "id":2,
-        "name": "Producto",
-        "image":"default.jpg",
-        "description":"",
-        "category": "",
+        "name": "Correa Reflectante para Perro",
+        "image":"correa_fullgaden.jpg",
+        "description":"Correa Reflectante para Perro, Resistente, con Mango Acolchado cómodo, Color Morado",
+        "category": "recommended",
         "rating":0.6,
         "reviewsAmount":1000,
-        "price":100,
-        "brand": "Genérico"
+        "price":219,
+        "brand": "Fullgaden"
     },
     {
         "id":3,
