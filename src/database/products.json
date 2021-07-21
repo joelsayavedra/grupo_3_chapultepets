@@ -3,11 +3,11 @@
     "id": 1,
     "name": "Rueda para hámster",
     "image": "rueda_hamster.jpg",
-    "description": "Corre, eddie, corre!",
+    "description": "¡Corre, Eddie, corre!",
     "category": "recommended",
     "rating": 0.1,
     "reviewsAmount": 456,
-    "price": 149.99,
+    "price": "149.99",
     "brand": "LEE'S"
   },
   {

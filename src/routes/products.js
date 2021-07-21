@@ -20,7 +20,7 @@ const upload = multer({storage});
 //Ruta raíz de productos
     //  Edición de productos
 router.get('/edit/:id', productsController.edit);
-router.post("/edit/:id",upload.single("avatar"),productsController.update);
+router.put("/edit/:id",upload.single("avatar"),productsController.update);
     //  Creación de productos
 router.get('/create', productsController.create);
 router.post('/create',upload.single("avatar"), productsController.store);
