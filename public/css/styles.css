@@ -222,7 +222,6 @@ body.index h1{
     position: absolute;
 }
 
-
 .carousel button.carousel-left-button,
 .carousel button.carousel-right-button{
     top: 50%;
@@ -276,6 +275,7 @@ body.index h1{
 
 .product-window article{
     width: 45%;
+
     margin-bottom: 15px;
     display: flex;
     flex-wrap: wrap;
@@ -296,6 +296,8 @@ body.index h1{
 
 .product-window img{
     width: 100%;
+    max-height: 45vw;
+    object-fit: contain;
 }
 
 .recommendation-bar{
@@ -317,8 +319,6 @@ body.index article:hover {
     box-shadow: 0px 0px 15px rgb(100, 100, 100);
     transition: all 1s;
 }
-
-
 
 /* detalle producto  */
 
@@ -1002,11 +1002,15 @@ footer.admin div.cabeza{
         width: 15%;
     }
 
+    .product-window img{
+        max-height: 20vw;
+        object-fit: contain;
+    }
+
     /* detalle producto  */
     .product-presentation-image{
         width: 58%;
     }
-
 
     .product-presentation-text{
         width: 38%;

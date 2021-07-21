@@ -31,5 +31,38 @@
     "price": "84.5",
     "brand": "Purina cat chow    ",
     "image": "prod_1626885053975.jpg"
+  },
+  {
+    "id": "c51ae418-bf1a-4da3-9569-71f7fc05edda",
+    "name": "Hamaca colgante de animal pequeño",
+    "description": "Hamaca colgante de animal pequeño de triple capa.  Juguete para hurones, cobayas, hámster, rata, chinchilla, loro, ardilla, gerbo, pájaro.",
+    "category": "juguete",
+    "rating": 0,
+    "reviewsAmount": 0,
+    "price": 349.5,
+    "brand": "HOMEYA",
+    "image": "prod_1626907966393.jpg"
+  },
+  {
+    "id": "d69a4cac-6163-496c-95d7-6c302fac439f",
+    "name": "Critter Nation with Stand",
+    "description": "Jaula para roedores de dos pisos, con bandeja para recoger desperdicios. ",
+    "category": "Hábitat",
+    "rating": 0,
+    "reviewsAmount": 0,
+    "price": 3589.6,
+    "brand": "MidWest Homes for Pets",
+    "image": "prod_1626908185859.jpg"
+  },
+  {
+    "id": "441d650f-3cfd-4afe-bf58-2e6ade8ce511",
+    "name": "Shampoo para Perros",
+    "description": "473 ml. \r\nTratamiento de la piel sensible\r\nLimpieza suave.\r\nAceite de árbol de té medicinal que ha demostrado ser eficaz contra infecciones bacterianas y fúngicas.\r\nAyuda a calmar la picadura y la picazón de las picaduras de insectos.\r\nNo hay fragancias artificiales. No hay productos químicos agresivos. Libre de parabeno.",
+    "category": "Higiene",
+    "rating": 0,
+    "reviewsAmount": 0,
+    "price": 199,
+    "brand": "SynergyLabs",
+    "image": "prod_1626908470398.jpg"
   }
 ]
