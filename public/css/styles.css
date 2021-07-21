@@ -313,18 +313,12 @@ body.index h1{
     text-align: center;
 }
 
-body.index article p.product-rating-stars, 
-body.index article p.product-price,
-body.index article p.product-brand{
-    opacity: 0%;
+body.index article:hover {
+    box-shadow: 0px 0px 15px rgb(100, 100, 100);
+    transition: all 1s;
 }
 
-body.index article:hover p.product-rating-stars, 
-body.index article:hover p.product-price,
-body.index article:hover p.product-brand{
-    transition: all 1s;
-    opacity: 100%;
-}
+
 
 /* detalle producto  */
 
