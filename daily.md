@@ -12,5 +12,8 @@ Se arregló el logo, carrusel, se incluyeron imágenes.
 Crear un archivo partial rating stars.
 
 David:
+ modificó el footer, le agregué una transición de color.
+Se modificó el header, agregué responsividad para el mobile first y para 400 px de longitud.
+Se modificó el tamaño de los fas-fa y del tamaño del font size de acuerdo a la resolución de la pantalla.
 
 
