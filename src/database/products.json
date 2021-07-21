@@ -1,101 +1,35 @@
 [
-    {
-        "id":1,
-        "name": "Rueda para hámster",
-        "image":"rueda_hamster.jpg",
-        "description":"Corre, eddie, corre!",
-        "category": "recommended",
-        "rating":0.1,
-        "reviewsAmount":456,
-        "price":149,
-        "brand": "LEE'S"
-    },
-    {
-        "id":2,
-        "name": "Correa Reflectante para Perro",
-        "image":"correa_fullgaden.jpg",
-        "description":"Correa Reflectante para Perro, Resistente, con Mango Acolchado cómodo, Color Morado",
-        "category": "recommended",
-        "rating":0.6,
-        "reviewsAmount":1000,
-        "price":219,
-        "brand": "Fullgaden"
-    },
-    {
-        "id":3,
-        "name": "Producto",
-        "image":"default.jpg",
-        "description":"",
-        "category": "",
-        "rating":1.1,
-        "reviewsAmount":1000,
-        "price":100,
-        "brand": "Genérico"
-    },
-    {
-        "id":4,
-        "name": "Producto",
-        "image":"default.jpg",
-        "description":"",
-        "category": "",
-        "rating":1.6,
-        "reviewsAmount":1000,
-        "price":100,
-        "brand": "Genérico"
-    },
-    {
-        "id":5,
-        "name": "Producto",
-        "image":"default.jpg",
-        "description":"",
-        "category": "",
-        "rating":2.1,
-        "reviewsAmount":1000,
-        "price":100,
-        "brand": "Genérico"
-    },
-    {
-        "id":6,
-        "name": "Producto",
-        "image":"default.jpg",
-        "description":"",
-        "category": "",
-        "rating":2.6,
-        "reviewsAmount":1000,
-        "price":100,
-        "brand": "Genérico"
-    },
-    {
-        "id":7,
-        "name": "Producto",
-        "image":"default.jpg",
-        "description":"",
-        "category": "",
-        "rating":3.1,
-        "reviewsAmount":1000,
-        "price":100,
-        "brand": "Genérico"
-    },
-    {
-        "id":7,
-        "name": "Producto",
-        "image":"default.jpg",
-        "description":"",
-        "category": "",
-        "rating":3.6,
-        "reviewsAmount":1000,
-        "price":100,
-        "brand": "Genérico"
-    },
-    {
-        "id":8,
-        "name": "Producto",
-        "image":"default.jpg",
-        "description":"",
-        "category": "",
-        "rating":4.76,
-        "reviewsAmount":1000,
-        "price":100,
-        "brand": "Genérico"
-    }
+  {
+    "id": 1,
+    "name": "Rueda para hámster",
+    "image": "rueda_hamster.jpg",
+    "description": "Corre, eddie, corre!",
+    "category": "recommended",
+    "rating": 0.1,
+    "reviewsAmount": 456,
+    "price": 149,
+    "brand": "LEE'S"
+  },
+  {
+    "id": 2,
+    "name": "Correa Reflectante para Perro",
+    "image": "correa_fullgaden.jpg",
+    "description": "Correa Reflectante para Perro, Resistente, con Mango Acolchado cómodo, Color Morado",
+    "category": "recommended",
+    "rating": 0.6,
+    "reviewsAmount": 1000,
+    "price": 219,
+    "brand": "Fullgaden"
+  },
+  {
+    "id": "4525d674-8cb0-4047-a136-7c2cd085cd9a",
+    "name": "Croquetas para gato 1-12 meses",
+    "description": "Croquetas para gatitos de 1 a 12 meses de edad. Bolsa de 1.5 kg",
+    "category": "Alimento",
+    "rating": 0,
+    "reviewsAmount": 0,
+    "price": 84.5,
+    "brand": "Purina cat chow",
+    "image": "prod_1626885053975.jpg"
+  }
 ]

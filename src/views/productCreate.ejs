@@ -8,7 +8,7 @@
 
         <!-- Configuración del main -->
         <main class="crear">
-            <form>
+            <form action="/products/create" method="POST" enctype="multipart/form-data">
                 <div class="logo-container">
                     <a href="/">
                         <img src="/img/logo_mobile.png" alt="" class="main-logo">
@@ -16,27 +16,49 @@
                 </div>
                 <p class="mensaje">Registro de un nuevo producto</p>
                 <p>
-                    <input type="text" name="nombreArticulo" id="" placeholder="Nombre del Artículo" class="nombreArt"
+                    <input type="text" name="name" id="" placeholder="Nombre del Artículo" class="nombreArt"
                         style="width: 100%;" required>
                 </p>
 
-                <p>
+                <!-- <p>
                     <input type="text" name="idArticulo" id="" placeholder="Ingrese nuevo ID" class="ID"
                         style="width: 100%;" required>
+                </p> -->
+
+                <p>
+                    <input 
+                    type="text" 
+                    name="category" 
+                    placeholder="Categoría del artículo" 
+                    class="categoriaArt"
+                    style="width: 100%;" 
+                    required>
                 </p>
 
                 <p>
-                    <input type="text" name="categoría" id="" placeholder="Categoría artículo" class="categoriaArt"
-                        style="width: 100%;" required>
+                    <input 
+                    type="text" 
+                    name="brand" 
+                    placeholder="Marca del artículo" 
+                    class="categoriaArt"
+                    style="width: 100%;" 
+                    required>
                 </p>
 
                 <p>
-                    <input type="number" name="precio" id="" max="10" placeholder="Precio en pesos mexicanos"
-                        class="precio" style="height: 30px; width: 100%;" required>
+                    <input 
+                    type="number" 
+                    name="price" 
+                    min="0"
+                    step="0.01"
+                    placeholder="Precio en pesos mexicanos"
+                    class="precio" style="height: 30px; width: 100%;" 
+                    required
+                    >
                 </p>
 
                 <label for="CategoriaAnimal">Categoría Animal:</label>
-                <select name="CategoriaAnimal" id="" style="width: 100%;">
+                <select name="CategoriaAnimal" style="width: 100%;">
                     <option value="perro">Perro</option>
                     <option value="gato">Gato</option>
                     <option value="ave">Ave</option>
@@ -59,7 +81,7 @@
                 </p>
 
                 <p>
-                    <textarea name="descripcion" id="" placeholder="Descripción" class="" style="width: 100%;"
+                    <textarea name="description" id="" placeholder="Descripción" class="" style="width: 100%;"
                         required></textarea>
                 </p>
 

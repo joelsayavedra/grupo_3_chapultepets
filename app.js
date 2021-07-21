@@ -1,5 +1,6 @@
 const express = require('express');
 const path=require('path');
+const methodOverride=require("method-override");
 
 //Require de los ruteadores
 const indexRouter=require('./src/routes/index.js');
@@ -15,6 +16,7 @@ app.set("views", "./src/views")
 //Configuración de la carpeta pública "public"
 const publicPath = path.resolve(__dirname,'./public');
 app.use(express.static(publicPath));
+app.use(methodOverride("_method"));
 
 //Configuración del puerto
 app.listen(process.env.PORT || 3000,()=>{
