@@ -19,26 +19,26 @@ Se modificó el header, agregué responsividad para el mobile first y para 400 p
 Se modificó el tamaño de los fas-fa y del tamaño del font size de acuerdo a la resolución de la pantalla.
 Se agregó una transición de borde hover en los artículos del index.
 
-<h2>¿Qué se hará mañana?</h2>
+<h3>¿Qué se hará mañana?</h3>
 
 Implementar multer y las diferentes rutas con solicitud.
 
-<h2>Obstáculos:</h2>
+<h3>Obstáculos:</h3>
 
 Git hub y la 4T.
 
 <h1>23/07/2021</h1>
 
-<h2>¿Qué se hizo ayer?</h2>
+<h3>¿Qué se hizo ayer?</h3>
 
 David: No pudo hacer nada debido a la carga de trabajo de playground. 
 
 Joel: Implementación del formulario de creación y edición de productos, con multer y almacenamiento en JSON.
 
-<h2>¿Qué se hará mañana?</h2>
+<h3>¿Qué se hará mañana?</h3>
 
 Agregar acción de borrado y detalle de producto, agregar página general de 
 
-<h2>Obstáculos:</h2>
+<h3>Obstáculos:</h3>
 
 El manejo de los JSON se nos complica, y hemos tenido problemas con la codificación de los archivos y los métodos necesarios para navegar por ellos.
