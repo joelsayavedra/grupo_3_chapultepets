@@ -23,5 +23,3 @@ Implementar multer y las diferentes rutas con solicitud.
 Obstáculos:
 Git hub y la 4T.
 
-
-
