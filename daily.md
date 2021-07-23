@@ -6,7 +6,7 @@ Se terminaron de definir las tareas pendientes para el sprint 4 en el tablero de
 
 <h1>21/07/2021</h1>
 
-<h2>¿Qué se hizo ayer?</h2>
+<h3>¿Qué se hizo ayer?</h3>
 
 Joel: Se hicieron los archivos JSON de product.json y user.json con las caracteristicas debidas.
 Actualizar los controladores indexCOntroller y productController agregando la ruta del json.
