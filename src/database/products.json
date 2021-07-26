@@ -64,5 +64,27 @@
     "price": 199,
     "brand": "SynergyLabs",
     "image": "prod_1626908470398.jpg"
+  },
+  {
+    "id": "prueba1",
+    "name": "",
+    "description": "",
+    "category": "",
+    "rating": 0,
+    "reviewsAmount": 0,
+    "price": 199,
+    "brand": "",
+    "image": "prod_1626908470398.jpg"
+  },
+  {
+    "id": "prueba2",
+    "name": "",
+    "description": "",
+    "category": "",
+    "rating": 0,
+    "reviewsAmount": 0,
+    "price": 199,
+    "brand": "",
+    "image": "prod_1626908470398.jpg"
   }
 ]
