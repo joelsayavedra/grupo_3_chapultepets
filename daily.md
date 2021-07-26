@@ -42,3 +42,22 @@ Agregar acción de borrado y detalle de producto, agregar página general de
 <h3>Obstáculos:</h3>
 
 El manejo de los JSON se nos complica, y hemos tenido problemas con la codificación de los archivos y los métodos necesarios para navegar por ellos.
+
+
+<h1>26/07/2021</h1>
+
+<h3>¿Qué se hizo ayer?</h3>
+
+David: Se creó las rutas de get: products, get:products/detail, delete:products/detail
+
+Joel: No por ya haber terminado sus tareas.
+
+<h3>¿Qué se hará mañana?</h3>
+
+david: crear una vista para /products y hacer responsivo el products/detail
+
+joel: hacer responsivo el index y la vista del 404.
+
+<h3>Obstáculos:</h3>
+
+La intensa pasión por querer modificar el CSS
