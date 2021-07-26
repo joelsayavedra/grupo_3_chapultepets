@@ -97,11 +97,15 @@ const controller = {
             res.send(products[indice]);
         }
         else {
-            res.send("El producto no existe");
+            res.send("El producto no está en inventario");
         }
     },
     productDelete: function (req, res) {
+        var nuevoProducts = products.filter(function (iden) {
+            return iden.id != req.params.id;
+        });
 
+        products = nuevoProducts;
     }
 };
 
