@@ -12,7 +12,7 @@ const controller = {
             return objeto.id == id;
         });
 
-        res.render('productEdit', {
+        res.render('products/productEdit', {
             producto: producto,
             id: id
         });
@@ -20,13 +20,13 @@ const controller = {
         // res.send(producto);
     },
     create: function (req, res) {
-        res.render('productCreate');
+        res.render('products/productCreate');
     },
     cart: function (req, res) {
-        res.render('productCart');
+        res.render('products/productCart');
     },
     detail: function (req, res) {
-        res.render('productDetail');
+        res.render('products/productDetail');
     },
     store: function (req, res) {
         let producto = {
@@ -84,7 +84,7 @@ const controller = {
         res.redirect("/products");
     },
     product: function (req, res) {
-        res.render('inventory', {
+        res.render('products/inventory', {
             products: products
         });
     },
@@ -108,7 +108,7 @@ const controller = {
         });
 
         fs.writeFileSync(productsFilePath, JSON.stringify(nuevoProducts, null, 2));
-        res.render("back");
+        res.render("products/back");
     }
 };
 
