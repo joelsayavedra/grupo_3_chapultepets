@@ -1,5 +1,17 @@
 <h1>grupo_3_chapultepets</h1>
 
+<h2>Enlaces de Trello</h2>
+<ol>
+    <li>Sprint 1</li>
+    <p>https://trello.com/b/YNlFlPea/grupo-3-sprint-1</p>
+    <li>Sprint 2</li>
+    <p>https://trello.com/b/XFFnpXX3/grupo-3-sprint-2</p>
+    <li>Sprint 3</li>
+    <p>https://trello.com/b/ugjV8SPt/grupo-3-sprint-3</p>
+    <li>Sprint 4 y 5</li>
+    <p>https://trello.com/b/LnlNPn4x/grupo-3-sprint-4</p>
+</ol>
+
 <h2>Sprint 1</h2>
 
 <p>2.1 Una breve descripción de la oferta de productos y/o servicios ofrecidos por su sitio. También agregar una breve descripción del público al que apunta el sitio.</p>
@@ -37,17 +49,4 @@
         <p>https://www.petngo.com.mx/pages/tienda-online-mascotas-mexico</p>
         <p>La página de detalles del producto es sencilla pero completa, y en general el diseño gráfico de la página es simple pero agradable a la vista, no satura con demasiadas imágenes.</p>
     </li>
-</ol>
-
-
-<h2>Enlaces de Trello</h2>
-<ol>
-    <li>Sprint 1</li>
-    <p>https://trello.com/b/YNlFlPea/grupo-3-sprint-1</p>
-    <li>Sprint 2</li>
-    <p>https://trello.com/b/XFFnpXX3/grupo-3-sprint-2</p>
-    <li>Sprint 3</li>
-    <p>https://trello.com/b/ugjV8SPt/grupo-3-sprint-3</p>
-    <li>Sprint 4</li>
-    <p>https://trello.com/b/LnlNPn4x/grupo-3-sprint-4</p>
 </ol>
