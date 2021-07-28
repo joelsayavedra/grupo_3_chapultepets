@@ -102,13 +102,13 @@ const controller = {
             res.send("El producto no está en inventario");
         }
     },
-    delete: function (req, res) {
+    erase: function (req, res) {
         var nuevoProducts = products.filter(function (iden) {
             return iden.id != req.params.id;
         });
 
         fs.writeFileSync(productsFilePath, JSON.stringify(nuevoProducts, null, 2));
-        res.send("listo");
+        res.render("back");
     }
 };
 
