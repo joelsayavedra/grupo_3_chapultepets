@@ -816,6 +816,10 @@ main article button{
     width: 100%;
 }
 
+main.inventory div.encabezado {
+    display:flex;
+}
+
 @media (min-width: 400px){
 
     /* header */
