@@ -79,11 +79,11 @@
   {
     "id": "prueba2",
     "name": "",
-    "description": "",
+    "description": "repetido",
     "category": "",
     "rating": 0,
     "reviewsAmount": 0,
-    "price": 199,
+    "price": "199",
     "brand": "",
     "image": "prod_1626908470398.jpg"
   }

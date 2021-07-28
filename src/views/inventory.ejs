@@ -1,0 +1,57 @@
+<%- include("./partials/head") %>
+
+    <head>
+        <title>ChapultePets - Inventario</title>
+    </head>
+
+    <body class=inventory>
+        <header>
+            <h1>Lista de productos</h1>
+        </header>
+
+        <main class=inventory>
+            <% for(let i=0;i<products.length;i++){ %>
+                <article>
+                    <h4>
+                        <%=i+1%>. <%= products[i].name %>
+                    </h4>
+                    <div class="image">
+                        <img src="/img/products/<%= products[i].image %> " alt="">
+                    </div>
+                    <div class="cajon">
+                        <p class="id">
+                            ID: <%= products[i].id %>
+                        </p>
+                        <p class="price">
+                            Precio: $<%= products[i].price %>
+                        </p>
+                        <p class="brand">
+                            Marca: <%= products[i].brand %>
+                        </p>
+                        <p class="category">
+                            Categoria: <%= products[i].category %>
+                        </p>
+                        <p class="description">
+                            Descripción: <%= products[i].description%>
+                        </p>
+                    </div>
+                    <form action="/products/detail/" method="GET" class="detail">
+                        <button type="submit">Detalle del producto</button>
+                    </form>
+
+                    <form action="/products/edit/<%=products[i].id%>?" method="GET">
+                        <button type="submit">Editar</button>
+                    </form>
+
+                    <form action="/products/<%=products[i].id%>?_method=DELETE>" method="POST"
+                        enctype="multipart/form-data">
+                        <button type="submit">Eliminar</button>
+                    </form>
+
+                </article>
+                <% } %>
+        </main>
+
+    </body>
+
+    </html>

@@ -81,10 +81,12 @@ const controller = {
         //Escritura del array modificado en el archivo products.json
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2 /*Para guardar en formato más legible*/));
 
-        res.redirect("/");
+        res.redirect("/products");
     },
     product: function (req, res) {
-        res.send(products)
+        res.render('inventory', {
+            products: products
+        });
     },
     productid: function (req, res) {
         let indice = -1;
@@ -100,12 +102,13 @@ const controller = {
             res.send("El producto no está en inventario");
         }
     },
-    productDelete: function (req, res) {
+    delete: function (req, res) {
         var nuevoProducts = products.filter(function (iden) {
             return iden.id != req.params.id;
         });
 
-        products = nuevoProducts;
+        fs.writeFileSync(productsFilePath, JSON.stringify(nuevoProducts, null, 2));
+        res.send("listo");
     }
 };
 

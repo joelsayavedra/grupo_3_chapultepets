@@ -786,6 +786,35 @@ footer.admin div.cabeza{
     margin-bottom: 0px;
 }
 
+/* inventario */
+
+main.inventory article {
+    font-size: 14px; 
+    width: 250px;
+    background-color: var(--fondoLogin);
+    margin: 0 auto;
+    border:  solid #E1E1E1 1px;
+    border-radius: 5px;
+    padding: 17px;
+    margin-top: 10px;
+}
+
+main article img{
+    width: 100%;
+    height: 100%;
+}
+
+main article div.image{
+    width: 215px;
+    height: 275px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+main article button{
+    margin-top: 5px;
+    width: 100%;
+}
+
 @media (min-width: 400px){
 
     /* header */

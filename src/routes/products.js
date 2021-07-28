@@ -31,6 +31,6 @@ router.get('/detail', productsController.detail);
 // Listado de productos
 router.get('/', productsController.product);
 router.get('/:id', productsController.productid);
-router.delete('/:id', productsController.productDelete);
+router.delete('/:id', productsController.delete);
 
 module.exports = router;
