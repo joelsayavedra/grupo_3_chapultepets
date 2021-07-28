@@ -88,5 +88,39 @@
       </ul>
       <p class="c1"><span class="c0">&nbsp;</span></p>
       <p class="c1 c11"><span class="c0"></span></p>
+    
+    <hr style="page-break-before:always;display:none;">
+    <p class="c6"><span class="c0"></span></p>
+    <h1 class="c5" id="h.s3ghazj3gddz"><span class="c4">Cuarto sprint</span></h1>
+    <h3 class="c1" id="h.uvi7t0d1tvjh"><span class="c7">Comenzar a hacer:</span></h3>
+    <ul class="c3 lst-kix_gp26vsvioc7k-0">
+        <li class="c2 li-bullet-0"><span class="c0">Revisar cada una de las rutas para pulirlas gr&aacute;ficamente el
+                maquetado.</span></li>
+    </ul>
+    <h3 class="c1" id="h.ugkz9a3qhx6t"><span class="c7">Hacer m&aacute;s</span></h3>
+    <ul class="c3 lst-kix_ovldevyrh93g-0">
+        <li class="c2 li-bullet-0"><span class="c0">Revisar y actualizar el tablero de trello cada vez que se comienza y
+                se termina, respectivamente, una tarea programada.</span></li>
+        <li class="c2 li-bullet-0"><span class="c0">Proponer fechas l&iacute;mites para las actividades.</span></li>
+    </ul>
+    <h3 class="c1" id="h.foabv8trc414"><span class="c7">Continuar haciendo</span></h3>
+    <ul class="c3 lst-kix_qiau31fd7d54-0">
+        <li class="c2 li-bullet-0"><span>Cronometrar adecuadamente los tiempos del </span><span
+                class="c11">daily</span><span class="c0">&nbsp;para forzarnos a hablar m&aacute;s.</span></li>
+        <li class="c2 li-bullet-0"><span class="c0">Hacer push cada vez que se termina una tarea.</span></li>
+        <li class="c2 li-bullet-0"><span class="c0">Reuniones tres d&iacute;as a la semana.</span></li>
+    </ul>
+    <h3 class="c1" id="h.51fbmv7meazk"><span class="c7">Hacer menos</span></h3>
+    <ul class="c3 lst-kix_aux7yqfoauwq-0">
+        <li class="c2 li-bullet-0"><span class="c0">Ocasionar conflictos de cambios entrantes/actuales en el mismo
+                archivo.</span></li>
+    </ul>
+    <h3 class="c1" id="h.ezn90bxhnbe9"><span class="c7">Dejar de hacer</span></h3>
+    <ul class="c3 lst-kix_hm8hwg4yyxhn-0">
+        <li class="c2 li-bullet-0"><span class="c0">Postergar la decoraci&oacute;n del sitio (agregar paleta de colores,
+                fuentes e im&aacute;genes decorativas).</span></li>
+        <li class="c2 li-bullet-0"><span class="c0">Equivocarse en las tareas que le corresponden a cada qui&eacute;n
+                (El Saya todo meco)</span></li>
+    </ul>
   </body>
 </html>
