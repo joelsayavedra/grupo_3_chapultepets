@@ -1,7 +1,7 @@
 <h1>grupo_3_chapultepets</h1>
 
 <h2>Enlaces de Trello</h2>
-<ol>
+<ul>
     <li>Sprint 1</li>
     <p>https://trello.com/b/YNlFlPea/grupo-3-sprint-1</p>
     <li>Sprint 2</li>
@@ -10,7 +10,7 @@
     <p>https://trello.com/b/ugjV8SPt/grupo-3-sprint-3</p>
     <li>Sprint 4 y 5</li>
     <p>https://trello.com/b/LnlNPn4x/grupo-3-sprint-4</p>
-</ol>
+</ul>
 
 <h2>Sprint 1</h2>
 
