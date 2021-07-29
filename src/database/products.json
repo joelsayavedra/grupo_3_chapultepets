@@ -88,14 +88,18 @@
     "image": "prod_1626908470398.jpg"
   },
   {
-    "id": "59532a4b-4b22-41fd-821a-39f0173896ff",
-    "name": "Producto de prueba 1",
-    "description": "peepeeeeeeer",
-    "category": "Alimento",
+    "id": "ad657eed-31ee-4d8b-b68b-0ffaab5ed496",
+    "name": "Prueba de Trim y Split",
+    "description": "Prueba 2 de trim y split",
+    "category": [
+      "Alimento",
+      "Higiene",
+      "Juguete"
+    ],
     "rating": 0,
     "reviewsAmount": 0,
-    "price": 500,
-    "brand": "Purina cat chow",
-    "image": "prod_1627521066848.jpg"
+    "price": "5",
+    "brand": "Split",
+    "image": "prod_1627526569954.jpg"
   }
 ]

@@ -31,11 +31,16 @@ const controller = {
         let errors = validationResult(req);
 
         if(errors.isEmpty()){
+            let categories = req.body.category.split(",");
+            for (let i = 0; i < categories.length; i++) {
+                categories[i]=categories[i].trim();                
+            }
+
             let producto = {
                 id: getID(),
                 name: req.body.name,
                 description: req.body.description,
-                category: req.body.category,
+                category: categories,
                 rating: 0,
                 reviewsAmount: 0,
                 price: Number(req.body.price),
@@ -64,6 +69,11 @@ const controller = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
+            let categories = req.body.category.split(",");
+            for (let i = 0; i < categories.length; i++) {
+                categories[i]=categories[i].trim();                
+            }
+
             //Obtención del id del producto, extraído de la url
             let id = req.params.id;
 
@@ -75,7 +85,7 @@ const controller = {
             //Sobreescritura de valores de los campos en el objeto recién creado
             editedProduct.name = req.body.name;
             editedProduct.price = req.body.price;
-            editedProduct.category = req.body.category;
+            editedProduct.category = categories;
             editedProduct.brand = req.body.brand;
             editedProduct.description = req.body.description;
             if (req.file) {

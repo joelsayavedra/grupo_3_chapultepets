@@ -43,7 +43,7 @@
                     placeholder=" Cambiar Categoría artículo"
                     class="categoriaArt <%=(locals.errors && errors.category) ? "caja-error" : "" %>" 
                     style="width: 100%;"
-                    value="<%= locals.old && old.category ? old.category : producto.category; %>"
+                    value="<%= locals.old && old.category ? old.category : `${producto.category.join(", ")}`; %>"
                     >
                     <% if (locals.errors && errors.category) { %>
                         <p class="errorMessage"><%= errors.category.msg %> </p>                 
