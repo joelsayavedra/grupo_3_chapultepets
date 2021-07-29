@@ -16,23 +16,31 @@
                 </div>
                 <p class="mensaje">Registro de un nuevo producto</p>
                 <p>
-                    <input type="text" name="name" id="" placeholder="Nombre del Artículo" class="nombreArt"
-                        style="width: 100%;" required>
-                </p>
+                    <input 
+                    type="text" 
+                    name="name" 
+                    placeholder="Nombre del Artículo" 
+                    class="nombreArt <%=(locals.errors && errors.name) ? "caja-error" : "" %>"
+                    style="width: 100%;"
+                    value="<%= locals.old && old.name ? old.name : ""; %>">
 
-                <!-- <p>
-                    <input type="text" name="idArticulo" id="" placeholder="Ingrese nuevo ID" class="ID"
-                        style="width: 100%;" required>
-                </p> -->
+                    <% if (locals.errors && errors.name) { %>
+                        <p class="errorMessage"><%= errors.name.msg %> </p>                 
+                    <% } %>
+                </p>
 
                 <p>
                     <input 
                     type="text" 
                     name="category" 
                     placeholder="Categoría del artículo" 
-                    class="categoriaArt"
-                    style="width: 100%;" 
-                    required>
+                    class="categoriaArt <%=(locals.errors && errors.category) ? "caja-error" : "" %>"
+                    style="width: 100%;"
+                    value="<%= locals.old && old.category ? old.category : ""; %>"
+                    >
+                    <% if (locals.errors && errors.category) { %>
+                        <p class="errorMessage"><%= errors.category.msg %> </p>                 
+                    <% } %>
                 </p>
 
                 <p>
@@ -40,9 +48,12 @@
                     type="text" 
                     name="brand" 
                     placeholder="Marca del artículo" 
-                    class="categoriaArt"
-                    style="width: 100%;" 
-                    required>
+                    class="categoriaArt <%=(locals.errors && errors.brand) ? "caja-error" : "" %>"
+                    style="width: 100%;"
+                    value="<%= locals.old && old.brand ? old.brand : ""; %>">
+                    <% if (locals.errors && errors.brand) { %>
+                        <p class="errorMessage"><%= errors.brand.msg %> </p>                 
+                    <% } %>
                 </p>
 
                 <p>
@@ -52,10 +63,18 @@
                     min="0"
                     step="0.01"
                     placeholder="Precio en pesos mexicanos"
-                    class="precio" style="height: 30px; width: 100%;" 
-                    required
-                    >
+                    class="precio <%=(locals.errors && errors.price) ? "caja-error" : "" %>" 
+                    style="width: 100%;"
+                    value="<%= locals.old && old.price ? old.price : ""; %>">
+                    <% if (locals.errors && errors.price) { %>
+                        <p class="errorMessage"><%= errors.price.msg %> </p>                 
+                    <% } %>
                 </p>
+                
+                <!-- <p>
+                    <input type="text" name="idArticulo" id="" placeholder="Ingrese nuevo ID" class="ID"
+                        style="width: 100%;" required>
+                </p> -->
 
                 <!-- <label for="CategoriaAnimal">Categoría Animal:</label>
                 <select name="CategoriaAnimal" style="width: 100%;">
@@ -76,13 +95,30 @@
 
                 <p class="foto">
                     <label>Foto del artículo: </label>
-                    <input type="file" name="avatar" accept=".jpg" multiple placeholder="Foto" style="width: 100%;"
-                        required>
+                    <input 
+                    type="file" 
+                    name="avatar" 
+                    accept=".jpg" 
+                    multiple 
+                    placeholder="Foto" 
+                    style="width: 100%;"
+                    >
+                    <% if (locals.errors && errors.avatar) { %>
+                        <p class="errorMessage"><%= errors.avatar.msg %> </p>                 
+                    <% } %>
+
                 </p>
 
                 <p>
-                    <textarea name="description" id="" placeholder="Descripción" class="" style="width: 100%;"
-                        required></textarea>
+                    <textarea 
+                    name="description" 
+                    placeholder="Descripción" 
+                    class="<%=(locals.errors && errors.description) ? "caja-error" : "" %>" 
+                    style="width: 100%;"
+                    ><%= locals.old && old.description ? old.description : ""; %></textarea>
+                    <% if (locals.errors && errors.description) { %>
+                        <p class="errorMessage"><%= errors.description.msg %> </p>                 
+                    <% } %>
                 </p>
 
                 <p>

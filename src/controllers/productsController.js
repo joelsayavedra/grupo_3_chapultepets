@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { v4: getID } = require("uuid");
+const {validationResult} = require("express-validator");
 
 const productsFilePath = path.join(__dirname, '../database/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -16,8 +17,6 @@ const controller = {
             producto: producto,
             id: id
         });
-
-        // res.send(producto);
     },
     create: function (req, res) {
         res.render('products/productCreate');
@@ -29,59 +28,86 @@ const controller = {
         res.render('products/productDetail');
     },
     store: function (req, res) {
-        let producto = {
-            id: getID(),
-            name: req.body.name,
-            description: req.body.description,
-            category: req.body.category,
-            rating: 0,
-            reviewsAmount: 0,
-            price: Number(req.body.price),
-            brand: req.body.brand,
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            let producto = {
+                id: getID(),
+                name: req.body.name,
+                description: req.body.description,
+                category: req.body.category,
+                rating: 0,
+                reviewsAmount: 0,
+                price: Number(req.body.price),
+                brand: req.body.brand,
+            };
+    
+            if (req.file) {
+                producto.image = req.file.filename;
+            } else {
+                producto.image = "default.png";
+            };
+    
+            products.push(producto);
+            fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+    
+            res.redirect("/");
+        }else{
+            res.render('products/productCreate',{
+                errors: errors.mapped(),
+                old: req.body,
+            });
+            // res.send(errors);
         }
-
-        if (req.file) {
-            producto.image = req.file.filename;
-        } else {
-            producto.image = "default.png";
-        }
-
-        products.push(producto);
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-
-        res.redirect("/");
     },
     update: function (req, res) {
-        //Obtención del id del producto, extraído de la url
-        let id = req.params.id;
+        let errors = validationResult(req);
 
-        //Obtención del producto de la base de datos, en forma de objeto
-        let editedProduct = products.find(function (objeto) {
-            return objeto.id == id;
-        });
+        if (errors.isEmpty()) {
+            //Obtención del id del producto, extraído de la url
+            let id = req.params.id;
 
-        //Sobreescritura de valores de los campos en el objeto recién creado
-        editedProduct.name = req.body.name;
-        editedProduct.price = req.body.price;
-        editedProduct.category = req.body.category;
-        editedProduct.brand = req.body.brand;
-        editedProduct.description = req.body.description;
-        if (req.file) {
-            editedProduct.image = req.file.filename;
-        };
+            //Obtención del producto de la base de datos, en forma de objeto
+            let editedProduct = products.find(function (objeto) {
+                return objeto.id == id;
+            });
 
-        //obtención del índice del producto en el array de products.json
-        let productIndex = products.findIndex(object => object.id == id);
+            //Sobreescritura de valores de los campos en el objeto recién creado
+            editedProduct.name = req.body.name;
+            editedProduct.price = req.body.price;
+            editedProduct.category = req.body.category;
+            editedProduct.brand = req.body.brand;
+            editedProduct.description = req.body.description;
+            if (req.file) {
+                editedProduct.image = req.file.filename;
+            };
 
-        //Edición del array products
-        if (productIndex != -1) {
-            products.splice(productIndex, 1, editedProduct);
-        };
+            //obtención del índice del producto en el array de products.json
+            let productIndex = products.findIndex(object => object.id == id);
 
-        //Escritura del array modificado en el archivo products.json
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2 /*Para guardar en formato más legible*/));
+            //Edición del array products
+            if (productIndex != -1) {
+                products.splice(productIndex, 1, editedProduct);
+            };
 
-        res.redirect("/products");
+            //Escritura del array modificado en el archivo products.json
+            fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2 /*Para guardar en formato más legible*/));
+
+            res.redirect("/products");
+        } else {
+            let id = req.params.id;
+            let producto = products.find(function (objeto) {
+                return objeto.id == id;
+            });
+
+            res.render('products/productEdit', {
+                producto: producto,
+                id: id,
+                errors: errors.mapped(),
+                old: req.body,
+            });        
+        }
+        
     },
     product: function (req, res) {
         res.render('products/inventory', {

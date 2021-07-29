@@ -692,40 +692,61 @@ main.crear .logo-container{
     margin-bottom: 20px;
 }
 main.crear input{
+    display: block;
     height: 25px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 5px;
 }
+
+
 
 main.crear select{
     height: 20px;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 main.crear textarea{
     height: 40px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 5px;
 }
 
-main.crear form .nombreArt:valid{
+main.crear button{
+    margin-top: 20px;
+}
+
+main.crear p label{
+    display: block;
+    margin-top: 20px;
+}
+
+p.errorMessage{
+    color: red;
+}
+
+input.caja-error,
+textarea.caja-error{
+    border: red solid 2px;
+    border-radius: 5px;
+}
+
+/* {
     transition: all 1s;
     border-radius: 5px;
     border: solid var(--formularioValido) 2px;
-} 
+}  */
 
-main.crear form .categoriaArt:valid{
-    transition: all 1s;
-    border-radius: 5px;
-    border: solid var(--formularioValido) 2px;
-} 
 
+/* main.crear form .nombreArt:valid,
+main.crear form .categoriaArt:valid,
 main.crear form .ID:valid{
     transition: all 1s;
     border-radius: 5px;
     border: solid var(--formularioValido) 2px;
-} 
+}  */
+
 
 /* Edición */
-
 main.editar form{
     font-size: 14px;
     width: 275px;
@@ -757,9 +778,15 @@ main.editar .logo-container{
     width: 100%;
     margin-bottom: 20px;
 }
+
 main.editar input{
     height: 25px;
-    margin-bottom: 20px;
+    padding: 5px;
+}
+
+main.editar label{
+    display: block;
+    margin-top: 20px;
 }
 
 main.editar select{
@@ -769,7 +796,7 @@ main.editar select{
 
 main.editar textarea{
     height: 40px;
-    margin-bottom: 20px;
+    padding: 5px;
 }
 
 footer.admin{
@@ -944,6 +971,10 @@ main.inventory div.encabezado {
 
     main.crear form p button{
         height: 35px;
+    }
+
+    main.crear form p{
+        
     }
 
     main.crear textarea{

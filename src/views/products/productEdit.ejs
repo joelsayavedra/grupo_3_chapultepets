@@ -26,10 +26,13 @@
                     type="text" 
                     name="name" 
                     placeholder="Cambiar nombre" 
-                    class="nombreArt"
+                    class="nombreArt <%=(locals.errors && errors.name) ? "caja-error" : "" %>"
                     style="width: 100%;"
-                    value="<%=producto.name%>"
+                    value="<%= locals.old && old.name ? old.name : producto.name; %>"
                     >
+                    <% if (locals.errors && errors.name) { %>
+                        <p class="errorMessage"><%= errors.name.msg %> </p>                 
+                    <% } %>
                 </p>
 
                 <p>
@@ -38,10 +41,13 @@
                     type="text" 
                     name="category" 
                     placeholder=" Cambiar Categoría artículo"
-                    class="categoriaArt" 
+                    class="categoriaArt <%=(locals.errors && errors.category) ? "caja-error" : "" %>" 
                     style="width: 100%;"
-                    value="<%=producto.category%>"
+                    value="<%= locals.old && old.category ? old.category : producto.category; %>"
                     >
+                    <% if (locals.errors && errors.category) { %>
+                        <p class="errorMessage"><%= errors.category.msg %> </p>                 
+                    <% } %>
                 </p>
 
                 <p>
@@ -52,10 +58,13 @@
                     min="0" 
                     step="0.01"
                     placeholder="Cambiar Precio" 
-                    class="precio"
+                    class="precio <%=(locals.errors && errors.price) ? "caja-error" : "" %>"
                     style="height: 30px; width: 100%;"
-                    required
-                    value=<%=producto.price%>>
+                    value=<%= locals.old && old.price ? old.price : producto.price; %>
+                    >
+                    <% if (locals.errors && errors.price) { %>
+                        <p class="errorMessage"><%= errors.price.msg %> </p>                 
+                    <% } %>
                 </p>
 
                 <p>
@@ -64,10 +73,13 @@
                     type="text" 
                     name="brand" 
                     placeholder=" Cambiar marca del artículo"
-                    class="categoriaArt" 
+                    class="categoriaArt <%=(locals.errors && errors.brand) ? "caja-error" : "" %>" 
                     style="width: 100%;"
-                    value="<%=producto.brand%>"
+                    value="<%= locals.old && old.brand ? old.brand : producto.brand; %>"
                     >
+                    <% if (locals.errors && errors.brand) { %>
+                        <p class="errorMessage"><%= errors.brand.msg %> </p>                 
+                    <% } %>
                 </p>
 
                 <!-- <label for="CategoriaAnimal">Cambiar categoría Animal:</label>
@@ -93,9 +105,13 @@
                     <textarea 
                     name="description" 
                     placeholder="Descripción nueva" 
-                    class="" 
+                    class="<%=(locals.errors && errors.description) ? "caja-error" : "" %>" 
                     style="width: 100%;"
-                    required><%= producto.description %></textarea>
+                    ><%= locals.old && old.description ? old.description : producto.description; %></textarea>
+                    <% if (locals.errors && errors.description) { %>
+                        <p class="errorMessage"><%= errors.description.msg %> </p>                 
+                    <% } %>
+
                 </p>
 
                 <p>
