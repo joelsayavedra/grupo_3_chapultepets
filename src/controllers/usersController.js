@@ -8,10 +8,9 @@ const controller = {
         res.render('users/register');
     },
     userLogin: function(req,res){
-        res.send('¡Hola!');
+        res.send('¡Ingresaste con éxito!');
     },
     userRegister: function(req,res){
-        User.create(req.body);
         res.send('¡Hay un nuevo integrante!');
     }
 };
