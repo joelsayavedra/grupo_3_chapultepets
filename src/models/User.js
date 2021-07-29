@@ -44,6 +44,11 @@ const User = {
 
     create: function(userData){
         let allUsers = this.findAll();
+        
+        if(!userData.imagenPerfil){
+            userData.imagenPerfil = "Portrait_Placeholder.png";
+        }
+
         let newUser ={
             id: this.generateID(),
             ...userData
@@ -51,7 +56,7 @@ const User = {
         allUsers.push(newUser);
 
         fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, " "));
-        return true;
+        return newUser;
     },
 
     delete: function(id){
