@@ -273,10 +273,27 @@ body.index h1{
     justify-content: space-around;
 }
 
-.product-window article{
+.product-window a{
     width: 45%;
-
     margin-bottom: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+.product-window a:link{
+    text-decoration: none;
+}
+.product-window a:visited{
+    text-decoration: none;
+}
+.product-window a:hover{
+    text-decoration: none;
+}
+.product-window a:active {
+    text-decoration: none;
+}
+
+.product-window article{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1059,7 +1076,7 @@ main.inventory div.encabezado {
         display: block;
     }
 
-    .product-window article{
+    .product-window a{
         width: 22.5%;
     }
 

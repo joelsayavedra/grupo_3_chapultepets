@@ -56,27 +56,28 @@
                     <div class="product-window">
 
                         <% for(let i=0;i<products.length;i++){ %>
-                            <article>
-                                <img src="/img/products/<%= products[i].image %> " alt="">
-                                <h4>
-                                    <%= products[i].name %>
-                                </h4>
-                                <!-- casillero de estrellas -->
-
-                                <p class="product-rating-stars">
-
-                                    <%- include("./partials/rating_stars",{ rating : products[i].rating }) %>
-
-                                        <%= products[i].rating %>
-
-                                            (<%= products[i].reviewsAmount %> )
-                                </p>
-                                <p class="product-price">$<%= products[i].price %>
-                                </p>
-                                <p class="product-brand">
-                                    <%= products[i].brand %>
-                                </p>
-                            </article>
+                                
+                            <a href="/products/<%= products[i].id %>">
+                                <article>
+                                    <img src="/img/products/<%= products[i].image %> " alt="">
+                                    <h4>
+                                        <%= products[i].name %>
+                                    </h4>
+                                    <!-- casillero de estrellas -->
+                                    <p class="product-rating-stars">
+                                        <%- include("./partials/rating_stars",{ rating : products[i].rating }) %>
+                                            <%= products[i].rating %>
+                                                (<%= products[i].reviewsAmount %> )
+                                    </p>
+                                    <p class="product-price">$<%= products[i].price %>
+                                    </p>
+                                    <p class="product-brand">
+                                        <%= products[i].brand %>
+                                    </p>
+                                </article>
+                            </a>
+                                
+                            
                             <% } %>
 
                                 <!-- <article>
