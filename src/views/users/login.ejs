@@ -9,7 +9,7 @@
 
         <!-- Configuración del main -->
         <main class="login">
-            <form class="formulario" method="POST" action="/users/login">
+            <form class="formulario" method="POST" action="/users/login" enctype="multipart/form-data">
                 <div class="logo-container">
                     <a href="/">
                         <img src="/img/logo_mobile.png" alt="" class="main-logo">
@@ -17,13 +17,19 @@
                 </div>
 
                 <p>
-                    <input type="text" name="nombreDeUsuario" id="" placeholder="Nombre de Usuario" class="nombre"
+                    <input type="text" name="nombreUsuario" id="" placeholder="Nombre de Usuario" class="nombre"
                         style="width: 100%;" required>
+                    <% if (locals.errors && errors.nombreUsuario) { %>
+                        <p class="errorMessage"><%= errors.nombreUsuario.msg %> </p>
+                    <% } %>
                 </p>
 
                 <p>
-                    <input type="password" name="contraseña" id="" class="contraseña" placeholder="Contraseña"
+                    <input type="password" name="password" id="" class="contraseña" placeholder="Contraseña"
                         style="width: 100%;" required>
+                    <% if (locals.errors && errors.password) { %>
+                        <p class="errorMessage"><%= errors.password.msg %> </p>
+                    <% } %>
                 </p>
 
                 <p class="contra">
@@ -33,9 +39,8 @@
                 <p>
                     <button type="submit" class="" style="width: 100%;">Iniciar Sesión</button>
                 </p>
-
-
             </form>
+
             <div class="reg">
                 <p>¿Eres nuevo?</p>
                 <p><A href=/register>Crear nueva cuenta</A></p>

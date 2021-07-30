@@ -4,10 +4,8 @@
 // 4. Editar la información de un usuario
 // 5. Eliminar a un usuario de la DB
 
-const { fips } = require("crypto");
 const fs = require("fs");
 const path = require('path');
-const { use } = require("../routes/users");
 
 const User = {
     fileName: path.join(__dirname, "../database/users.json"),
