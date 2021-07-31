@@ -8,12 +8,16 @@ const controller = {
     register: function(req,res){
         res.render('users/register');
     },
+    profile: function(req,res){
+        res.render('users/profile');
+    },
     userLoginProcess: function(req,res){
         //res.send(req.body);
         let userToLogin = User.findByField("nombreUsuario",req.body.nombreUsuario);
         if(userToLogin){
             if (bcryptjs.compareSync(req.body.password,userToLogin.password)) {
-                res.send("¡Bienvenido "+userToLogin.nombreUsuario+"!");
+                res.redirect("/users/profile");
+                // res.send("¡Bienvenido "+userToLogin.nombreUsuario+"!");
             } else {
                 res.render('users/login',{
                     errors:{

@@ -25,4 +25,6 @@ router.get('/login', usersController.login);
 router.post("/register",usersController.userRegister);
 router.post("/login",upload.single("Campo"), usersController.userLoginProcess);
 
+router.get('/profile', usersController.profile);
+
 module.exports= router;
