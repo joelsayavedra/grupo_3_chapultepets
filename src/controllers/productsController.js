@@ -22,7 +22,9 @@ const controller = {
         res.render('products/productCreate');
     },
     cart: function (req, res) {
-        res.render('products/productCart');
+        res.render('products/productCart',{
+            user: req.session.userLogged,
+        });
     },
     detail: function (req, res) {
         res.render('products/productDetail');

@@ -7,7 +7,8 @@
     <%- include("../partials/header") %>
 
     <main>
-        <h1>Bienvenido <%= locals.userName ? locals.userName : "Extraño"%> </h1>
+        <h1>Bienvenido <%= user.nombreUsuario%> </h1>
+        <img src="/img/users/<%=user.imagenPerfil%> " alt="Imagen de perfil">
     </main>
 
     <%- include("../partials/footer") %>

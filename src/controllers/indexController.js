@@ -1,3 +1,4 @@
+const session = require('express-session');
 const fs = require('fs');
 const path = require('path');
 
@@ -8,6 +9,7 @@ const controller = {
     index: function(req,res){
         res.render('index',{
             products:products,
+            user: req.session.userLogged,
         });
     },
 };

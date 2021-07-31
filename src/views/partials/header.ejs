@@ -8,15 +8,18 @@
         </div>
         <div class="upper-nav-bar-container">
             <div class="upper-nav-bar">
-                <div class="upper-nav-bar-element">
-                    <div>
 
-                        <a href="/users/register">
-                            <p><i class="fas fa-envelope" id=fasRegister></i></p>
-                            <h4>Registro</h4>
-                        </a>
-                    </div>
-                </div>
+                <% if (!locals.user) { %>
+                    <div class="upper-nav-bar-element">
+                        <div>
+                            <a href="/users/register">
+                                <p><i class="fas fa-envelope" id=fasRegister></i></p>
+                                <h4>Registro</h4>
+                            </a>
+                        </div>
+                    </div>                 
+                <% } %>
+
                 <div class="upper-nav-bar-element">
                     <div>
                         <a href="/products/cart">
@@ -27,8 +30,8 @@
                 </div>
                 <div class="upper-nav-bar-element">
                     <div>
-                        <a href="/users/login">
-                            <img src="/img/Portrait_Placeholder.png" alt="">
+                        <a href="<%= locals.user ? "/users/profile" : "/users/login" %>">
+                            <img src="/img/users/<%= locals.user ? user.imagenPerfil : "Portrait_Placeholder.png" %>" alt="">
                             <h4>Mi perfil</h4>
                         </a>
                     </div>
