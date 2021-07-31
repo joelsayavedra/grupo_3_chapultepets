@@ -13,7 +13,7 @@
                     <div class="upper-nav-bar-element">
                         <div>
                             <a href="/users/register">
-                                <p><i class="fas fa-envelope" id=fasRegister></i></p>
+                                <p><i class="fas fa-envelope" id="fasRegister"></i></p>
                                 <h4>Registro</h4>
                             </a>
                         </div>
@@ -23,16 +23,28 @@
                 <div class="upper-nav-bar-element">
                     <div>
                         <a href="/products/cart">
-                            <p><i class="fas fa-shopping-cart" id=fasCart></i></p>
+                            <p><i class="fas fa-shopping-cart" id="fasCart"></i></p>
                             <h4>Mi carrito</h4>
                         </a>
                     </div>
                 </div>
+
+                <!-- ícono de perfil -->
                 <div class="upper-nav-bar-element">
                     <div>
                         <a href="<%= locals.user ? "/users/profile" : "/users/login" %>">
                             <img src="/img/users/<%= locals.user ? user.imagenPerfil : "Portrait_Placeholder.png" %>" alt="">
                             <h4>Mi perfil</h4>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ícono de login -->
+                <div class="upper-nav-bar-element">
+                    <div>
+                        <a href="/users/login">
+                            <p><i class="fas fa-sign-in-alt" id="fasCart"></i></p>
+                            <h4>Ingresar</h4>
                         </a>
                     </div>
                 </div>

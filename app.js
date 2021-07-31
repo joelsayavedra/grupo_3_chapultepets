@@ -26,6 +26,7 @@ app.use(session({
     saveUninitialized: false
 }));
 
+
 //Configuración del puerto
 app.listen(process.env.PORT || 3000,()=>{
     console.log("corriendo servidor en el puerto 3000");

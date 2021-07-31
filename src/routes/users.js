@@ -28,5 +28,6 @@ router.post("/register",usersController.userRegister);
 router.post("/login",upload.single("Campo"), usersController.userLoginProcess);
 
 router.get('/profile', authMiddleware, usersController.profile);
+router.get('/logout', authMiddleware, usersController.logout);
 
 module.exports= router;

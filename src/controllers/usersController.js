@@ -13,6 +13,10 @@ const controller = {
             user: req.session.userLogged,
         });
     },
+    logout: function(req,res){
+        req.session.destroy();
+        return res.redirect("/");
+    },
     userLoginProcess: function(req,res){
         //res.send(req.body);
         let userToLogin = User.findByField("nombreUsuario",req.body.nombreUsuario);
