@@ -1,6 +1,6 @@
-const express = require ('express');
+const express = require('express');
 const router = express.Router();
-const usersController= require ('../controllers/usersController.js');
+const usersController = require('../controllers/usersController.js');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 
@@ -12,22 +12,22 @@ const storage = multer.diskStorage({
         cb(null, path.join(__dirname, "../../public/img/users"));
     },
     filename: function (req, file, cb) {
-        const newFileName = "prod_" + Date.now() + path.extname(file.originalname);
+        const newFileName = "users_" + Date.now() + path.extname(file.originalname);
         cb(null, newFileName);
     }
 });
 
-const upload = multer({ storage });
+const upload = multer({ storage: storage });
 
 //Ruta raíz de usuarios
 
-router.get('/register',guestMiddleware, usersController.register);
+router.get('/register', guestMiddleware, usersController.register);
 router.get('/login', guestMiddleware, usersController.login);
 
-router.post("/register",usersController.userRegister);
-router.post("/login",upload.single("Campo"), usersController.userLoginProcess);
+router.post("/register", upload.single("avatarPicture"), usersController.userRegister);
+router.post("/login", usersController.userLoginProcess);
 
 router.get('/profile', authMiddleware, usersController.profile);
 router.get('/logout', authMiddleware, usersController.logout);
 
-module.exports= router;
+module.exports = router;

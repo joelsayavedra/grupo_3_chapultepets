@@ -11,25 +11,24 @@
             <form action="/users/register" method="POST" enctype="multipart/form-data">
                 <div class="logo-container">
                     <a href="/">
-                        <img src="/img/logo_mobile.png" alt="" class="main-logo" >
+                        <img src="/img/logo_mobile.png" alt="" class="main-logo">
                     </a>
                 </div>
 
                 <p>Encuentra tus productos favoritos con una cuenta personalizada.</p>
 
                 <p>
-                    <input type="text" name="nombreUsuario" placeholder="Nombre de usuario"
-                        class="nombreDeUsuario" style="width: 100%;" required>
-                </p>
-
-                <p>
-                    <input type="text" name="nombrePila" placeholder="Nombre(s)" class=""
+                    <input type="text" name="nombreUsuario" placeholder="Nombre de usuario" class="nombreDeUsuario"
                         style="width: 100%;" required>
                 </p>
 
                 <p>
-                    <input type="text" name="apellido" id="" placeholder="Apellido(s)" class=""
-                        style="width: 100%;" required>
+                    <input type="text" name="nombrePila" placeholder="Nombre(s)" class="" style="width: 100%;" required>
+                </p>
+
+                <p>
+                    <input type="text" name="apellido" id="" placeholder="Apellido(s)" class="" style="width: 100%;"
+                        required>
                 </p>
 
                 <p>
@@ -38,9 +37,8 @@
                 </p>
 
                 <p>
-                    <input type="password" name="confirmacionPassword" minlength="6"
-                        placeholder="Confirmar contraseña" id="" class="confirmarContraseña" style="width: 100%;"
-                        required>
+                    <input type="password" name="confirmacionPassword" minlength="6" placeholder="Confirmar contraseña"
+                        id="" class="confirmarContraseña" style="width: 100%;" required>
                 </p>
 
                 <p>
@@ -49,9 +47,13 @@
                 </p>
 
                 <p>
-                    <input type="number" name="telefono" id="" min="10"
-                        placeholder="Numéro Telefónico (10 Dígitos)" class="tel" style="height: 30px; width: 100%;"
-                        required>
+                    <input type="number" name="telefono" id="" min="10" placeholder="Numéro Telefónico (10 Dígitos)"
+                        class="tel" style="height: 30px; width: 100%;" required>
+                </p>
+                <p>
+                    <label name="avatarPicture">Foto de perfil:</label>
+                    <input type="file" name="avatarPicture" id="avatarPicture" class="avatarPicture"
+                        style="height: 30px; width: 100%;">
                 </p>
 
                 <p>
