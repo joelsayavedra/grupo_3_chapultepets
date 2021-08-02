@@ -64,11 +64,10 @@ const controller = {
             password: req.body.password,
             celNumber: req.body.telefono,
         };
-
         if (req.file) {
-            usuario.picture = req.file.avatarPicture;
+            usuario.image = req.file.filename;
         } else {
-            usuario.picture = "default.png";
+            usuario.image = "default.png";
         };
 
         users.push(usuario);
