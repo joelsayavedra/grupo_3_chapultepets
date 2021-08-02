@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { v4: getID } = require("uuid");
-const {validationResult} = require("express-validator");
+const { validationResult } = require("express-validator");
 
 const productsFilePath = path.join(__dirname, '../database/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -22,7 +22,7 @@ const controller = {
         res.render('products/productCreate');
     },
     cart: function (req, res) {
-        res.render('products/productCart',{
+        res.render('products/productCart', {
             user: req.session.userLogged,
         });
     },
@@ -32,10 +32,10 @@ const controller = {
     store: function (req, res) {
         let errors = validationResult(req);
 
-        if(errors.isEmpty()){
+        if (errors.isEmpty()) {
             let categories = req.body.category.split(",");
             for (let i = 0; i < categories.length; i++) {
-                categories[i]=categories[i].trim();                
+                categories[i] = categories[i].trim();
             }
 
             let producto = {
@@ -48,19 +48,19 @@ const controller = {
                 price: Number(req.body.price),
                 brand: req.body.brand,
             };
-    
+
             if (req.file) {
-                producto.image = req.file.filename;
+                producto.image = req.file.avatarPicture;
             } else {
                 producto.image = "default.png";
             };
-    
+
             products.push(producto);
             fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-    
+
             res.redirect("/");
-        }else{
-            res.render('products/productCreate',{
+        } else {
+            res.render('products/productCreate', {
                 errors: errors.mapped(),
                 old: req.body,
             });
@@ -73,7 +73,7 @@ const controller = {
         if (errors.isEmpty()) {
             let categories = req.body.category.split(",");
             for (let i = 0; i < categories.length; i++) {
-                categories[i]=categories[i].trim();                
+                categories[i] = categories[i].trim();
             }
 
             //Obtención del id del producto, extraído de la url
@@ -117,9 +117,9 @@ const controller = {
                 id: id,
                 errors: errors.mapped(),
                 old: req.body,
-            });        
+            });
         }
-        
+
     },
     product: function (req, res) {
         res.render('products/inventory', {

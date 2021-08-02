@@ -63,11 +63,12 @@ const controller = {
             email: req.body.email,
             password: req.body.password,
             celNumber: req.body.telefono,
-            picture: "default.png"
         };
 
         if (req.file) {
             usuario.picture = req.file.avatarPicture;
+        } else {
+            usuario.picture = "default.png";
         };
 
         users.push(usuario);
