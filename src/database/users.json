@@ -28,15 +28,5 @@
     "email": "prueba@mail.com",
     "telefono": "5554444888",
     "imagenPerfil": "peeper.jpg"
-  },
-  {
-    "id": "c55e9aa0-c55b-4d6e-9703-883876597768",
-    "userName": "test2",
-    "currentName": "test2",
-    "lastname": "test2",
-    "email": "test@test.com",
-    "password": "123456",
-    "celNumber": "1234567890",
-    "image": "users_1627928144247.png"
   }
 ]

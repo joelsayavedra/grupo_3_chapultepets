@@ -54,20 +54,20 @@ const controller = {
 
     },
     userRegister: function (req, res) {
-
+        const passwordcrypt = bcryptjs.hashSync(req.body.password, 12);
         let usuario = {
             id: getID(),
-            userName: req.body.nombreUsuario,
-            currentName: req.body.nombrePila,
-            lastname: req.body.apellido,
+            nombreUsuario: req.body.nombreUsuario,
+            nombrePila: req.body.nombrePila,
+            apellido: req.body.apellido,
             email: req.body.email,
-            password: req.body.password,
-            celNumber: req.body.telefono,
+            password: passwordcrypt,
+            telefono: req.body.telefono,
         };
         if (req.file) {
-            usuario.image = req.file.filename;
+            usuario.imagenPerfil = req.file.filename;
         } else {
-            usuario.image = "default.png";
+            usuario.imagenPerfil = "default.png";
         };
 
         users.push(usuario);
