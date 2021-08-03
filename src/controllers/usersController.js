@@ -10,27 +10,35 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const controller = {
     login: function (req, res) {
+        // console.log(req.cookies.testing);
         res.render('users/login');
     },
     register: function (req, res) {
+        // res.cookie("testing", "Put that cookie down!",{maxAge: 1000*300});
         res.render('users/register');
     },
     profile: function (req, res) {
         res.render('users/profile', {
-            user: req.session.userLogged,
         });
     },
     logout: function (req, res) {
         req.session.destroy();
+        res.clearCookie("userName");
         return res.redirect("/");
     },
     userLoginProcess: function (req, res) {
-        //res.send(req.body);
+        // res.send(req.body);
+
         let userToLogin = User.findByField("nombreUsuario", req.body.nombreUsuario);
         if (userToLogin) {
             if (bcryptjs.compareSync(req.body.password, userToLogin.password)) {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
+
+                if (req.body.recordar) {
+                    res.cookie("userName", req.body.nombreUsuario, {maxAge: 1000*60*30});
+                }
+                
                 res.redirect("/users/profile");
 
             } else {
@@ -51,8 +59,8 @@ const controller = {
                 }
             });
         };
-
     },
+
     userRegister: function (req, res) {
         const passwordcrypt = bcryptjs.hashSync(req.body.password, 12);
         let usuario = {

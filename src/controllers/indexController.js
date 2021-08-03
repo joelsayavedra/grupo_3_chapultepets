@@ -9,7 +9,6 @@ const controller = {
     index: function(req,res){
         res.render('index',{
             products:products,
-            user: req.session.userLogged,
         });
     },
 };

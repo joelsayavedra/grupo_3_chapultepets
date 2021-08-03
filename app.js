@@ -2,6 +2,9 @@ const express = require('express');
 const path=require('path');
 const methodOverride=require("method-override");
 const session = require('express-session');
+const cookies = require('cookie-parser');
+
+const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware');
 
 //Require de los ruteadores
 const indexRouter=require('./src/routes/index.js');
@@ -25,7 +28,8 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
-
+app.use(cookies());
+app.use(userLoggedMiddleware);
 
 //Configuración del puerto
 app.listen(process.env.PORT || 3000,()=>{
