@@ -95,3 +95,26 @@ La intensa pasión por querer modificar el CSS
 
 <h3>Obstáculos:</h3>
 Multer y su interferencia en el envío de datos por formulario.
+
+
+<h1>03/08/2021</h1>
+<h3>¿Qué se hizo ayer?</h3>
+<ul>
+  <li>
+    David:
+      Validación del registro de usuarios.
+  </li>
+  <li>
+    Joel:
+      perrito panzón, todo chikito todo panzón.
+  </li>
+</ul>
+
+<h3>¿Qué se hará mañana?</h3>
+<ul>
+  <li>David: Trabajar en el css de la validación, dinamico el product detail</li>
+  <li>Joel: hacer responsivo el index y la vista del 404.</li>
+</ul>
+
+<h3>Obstáculos:</h3>
+Calles inclinadas.
