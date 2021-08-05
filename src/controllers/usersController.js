@@ -3,7 +3,7 @@ const bcryptjs = require('bcryptjs');
 const fs = require('fs');
 const path = require('path');
 const { v4: getID } = require("uuid");
-const { validationResult } = require("express-validator");
+const { validationResult, body } = require("express-validator");
 
 const usersFilePath = path.join(__dirname, '../database/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -36,9 +36,9 @@ const controller = {
                 req.session.userLogged = userToLogin;
 
                 if (req.body.recordar) {
-                    res.cookie("userName", req.body.nombreUsuario, {maxAge: 1000*60*30});
+                    res.cookie("userName", req.body.nombreUsuario, { maxAge: 1000 * 60 * 30 });
                 }
-                
+
                 res.redirect("/users/profile");
 
             } else {
@@ -62,26 +62,37 @@ const controller = {
     },
 
     userRegister: function (req, res) {
+        let errors = validationResult(req);
+
         const passwordcrypt = bcryptjs.hashSync(req.body.password, 12);
-        let usuario = {
-            id: getID(),
-            nombreUsuario: req.body.nombreUsuario,
-            nombrePila: req.body.nombrePila,
-            apellido: req.body.apellido,
-            email: req.body.email,
-            password: passwordcrypt,
-            telefono: req.body.telefono,
-        };
-        if (req.file) {
-            usuario.imagenPerfil = req.file.filename;
-        } else {
-            usuario.imagenPerfil = "default.png";
-        };
+        if (errors.isEmpty()) {
+            let usuario = {
+                id: getID(),
+                nombreUsuario: req.body.nombreUsuario,
+                nombrePila: req.body.nombrePila,
+                apellido: req.body.apellido,
+                email: req.body.email,
+                password: passwordcrypt,
+                telefono: req.body.telefono,
+            };
+            if (req.file) {
+                usuario.imagenPerfil = req.file.filename;
+            } else {
+                usuario.imagenPerfil = "default.png";
+            };
 
-        users.push(usuario);
-        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
+            users.push(usuario);
+            fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
 
-        res.send("¡Hay un nuevo entrenador pokemon!");
+            res.send("¡Hay un nuevo entrenador pokemon!");
+        }
+        else {
+            res.render('register',
+                {
+                    errors: errors.mapped(),
+                    old: req.body
+                });
+        }
 
     }
 };
