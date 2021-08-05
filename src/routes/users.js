@@ -25,15 +25,15 @@ let validacionRegistro = [
         .isEmpty().withMessage('Escribe un nombre para este sitio.').bail()
         .isLength({ min: 4 }).withMessage('Debe ser de al menos 4 caracteres'),
     check('nombrePila')
-        .isEmpty.withMessage('Escribe tu nombre'),
+        .isEmpty().withMessage('Escribe tu nombre'),
     check('apellido')
-        .isEmpty.withMessage('Escribe tu apellido'),
+        .isEmpty().withMessage('Escribe tu apellido'),
     check('email')
-        .isEmail.withMessage('Debe ser una dirección de correo válida'),
+        .isEmail().withMessage('Debe ser una dirección de correo válida'),
     check('password')
         .isEmpty().withMessage('Escribe una constraseña').bail()
         .isStrongPassword().withMessage('La contraseña debe contener al menos 8 caracteres. Al menos una mayúscula, una mínuscula, un símbolo y un número'),
-    check('teléfono')
+    check('telefono')
         .isLength({ min: 10 }).withMessage('Debe contener al menos 10 caracteres numéricos').bail()
         .isInt().withMessage('Solo se aceptan caracteres numéricos'),
 ];

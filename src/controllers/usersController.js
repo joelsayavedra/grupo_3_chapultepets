@@ -87,7 +87,7 @@ const controller = {
             res.send("¡Hay un nuevo entrenador pokemon!");
         }
         else {
-            res.render('register',
+            res.render('users/register',
                 {
                     errors: errors.mapped(),
                     old: req.body

@@ -18,38 +18,71 @@
                 <p>Encuentra tus productos favoritos con una cuenta personalizada.</p>
 
                 <p>
-                    <input type="text" name="nombreUsuario" placeholder="Nombre de usuario" class="nombreDeUsuario"
-                        style="width: 100%;" required>
+                    <input type="text" name="nombreUsuario" placeholder="Nombre de usuario" 
+                    class="nombreDeUsuario" style="width: 100%;" 
+                    value= "<%= locals.old && locals.nombreUsuario%>">
                 </p>
-
+                <%if (locals.errors && errors.nombreUsuario) { %>
+                    <p class="feedback">
+                        *<%= errors.nombreUsuario.msg%>
+                    </p>
+                    <% } %>
                 <p>
-                    <input type="text" name="nombrePila" placeholder="Nombre(s)" class="" style="width: 100%;" required>
+                    <input type="text" name="nombrePila" placeholder="Nombre(s)" class="" style="width: 100%;" 
+                    value= "<%= locals.old && locals.nombrePila%>">
                 </p>
+                <%if (locals.errors && errors.nombrePila) { %>
+                    <p class="feedback">
+                        *<%= errors.nombrePila.msg%>
+                    </p>
+                    <% } %>
 
                 <p>
                     <input type="text" name="apellido" id="" placeholder="Apellido(s)" class="" style="width: 100%;"
-                        required>
+                    value= "<%= locals.old && locals.apellido%>">
                 </p>
+                <%if (locals.errors && errors.apellido) { %>
+                    <p class="feedback">
+                        *<%= errors.apellido.msg%>
+                    </p>
+                    <% } %>
 
                 <p>
-                    <input type="password" name="password" minlength="6" placeholder="Contraseña" id=""
-                        class="contraseña" style=" width: 100%;" required>
+                    <input type="password" name="password"  placeholder="Contraseña" id=""
+                        class="contraseña" style=" width: 100%;"
+                        value= "<%= locals.old && locals.password%>" >
                 </p>
+                <%if (locals.errors && errors.password) { %>
+                    <p class="feedback">
+                        *<%= errors.password.msg%>
+                    </p>
+                    <% } %>
 
                 <p>
-                    <input type="password" name="confirmacionPassword" minlength="6" placeholder="Confirmar contraseña"
-                        id="" class="confirmarContraseña" style="width: 100%;" required>
+                    <input type="password" name="confirmacionPassword"  placeholder="Confirmar contraseña"
+                        id="" class="confirmarContraseña" style="width: 100%;" >
                 </p>
 
                 <p>
                     <input type="email" name="email" id="" placeholder="Correo electrónico" class="correo"
-                        style="width: 100%;" required>
+                        style="width: 100%;" >
                 </p>
+                <%if (locals.errors && errors.email) { %>
+                    <p class="feedback">
+                        *<%= errors.email.msg%>
+                    </p>
+                    <% } %>
 
                 <p>
-                    <input type="number" name="telefono" id="" min="10" placeholder="Numéro Telefónico (10 Dígitos)"
-                        class="tel" style="height: 30px; width: 100%;" required>
+                    <input type="number" name="telefono" id=""  placeholder="Numéro Telefónico (10 Dígitos)"
+                        class="tel" style="height: 30px; width: 100%;"
+                        value= "<%= locals.old && locals.telefono%>">
                 </p>
+                <%if (locals.errors && errors.telefono) { %>
+                    <p class="feedback">
+                        *<%= errors.telefono.msg%>
+                    </p>
+                    <% } %>
                 <p>
                     <label name="avatarPicture">Foto de perfil:</label>
                     <input type="file" name="avatarPicture" id="" class="avatarPicture"
