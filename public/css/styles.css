@@ -71,8 +71,8 @@ header A{
 }
 
 .upper-nav-bar-container{
-    width: 100%;
-    font-size: 14px;
+    width: 60%;
+    font-size: 12px;
     background-color: var(--fondoLogin);
     padding: 17px;
     margin: 0 auto;
@@ -873,6 +873,10 @@ main.inventory div.encabezado {
     .upper-nav-bar-element img{
         width: 42px;
     }
+    
+.logo-container img{
+    width: 70%;
+}
     /* index */
 
     /* detalle producto  */
@@ -1047,10 +1051,10 @@ main.inventory div.encabezado {
     }
 
     .upper-nav-bar-container{
-        font-size: 16px;
+        font-size: 14px;
     }
     .search-form input{
-        height: 30px;
+        height: 25px;
     }
 
     /* index */
@@ -1226,19 +1230,17 @@ main.inventory div.encabezado {
 @media (min-width: 1200px){
 
     /* header */
-
-
     .upper-nav-bar-container{
-        font-size: 18px;
+        font-size: 14px;
     }
 
     header #fasCart{
-        font-size: 32px;
+        font-size: 25px;
         margin-top: 20px;
         margin-bottom: 10px;
     }
     header #fasRegister{
-        font-size: 32px;
+        font-size: 25px;
         margin-top: 20px;
         margin-bottom: 10px;
     }
