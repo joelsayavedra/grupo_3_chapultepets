@@ -874,9 +874,7 @@ main.inventory div.encabezado {
         width: 42px;
     }
     
-.logo-container img{
-    width: 70%;
-}
+
     /* index */
 
     /* detalle producto  */
@@ -1055,6 +1053,9 @@ main.inventory div.encabezado {
     }
     .search-form input{
         height: 25px;
+    }
+    .logo-container img{
+        width: 70%;
     }
 
     /* index */
