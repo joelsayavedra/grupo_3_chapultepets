@@ -3,7 +3,7 @@ const bcryptjs = require('bcryptjs');
 const fs = require('fs');
 const path = require('path');
 const { v4: getID } = require("uuid");
-const { validationResult, body } = require("express-validator");
+const { validationResult} = require("express-validator");
 
 const usersFilePath = path.join(__dirname, '../database/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -62,10 +62,9 @@ const controller = {
     },
 
     userRegister: function (req, res) {
-        let errors = validationResult(req.body);
-
-        const passwordcrypt = bcryptjs.hashSync(req.body.password, 12);
+        let errors = validationResult(req);
         if (errors.isEmpty()) {
+            const passwordcrypt = bcryptjs.hashSync(req.body.password, 12);
             let usuario = {
                 id: getID(),
                 nombreUsuario: req.body.nombreUsuario,

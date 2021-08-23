@@ -43,7 +43,7 @@ let validacionRegistro = [
 router.get('/register', guestMiddleware, usersController.register);
 router.get('/login', guestMiddleware, usersController.login);
 
-router.post("/register", validacionRegistro, upload.single("avatarPicture"), usersController.userRegister);
+router.post("/register", upload.single("avatarPicture"), validacionRegistro, usersController.userRegister);
 router.post("/login", upload.single("avatarPicture"), usersController.userLoginProcess);
 
 router.get('/profile', authMiddleware, usersController.profile);
