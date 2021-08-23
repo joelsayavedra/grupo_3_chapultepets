@@ -3,11 +3,12 @@
     --Azul: #0064E1;
     --Rosa: #e10064; */
 
-    --fondo-header: white;
+    --fondo-header: rgb(205, 255, 190);
     --letra-header:black;
     --sombreado-header: #11d10094;
     --Rosa: #e10064;
     --fondo-main: white;
+    --fondo-body: #f4f4f4;
     --fondo-botones-carrusel: rgba(255, 255, 255, 0.25);
     --fondo-descripcion-carrusel: rgba(255, 255, 255, 0.25);
     --presio: red;
@@ -25,6 +26,10 @@
     padding: 0;
 }
 
+body.index{
+    background-color: var(--fondo-body);
+}
+
 main{
     margin: 15px;
     background-color: var(--fondo-main);
@@ -40,8 +45,8 @@ header{
     display: flex;
     flex-wrap: wrap;
     color: var(--letra-header);
-    margin: 15px;
     padding-top: 15px;
+    margin-bottom: 15px;
 }
 
 header A{
@@ -73,7 +78,7 @@ header A{
 .upper-nav-bar-container{
     width: 60%;
     font-size: 12px;
-    background-color: var(--fondoLogin);
+    background-color: var(--fondo-header);
     padding: 17px;
     margin: 0 auto;
     align-self: center;
@@ -196,6 +201,14 @@ footer p{
 }
 /* index */
 
+main.index{
+    background-color: var(--fondo-body);
+}
+
+main.index div{
+    background-color: var(--fondo-body);
+}
+
 body.index h1{
     margin-left: 2vw;
 }
@@ -243,6 +256,7 @@ body.index h1{
     justify-content: space-around;
     list-style-type: none;
     margin: 15px 0px;
+    background-color: var(--fondo-body);
 }
 
 .home-logo-bar li{
@@ -259,9 +273,11 @@ body.index h1{
 }
 
 .product-window{
+    background-color: var(--fondo-body);
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-top: 15px;
 }
 
 .product-window a{
@@ -288,6 +304,8 @@ body.index h1{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: white;
+    padding: 0px 5px 5px 5px;
 }
 
 .product-window article h4,
@@ -304,8 +322,9 @@ body.index h1{
 
 .product-window img{
     width: 100%;
-    max-height: 45vw;
+    height: 45vw;
     object-fit: contain;
+    padding: 5%;
 }
 
 .recommendation-bar{
@@ -1229,6 +1248,9 @@ main.inventory div.encabezado {
 
 @media (min-width: 1200px){
 
+    /* Generales */
+
+
     /* header */
     .upper-nav-bar-container{
         font-size: 14px;
@@ -1250,6 +1272,10 @@ main.inventory div.encabezado {
     }
 
     /* index */
+    main.index{
+        margin: auto;
+        max-width: 75%;
+    }
 
     /* detalle producto  */
 
