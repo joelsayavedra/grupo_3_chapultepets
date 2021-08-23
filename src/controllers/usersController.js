@@ -62,7 +62,7 @@ const controller = {
     },
 
     userRegister: function (req, res) {
-        let errors = validationResult(req);
+        let errors = validationResult(req.body);
 
         const passwordcrypt = bcryptjs.hashSync(req.body.password, 12);
         if (errors.isEmpty()) {

@@ -28,5 +28,15 @@
     "email": "prueba@mail.com",
     "telefono": "5554444888",
     "imagenPerfil": "peeper.jpg"
+  },
+  {
+    "id": "c7f68ca8-b878-4562-b0c0-6616b6ec8c70",
+    "nombreUsuario": "Eduardo",
+    "nombrePila": "David",
+    "apellido": "Gonzalez",
+    "email": "test@test.com",
+    "password": "$2a$12$aW4mHsbvIRUe/FNqZXEwluqoNxC5u2iws3YWugfLIhYC40LdsJpX2",
+    "telefono": "1234567891",
+    "imagenPerfil": "default.png"
   }
 ]
