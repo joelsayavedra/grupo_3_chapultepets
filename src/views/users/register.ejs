@@ -20,7 +20,7 @@
                 <p>
                     <input type="text" name="nombreUsuario" placeholder="Nombre de usuario" 
                     class="nombreDeUsuario" style="width: 100%;" 
-                    value= "<%= locals.old && locals.nombreUsuario%>">
+                    value= "<%= locals.old && locals.nombreUsuario ? old.nombreUsuario: ""; %>">
                 </p>
                 <%if (locals.errors && errors.nombreUsuario) { %>
                     <p class="feedback">
@@ -29,7 +29,7 @@
                     <% } %>
                 <p>
                     <input type="text" name="nombrePila" placeholder="Nombre(s)" class="" style="width: 100%;" 
-                    value= "<%= locals.old && locals.nombrePila%>">
+                    value= "<%= locals.old && locals.nombrePila ? old.nombrePila: ""; %>">
                 </p>
                 <%if (locals.errors && errors.nombrePila) { %>
                     <p class="feedback">
@@ -39,7 +39,7 @@
 
                 <p>
                     <input type="text" name="apellido" id="" placeholder="Apellido(s)" class="" style="width: 100%;"
-                    value= "<%= locals.old && locals.apellido%>">
+                    value= "<%= locals.old && locals.apellido ? old.apellido: "";%>">
                 </p>
                 <%if (locals.errors && errors.apellido) { %>
                     <p class="feedback">

@@ -510,7 +510,7 @@ main.register form{
     padding: 17px;
 }
 
-main.register form p input.nombreDeUsuario:valid{
+/* main.register form p input.nombreDeUsuario:valid{
     transition: all 1s;
     border-radius: 5px;
     border: solid var(--formularioValido) 2px;
@@ -520,9 +520,9 @@ main.register form input.contraseña:valid{
     transition: all 1s;
     border-radius: 5px;
     border: solid var(--formularioValido) 2px;
-}
+} */
 
-main.register form input.confirmarContraseña:valid{
+/* main.register form input.confirmarContraseña:valid{
     transition: all 1s;
     border-radius: 5px;
     border: solid var(--formularioValido) 2px;
@@ -538,7 +538,7 @@ main.register form input.tel:valid{
     transition: all 1s;
     border-radius: 5px;
     border: solid var(--formularioValido) 2px;
-}
+} */
 
 main.register form button:hover{
     transition: all .5s;
@@ -705,8 +705,6 @@ main.crear input{
     margin-top: 20px;
     padding: 5px;
 }
-
-
 
 main.crear select{
     height: 20px;
@@ -1050,7 +1048,7 @@ main.inventory div.encabezado {
     .search-form input{
         height: 25px;
     }
-    .logo-container img{
+    header .logo-container img{
         width: 70%;
     }
 
