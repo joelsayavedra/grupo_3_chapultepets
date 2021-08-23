@@ -548,6 +548,11 @@ main.register form button:hover{
     color: #ffffff;
 }
 
+main.register input.caja-error{
+    border: red solid 2px;
+    border-radius: 5px;
+}
+
 /* main.register form input.contraseña:invalid{
     transition: initial;
     background-color: #ff7f7f;

@@ -18,68 +18,103 @@
                 <p>Encuentra tus productos favoritos con una cuenta personalizada.</p>
 
                 <p>
-                    <input type="text" name="nombreUsuario" placeholder="Nombre de usuario" 
-                    class="nombreDeUsuario" style="width: 100%;" 
+                    <input 
+                    type="text" 
+                    name="nombreUsuario" 
+                    placeholder="Nombre de usuario"  
+                    style="width: 100%;"
+                    class=<%=(locals.errors && errors.nombreUsuario) ? "caja-error" : "nombreUsuario" %> 
                     value= "<%= locals.old && old.nombreUsuario ? old.nombreUsuario: ""; %>">
                 </p>
                 <%if (locals.errors && errors.nombreUsuario) { %>
-                    <p class="feedback">
+                    <p class="errorMessage">
                         *<%= errors.nombreUsuario.msg%>
                     </p>
                     <% } %>
                 <p>
-                    <input type="text" name="nombrePila" placeholder="Nombre(s)" class="" style="width: 100%;" 
+                    <input 
+                    type="text" 
+                    name="nombrePila" 
+                    placeholder="Nombre(s)" 
+                    <%=(locals.errors && errors.nombreUsuario) ? "caja-error" : "nombreDeUsuario" %>
+                    style="width: 100%;" 
                     value= "<%= locals.old && old.nombrePila ? old.nombrePila: ""; %>">
                 </p>
                 <%if (locals.errors && errors.nombrePila) { %>
-                    <p class="feedback">
+                    <p class="errorMessage">
                         *<%= errors.nombrePila.msg%>
                     </p>
                     <% } %>
 
                 <p>
-                    <input type="text" name="apellido" id="" placeholder="Apellido(s)" class="" style="width: 100%;"
+                    <input 
+                    type="text" 
+                    name="apellido" 
+                    id="" 
+                    placeholder="Apellido(s)" 
+                    class=<%=(locals.errors && errors.nombreUsuario) ? "caja-error" : "apellido" %> 
+                    style="width: 100%;"
                     value= "<%= locals.old && old.apellido ? old.apellido: "";%>">
                 </p>
                 <%if (locals.errors && errors.apellido) { %>
-                    <p class="feedback">
+                    <p class="errorMessage">
                         *<%= errors.apellido.msg%>
                     </p>
                     <% } %>
 
                 <p>
-                    <input type="password" name="password"  placeholder="Contraseña" id=""
-                        class="contraseña" style=" width: 100%;"
+                    <input 
+                    type="password" 
+                    name="password"  p
+                    laceholder="Contraseña" 
+                    id=""
+                    <%=(locals.errors && errors.nombreUsuario) ? "caja-error" : "password %>
+                    style=" width: 100%;"
                         value= "<%= locals.old && old.password ? old.password: ""; %>" >
                 </p>
                 <%if (locals.errors && errors.password) { %>
-                    <p class="feedback">
+                    <p class="errorMessage">
                         *<%= errors.password.msg%>
                     </p>
                     <% } %>
 
                 <p>
-                    <input type="password" name="confirmacionPassword"  placeholder="Confirmar contraseña"
-                        id="" class="confirmarContraseña" style="width: 100%;" >
+                    <input 
+                    type="password" 
+                    name="confirmacionPassword"  
+                    placeholder="Confirmar contraseña"
+                    id="" 
+                    class="confirmarContraseña" 
+                    style="width: 100%;" >
                 </p>
 
                 <p>
-                    <input type="email" name="email" id="" placeholder="Correo electrónico" class="correo"
+                    <input 
+                    type="email" 
+                    name="email" 
+                    id="" 
+                    placeholder="Correo electrónico" 
+                    <%=(locals.errors && errors.nombreUsuario) ? "caja-error" : "correo" %>
                         style="width: 100%;" >
                 </p>
                 <%if (locals.errors && errors.email) { %>
-                    <p class="feedback">
+                    <p class="errorMessage">
                         *<%= errors.email.msg%>
                     </p>
                     <% } %>
 
                 <p>
-                    <input type="number" name="telefono" id=""  placeholder="Numéro Telefónico (10 Dígitos)"
-                        class="tel" style="height: 30px; width: 100%;"
+                    <input 
+                    type="number" 
+                    name="telefono" 
+                    id=""  
+                    placeholder="Numéro Telefónico (10 Dígitos)"
+                    class=<%=(locals.errors && errors.nombreUsuario) ? "caja-error" : "tel" %>
+                    style="height: 30px; width: 100%;"
                         value= "<%= locals.old && old.telefono ? old.telefono: "";%>">
                 </p>
                 <%if (locals.errors && errors.telefono) { %>
-                    <p class="feedback">
+                    <p class="errorMessage">
                         *<%= errors.telefono.msg%>
                     </p>
                     <% } %>
