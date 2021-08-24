@@ -36,7 +36,7 @@
                     type="text" 
                     name="nombrePila" 
                     placeholder="Nombre(s)" 
-                    <%=(locals.errors && errors.nombreUsuario) ? "caja-error" : "nombreDeUsuario" %>
+                    class=<%=(locals.errors && errors.nombreUsuario) ? "caja-error" : "nombreDeUsuario" %>
                     style="width: 100%;" 
                     value= "<%= locals.old && old.nombrePila ? old.nombrePila: ""; %>">
                 </p>
@@ -65,10 +65,10 @@
                 <p>
                     <input 
                     type="password" 
-                    name="password"  p
-                    laceholder="Contraseña" 
+                    name="password" 
+                    placeholder="Contraseña" 
                     id=""
-                    <%=(locals.errors && errors.nombreUsuario) ? "caja-error" : "password %>
+                    class=<%=(locals.errors && errors.nombreUsuario) ? "caja-error" : "password" %>
                     style=" width: 100%;"
                         value= "<%= locals.old && old.password ? old.password: ""; %>" >
                 </p>
@@ -94,7 +94,7 @@
                     name="email" 
                     id="" 
                     placeholder="Correo electrónico" 
-                    <%=(locals.errors && errors.nombreUsuario) ? "caja-error" : "correo" %>
+                    class=<%=(locals.errors && errors.nombreUsuario) ? "caja-error" : "correo" %>
                         style="width: 100%;" >
                 </p>
                 <%if (locals.errors && errors.email) { %>
