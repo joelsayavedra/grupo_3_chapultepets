@@ -270,6 +270,11 @@ body.index h1{
     text-align: center;
 }
 
+.home-logo-bar a{
+    text-decoration: none;
+    color: black;
+}
+
 .home-logo-bar img{
     width: 100%;
 }
