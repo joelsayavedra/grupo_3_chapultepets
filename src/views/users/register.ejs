@@ -23,11 +23,11 @@
                     name="nombreUsuario" 
                     placeholder="Nombre de usuario"  
                     style="width: 100%;"
-                    class=<%=(locals.errors && errors.nombreUsuario) ? "caja-error" : "nombreUsuario" %> 
+                    class=<%=(locals.errors && errors.nombreUsuario) ? "caja-errorr" : "nombreUsuario" %> 
                     value= "<%= locals.old && old.nombreUsuario ? old.nombreUsuario: ""; %>">
                 </p>
                 <%if (locals.errors && errors.nombreUsuario) { %>
-                    <p class="errorMessage">
+                    <p class="errorMessager">
                         *<%= errors.nombreUsuario.msg%>
                     </p>
                     <% } %>
@@ -36,12 +36,12 @@
                     type="text" 
                     name="nombrePila" 
                     placeholder="Nombre(s)" 
-                    class=<%=(locals.errors && errors.nombreUsuario) ? "caja-error" : "nombreDeUsuario" %>
+                    class=<%=(locals.errors && errors.nombrePila) ? "caja-errorr" : "nombrePila" %>
                     style="width: 100%;" 
                     value= "<%= locals.old && old.nombrePila ? old.nombrePila: ""; %>">
                 </p>
                 <%if (locals.errors && errors.nombrePila) { %>
-                    <p class="errorMessage">
+                    <p class="errorMessager">
                         *<%= errors.nombrePila.msg%>
                     </p>
                     <% } %>
@@ -52,12 +52,12 @@
                     name="apellido" 
                     id="" 
                     placeholder="Apellido(s)" 
-                    class=<%=(locals.errors && errors.nombreUsuario) ? "caja-error" : "apellido" %> 
+                    class=<%=(locals.errors && errors.apellido) ? "caja-errorr" : "apellido" %> 
                     style="width: 100%;"
                     value= "<%= locals.old && old.apellido ? old.apellido: "";%>">
                 </p>
                 <%if (locals.errors && errors.apellido) { %>
-                    <p class="errorMessage">
+                    <p class="errorMessager">
                         *<%= errors.apellido.msg%>
                     </p>
                     <% } %>
@@ -68,12 +68,12 @@
                     name="password" 
                     placeholder="Contraseña" 
                     id=""
-                    class=<%=(locals.errors && errors.nombreUsuario) ? "caja-error" : "password" %>
+                    class=<%=(locals.errors && errors.password) ? "caja-errorr" : "password" %>
                     style=" width: 100%;"
                         value= "<%= locals.old && old.password ? old.password: ""; %>" >
                 </p>
                 <%if (locals.errors && errors.password) { %>
-                    <p class="errorMessage">
+                    <p class="errorMessager">
                         *<%= errors.password.msg%>
                     </p>
                     <% } %>
@@ -84,7 +84,7 @@
                     name="confirmacionPassword"  
                     placeholder="Confirmar contraseña"
                     id="" 
-                    class="confirmarContraseña" 
+                    class=<%=(locals.errors && errors.password) ? "caja-errorr" : "confirmarContraseña" %> 
                     style="width: 100%;" >
                 </p>
 
@@ -94,11 +94,11 @@
                     name="email" 
                     id="" 
                     placeholder="Correo electrónico" 
-                    class=<%=(locals.errors && errors.nombreUsuario) ? "caja-error" : "correo" %>
+                    class=<%=(locals.errors && errors.email) ? "caja-errorr" : "correo" %>
                         style="width: 100%;" >
                 </p>
                 <%if (locals.errors && errors.email) { %>
-                    <p class="errorMessage">
+                    <p class="errorMessager">
                         *<%= errors.email.msg%>
                     </p>
                     <% } %>
@@ -109,16 +109,16 @@
                     name="telefono" 
                     id=""  
                     placeholder="Numéro Telefónico (10 Dígitos)"
-                    class=<%=(locals.errors && errors.nombreUsuario) ? "caja-error" : "tel" %>
+                    class=<%=(locals.errors && errors.telefono) ? "caja-errorr" : "tel" %>
                     style="height: 30px; width: 100%;"
                         value= "<%= locals.old && old.telefono ? old.telefono: "";%>">
                 </p>
                 <%if (locals.errors && errors.telefono) { %>
-                    <p class="errorMessage">
+                    <p class="errorMessager">
                         *<%= errors.telefono.msg%>
                     </p>
                     <% } %>
-                <p>
+                <p class="avatarPicture">
                     <label name="avatarPicture">Foto de perfil:</label>
                     <input type="file" name="avatarPicture" id="" class="avatarPicture"
                         style="height: 30px; width: 100%;">

@@ -498,15 +498,38 @@ footer.for div div.redes{
 }
 
 /* register */
+input.caja-errorr{
+    margin-top: 10px;
+    border: red solid 2px;
+    border-radius: 5px;
+}
+p.errorMessager{
+    color: red;
+    margin-bottom:10px;
+    font-size: 14px;
+}
+
+input.nombreUsuario,
+input.nombrePila,
+input.apellido,
+input.password,
+input.confirmarContraseña,
+input.correo,
+input.tel,
+p.avatarPicture,
+main.register button{
+    margin-top:30px;
+}
+
 body.register{
     background-color: var(--contrasteLogin);
 }
 main.register{
     background-color: var(--contrasteLogin);
 }
-main.register form p{
+/* main.register form p{
     margin: 30px 30px;
-}
+} */
 
 main.register div.logo-container{
     width: 100%;
@@ -600,6 +623,7 @@ footer.formulario div div.redes{
     flex-direction: row;
     justify-content: space-around;
 }
+
 
 /* Carrito de compras */
 main.cart{
