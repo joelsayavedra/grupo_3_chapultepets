@@ -117,5 +117,29 @@
     "price": "5",
     "brand": "Split",
     "image": "prod_1627526569954.jpg"
+  },
+  {
+    "id": "8763ce9e-6fb4-4fc2-b7bf-24e4da9acf96",
+    "name": "prueba",
+    "description": "prueba",
+    "category": [
+      "prueba"
+    ],
+    "rating": 0,
+    "reviewsAmount": 0,
+    "price": 123,
+    "brand": "prueba"
+  },
+  {
+    "id": "8763ce9e-6fb4-4fc2-b7bf-24e4da9acf97",
+    "name": "prueba2",
+    "description": "prueba",
+    "category": [
+      "prueba"
+    ],
+    "rating": 0,
+    "reviewsAmount": 0,
+    "price": 123,
+    "brand": "prueba"
   }
 ]

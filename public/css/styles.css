@@ -918,7 +918,24 @@ main article button{
 main.inventory div.encabezado {
     display:flex;
 }
+/*Back*/
+body.back div.contenedor-logo img{
+    width: 100%;
+}
+body.back form{
+    text-align: center;
+    font-size: 14px;
+    width: 400px;
+    background-color: var(--fondoLogin);
+    margin: 0 auto;
+    border:  solid #E1E1E1 1px;
+    border-radius: 5px;
+    padding: 17px;
+}
 
+body.back form button{
+    font-size: 14px;
+}
 @media (min-width: 400px){
 
     /* header */
@@ -1092,6 +1109,8 @@ main.inventory div.encabezado {
     footer.admin div.cabeza h2{
         margin-bottom: 0px;
     }
+    /*Back*/
+    
 }
 
 @media (min-width: 720px){
@@ -1286,6 +1305,9 @@ main.inventory div.encabezado {
     footer.admin div.cabeza{
         width: 425px;
     }
+    /*Back*/
+    
+
 }
 
 @media (min-width: 1200px){
@@ -1458,4 +1480,6 @@ main.inventory div.encabezado {
     footer.admin div.cabeza{
         width: 400px;
     }
+    /*Back*/
+
 }
