@@ -22,6 +22,8 @@ const publicPath = path.resolve(__dirname,'./public');
 app.use(express.static(publicPath));
 
 //configuración de middlewares varios
+app.use(express.urlencoded({ extended: false })); //URL encode  - Para que nos pueda llegar la información desde el formulario al req.body 
+app.use(express.json()); //Para recibir los json de postman
 app.use(methodOverride("_method"));
 app.use(session({
     secret:"Semcreto",
@@ -30,6 +32,7 @@ app.use(session({
 }));
 app.use(cookies());
 app.use(userLoggedMiddleware);
+
 
 //Configuración del puerto
 app.listen(process.env.PORT || 3000,()=>{
@@ -40,3 +43,19 @@ app.listen(process.env.PORT || 3000,()=>{
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+    next(createError(404));
+});
+  
+// error handler
+app.use(function(err, req, res, next) {
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error404');
+});
