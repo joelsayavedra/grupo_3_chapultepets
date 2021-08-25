@@ -22,6 +22,8 @@ const publicPath = path.resolve(__dirname,'./public');
 app.use(express.static(publicPath));
 
 //configuración de middlewares varios
+app.use(express.urlencoded({ extended: false })); //URL encode  - Para que nos pueda llegar la información desde el formulario al req.body 
+app.use(express.json()); //Para recibir los json de postman
 app.use(methodOverride("_method"));
 app.use(session({
     secret:"Semcreto",
@@ -30,6 +32,7 @@ app.use(session({
 }));
 app.use(cookies());
 app.use(userLoggedMiddleware);
+
 
 //Configuración del puerto
 app.listen(process.env.PORT || 3000,()=>{

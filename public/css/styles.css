@@ -20,6 +20,20 @@
     --fondoTransiciones: #0022AA;
 }
 
+/*
+
+    ÍNDICE
+
+    Sin media query (SMQ)
+        vista: /partials/header SMQ 
+        vista: /users/profile SMQ
+    Media query 400px
+
+
+*/
+
+
+/*          Sin media query (SMQ)           */
 *{
     box-sizing:border-box;
     margin: 0;
@@ -39,7 +53,7 @@ main{
     color: var(--estrellas);
 }
 
-/* header */
+/* vista: /partials/header SMQ */
 header{
     background-color: var(--fondo-header);
     display: flex;
@@ -930,6 +944,18 @@ main.error img{
     width: 80%;
 }
 
+/*   vista: /users/profile SMQ    */
+main.profile{
+    margin: auto;
+    text-align: center;
+}
+
+main.profile img{
+    max-width: 300px;
+    border-radius: 50%;
+}
+
+/* Media query 400px */
 @media (min-width: 400px){
 
     /* header */
