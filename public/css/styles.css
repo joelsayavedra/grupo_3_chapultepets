@@ -250,6 +250,12 @@ body.index h1{
     background-color: var(--fondo-descripcion-carrusel);
 }
 
+.recommendation-bar h1,
+.home-logo-bar h1,
+.product-window h1{
+    width: 100%;
+}
+
 .home-logo-bar{
     display: flex;
     flex-wrap: wrap;
@@ -262,6 +268,11 @@ body.index h1{
 .home-logo-bar li{
     width: 15%;
     text-align: center;
+}
+
+.home-logo-bar a{
+    text-decoration: none;
+    color: black;
 }
 
 .home-logo-bar img{
@@ -626,8 +637,15 @@ footer.formulario div div.redes{
 
 
 /* Carrito de compras */
+body.cart{
+    background-color: white;
+}
+
 main.cart{
     font-size: 14px;
+    margin: auto;
+    background-color: white;
+    padding: 15px;
 }
 main.cart .resumen{
     font-size: 14px;
@@ -1301,6 +1319,31 @@ main.inventory div.encabezado {
         max-width: 75%;
     }
 
+    .div-principal{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .home-logo-bar{
+        width: 15%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .home-logo-bar li{
+        width: 100%
+    }
+
+    .product-window{
+        width: 83%;
+    }
+
+    .recommendation-bar,
+    .page-changer{
+        width: 100%;
+    }
+
     /* detalle producto  */
 
     /* footer */
@@ -1343,6 +1386,7 @@ main.inventory div.encabezado {
     /* Carrito de compras */
     main.cart{
         font-size: 20px;
+        max-width: 1200px;
     }
     main.cart .resumen{
         min-width: 350px;

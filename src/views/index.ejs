@@ -21,41 +21,54 @@
             </div>
 
             <!-- div para todo lo que va debajo del carrusel :v -->
-            <div>
+            <div class="div-principal">
                 <!-- Div de categorías -->
-                <h1>Categorías</h1>
+                
                 <ul class="home-logo-bar">
+                    <h1>Categorías</h1>
                     <li>
-                        <img src="img/general_placeholder.png" alt="">
-                        <p>logo categoría 1</p>
+                        <a href="/">
+                            <img src="img/general_placeholder.png" alt="">
+                            <p>logo categoría 1</p>
+                        </a>
                     </li>
                     <li>
-                        <img src="img/general_placeholder.png" alt="">
-                        <p>logo categoría 2</p>
+                        <a href="/">
+                            <img src="img/general_placeholder.png" alt="">
+                            <p>logo categoría 2</p>
+                        </a>
                     </li>
                     <li>
-                        <img src="img/general_placeholder.png" alt="">
-                        <p>logo categoría 3</p>
+                        <a href="/">
+                            <img src="img/general_placeholder.png" alt="">
+                            <p>logo categoría 3</p>
+                        </a>
                     </li>
                     <li>
-                        <img src="img/general_placeholder.png" alt="">
-                        <p>logo categoría 4</p>
+                        <a href="/">
+                            <img src="img/general_placeholder.png" alt="">
+                            <p>logo categoría 4</p>
+                        </a>
                     </li>
                     <li>
-                        <img src="img/general_placeholder.png" alt="">
-                        <p>logo categoría 5</p>
+                        <a href="/">
+                            <img src="img/general_placeholder.png" alt="">
+                            <p>logo categoría 5</p>
+                        </a>
                     </li>
                     <li>
-                        <img src="img/general_placeholder.png" alt="">
-                        <p>logo categoría 6</p>
+                        <a href="">
+                            <img src="img/general_placeholder.png" alt="">
+                            <p>logo categoría 6</p>
+                        </a>
                     </li>
                 </ul>
 
                 
                 <!-- Div de muestra de artículos -->
-                <h1>Todos nuestros productos</h1>
+                
                 <div class="product-window">
-
+                    <h1>Todos nuestros productos</h1>
                     <% for(let i=0;i<products.length;i++){ %>
                             
                         <a href="/products/<%= products[i].id %>">
@@ -77,32 +90,13 @@
                                 </p>
                             </article>
                         </a>
-                            
-                        
                         <% } %>
-
-                            <!-- <article>
-                <img src="/img/general_placeholder.png" alt="">
-                <h4>Nombre del producto</h4> -->
-
-                            <!-- casillero de estrellas -->
-
-                            <!-- <p class="product-rating-stars">
-                    <i class="fas fa-star stars"></i>
-                    <i class="fas fa-star stars"></i>
-                    <i class="fas fa-star-half-alt stars"></i>
-                    <i class="far fa-star stars"></i>
-                    <i class="far fa-star stars"></i>
-                    (19)
-                </p>
-                <p class="product-price">$00.00</p>
-                <p class="product-brand">Marca</p>
-            </article>                        -->
-
                 </div>
+
                 <!-- div de recomendaciones -->
-                <h1>Nuestras recomendaciones</h1>
+                
                 <div class="recommendation-bar">
+                    <h1>Nuestras recomendaciones</h1>
                     <img src="/img/general_placeholder.png" alt="">
                     <img src="/img/general_placeholder.png" alt="">
                     <img src="/img/general_placeholder.png" alt="">
