@@ -61,6 +61,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 //Ruta raíz de productos
+
 //  Edición de productos
 router.get('/edit/:id', productsController.edit);
 router.put("/edit/:id", upload.single("avatar"), validacionesEdicionProducto, productsController.update);

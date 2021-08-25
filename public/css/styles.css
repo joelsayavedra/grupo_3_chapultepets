@@ -895,6 +895,17 @@ main.inventory div.encabezado {
     display:flex;
 }
 
+/* error */
+main.error{
+    text-align: center;
+    padding: 5%;
+}
+
+main.error img{
+    padding: 5%;
+    width: 80%;
+}
+
 @media (min-width: 400px){
 
     /* header */
@@ -1262,6 +1273,11 @@ main.inventory div.encabezado {
     footer.admin div.cabeza{
         width: 425px;
     }
+
+    /* Error */
+    main.error img{
+        width: 60%;
+    }
 }
 
 @media (min-width: 1200px){
@@ -1433,5 +1449,10 @@ main.inventory div.encabezado {
 
     footer.admin div.cabeza{
         width: 400px;
+    }
+
+    /* Error */
+    main.error img{
+        width: 50%;
     }
 }
