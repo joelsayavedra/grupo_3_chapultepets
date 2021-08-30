@@ -25,15 +25,71 @@
     ÍNDICE
 
     Sin media query (SMQ)
+        Configuraciones generales SMQ
         vista: /partials/header SMQ 
+        vista: /partials/footer SMQ
+        vista: /index SMQ
+        vista: /products/productDetail SMQ
+        vista: /users/login SMQ
+        vista: /users/register SMQ
+        vista: /products/productCart SMQ
+        vista: /products/productCreate SMQ
+        vista: /products/productEdit SMQ
+        vista: /products/inventory SMQ
+        vista: /products/back SMQ
+        vista: /error404 SMQ
         vista: /users/profile SMQ
+
     Media query 400px
+        vista: /partials/header MQ400px
+        vista: /partials/footer MQ400px
+        vista: /index MQ400px
+        vista: /products/productDetail MQ400px
+        vista: /users/login MQ400px
+        vista: /users/register MQ400px
+        vista: /products/productCart MQ400px
+        vista: /products/productCreate MQ400px
+        vista: /products/productEdit MQ400px
+        vista: /products/inventory MQ400px
+        vista: /products/back MQ400px
+        vista: /error404 MQ400px
+        vista: /users/profile MQ400px
 
+    Media query 720px
+        vista: /partials/header MQ720px
+        vista: /partials/footer MQ720px
+        vista: /index MQ720px
+        vista: /products/productDetail MQ720px
+        vista: /users/login MQ720px
+        vista: /users/register MQ720px
+        vista: /products/productCart MQ720px
+        vista: /products/productCreate MQ720px
+        vista: /products/productEdit MQ720px
+        vista: /products/inventory MQ720px
+        vista: /products/back MQ720px
+        vista: /error404 MQ720px
+        vista: /users/profile MQ720px
 
+    Media query 1200px
+        Configuraciones generales MQ1200px
+        vista: /partials/header MQ1200px
+        vista: /partials/footer MQ1200px
+        vista: /index MQ1200px
+        vista: /products/productDetail MQ1200px
+        vista: /users/login MQ1200px
+        vista: /users/register MQ1200px
+        vista: /products/productCart MQ1200px
+        vista: /products/productCreate MQ1200px
+        vista: /products/productEdit MQ1200px
+        vista: /products/inventory MQ1200px
+        vista: /products/back MQ1200px
+        vista: /error404 MQ1200px
+        vista: /users/profile MQ1200px
 */
 
-
 /*          Sin media query (SMQ)           */
+
+/*           Configuraciones generales SMQ            */
 *{
     box-sizing:border-box;
     margin: 0;
@@ -182,7 +238,7 @@ header #fasLogin{
     border-radius: 5px;
 }
 
-/* footer */
+/* vista: /partials/footer SMQ */
 footer {
     font-size: 14px;;
     margin: 10px;
@@ -213,7 +269,8 @@ footer h2{
 footer p{
     margin-bottom: 5px;
 }
-/* index */
+
+/* vista: /index SMQ */
 
 main.index{
     background-color: var(--fondo-body);
@@ -372,7 +429,7 @@ body.index article:hover {
     transition: all 1s;
 }
 
-/* detalle producto  */
+/* vista: /products/productDetail SMQ  */
 
 .main-product-detail{
     display: flex;
@@ -433,7 +490,7 @@ body.index article:hover {
     margin-bottom: 15px;
 }
 
-/* login */
+/* vista: /users/login SMQ */
 
 body.login{
     background-color: var(--contrasteLogin);
@@ -522,7 +579,7 @@ footer.for div div.redes{
     justify-content: space-around;
 }
 
-/* register */
+/* vista: /users/register SMQ */
 input.caja-errorr{
     margin-top: 10px;
     border: red solid 2px;
@@ -650,7 +707,7 @@ footer.formulario div div.redes{
 }
 
 
-/* Carrito de compras */
+/* vista: /products/productCart SMQ */
 body.cart{
     background-color: white;
 }
@@ -747,7 +804,7 @@ footer.cart{
     margin-top: 50px;
 }
 
-/* Creación */
+/* vista: /products/productCreate SMQ */
 main.crear form{
     font-size: 14px;
     width: 275x;
@@ -832,7 +889,7 @@ main.crear form .ID:valid{
 }  */
 
 
-/* Edición */
+/* vista: /products/productEdit SMQ */
 main.editar form{
     font-size: 14px;
     width: 275px;
@@ -899,7 +956,7 @@ footer.admin div.cabeza{
     margin-bottom: 0px;
 }
 
-/* inventario */
+/* vista: /products/inventory SMQ */
 
 main.inventory article {
     font-size: 14px; 
@@ -932,7 +989,9 @@ main article button{
 main.inventory div.encabezado {
     display:flex;
 }
-/*Back*/
+
+
+/* vista: /products/back SMQ */
 body.back div.contenedor-logo img{
     width: 100%;
 }
@@ -950,7 +1009,8 @@ body.back form{
 body.back form button{
     font-size: 14px;
 }
-/* error */
+
+/* vista: /error404 SMQ */
 main.error{
     text-align: center;
     padding: 5%;
@@ -972,10 +1032,10 @@ main.profile img{
     border-radius: 50%;
 }
 
-/* Media query 400px */
+/*          Media query 400px           */
 @media (min-width: 400px){
 
-    /* header */
+    /* vista: /partials/header MQ400px */
     .upper-nav-bar{
         width: 80%;
     }
@@ -991,13 +1051,8 @@ main.profile img{
     .upper-nav-bar-element img{
         width: 42px;
     }
-    
 
-    /* index */
-
-    /* detalle producto  */
-
-    /* footer */
+    /* vista: /partials/footer MQ400px */
     footer {
         font-size: 14px;
         flex-direction: row;
@@ -1019,7 +1074,10 @@ main.profile img{
         color: var(--fondoTransiciones);;
     }
 
-    /* login */
+    /*      vista: /index MQ400px       */
+    /*      vista: /products/productDetail MQ400px       */
+
+    /* vista: /users/login MQ400px */
 
     main.login form{
         width: 275px;
@@ -1044,7 +1102,7 @@ main.profile img{
     }
 
    
-    /* register */
+    /* vista: /users/register MQ400px */
     main.register form{
         width: 350px;
     }
@@ -1063,7 +1121,7 @@ main.profile img{
     footer.formulario div.cabeza h2{
         margin-bottom: 0px;
     }
-    /* Carrito de compras */
+    /* vista: /products/productCart MQ400px */
     main.cart{
         font-size: 16px;
     }
@@ -1089,7 +1147,7 @@ main.profile img{
     main.cart .etiquetaPrecio{
         margin-left: 10px;
     }
-    /* Creación */
+    /* vista: /products/productCreate MQ400px */
     main.crear form{
         width: 325px;
     }
@@ -1109,7 +1167,7 @@ main.profile img{
         height: 35px;
     }
 
-    /* Edición */
+    /* vista: /products/productEdit MQ400px */
 
     main.editar form{
         width: 325px;
@@ -1146,13 +1204,17 @@ main.profile img{
     footer.admin div.cabeza h2{
         margin-bottom: 0px;
     }
-    /*Back*/
+
+    /* vista: /products/inventory MQ400px */
+    /* vista: /products/back MQ400px */
+    /* vista: /error404 MQ400px */
+    /* vista: /users/profile MQ400px */
     
 }
 
 @media (min-width: 720px){
 
-    /* header */
+    /* vista: /partials/header MQ720px */
     .main-logo-desktop{
         display: block;
     }
@@ -1174,7 +1236,12 @@ main.profile img{
         width: 70%;
     }
 
-    /* index */
+    /*          vista: /partials/footer MQ720px         */
+    footer {
+        font-size: 16px;
+    }
+
+    /*          vista: /index MQ720px            */
 
     .search-form button p{
         display: block;
@@ -1201,7 +1268,7 @@ main.profile img{
         object-fit: contain;
     }
 
-    /* detalle producto  */
+    /*          vista: /products/productDetail MQ720px        */
     .product-presentation-image{
         width: 58%;
     }
@@ -1218,13 +1285,8 @@ main.profile img{
     .opinions-section{
         max-width: 60%;
     }
-
-    /* footer */
-    footer {
-        font-size: 16px;
-    }
     
-    /* login */
+    /*          vista: /users/login MQ720px         */
     main.login form p input{
         height: 40px;
     }
@@ -1247,7 +1309,7 @@ main.profile img{
         width: 350px;
     }
 
-    /* register */
+    /*          vista: /users/register MQ720px          */
     main.register form.formulario p input{
         height: 40px;
     }
@@ -1263,7 +1325,7 @@ main.profile img{
         width: 450px;
     }
 
-    /* Carrito de compras */
+    /*          vista: /products/productCart MQ720px            */
     main.cart{
         font-size: 18px;
     }
@@ -1296,7 +1358,7 @@ main.profile img{
         min-width: 300px;
     }
 
-    /* Creación */
+    /*          vista: /products/productCreate MQ720px          */
     main.crear form p input{
         height: 40px;
     }
@@ -1317,7 +1379,7 @@ main.profile img{
         height: 40px;
     }
 
-    /* Edición */
+    /*          vista: /products/productEdit MQ720px            */
 
     main.editar form p input{
         height: 40px;
@@ -1342,22 +1404,24 @@ main.profile img{
     footer.admin div.cabeza{
         width: 425px;
     }
-    /*Back*/
     
+    /*          vista: /products/inventory MQ720px          */
+    /*          vista: /products/back MQ720px            */
 
-
-    /* Error */
+    /*          vista: /error404 MQ720px            */
     main.error img{
         width: 60%;
     }
+
+    /*          vista: /users/profile MQ720px           */
 }
 
 @media (min-width: 1200px){
 
-    /* Generales */
+    /*          Configuraciones generales MQ1200px      */
 
 
-    /* header */
+    /*          vista: /partials/header MQ1200px            */
     .upper-nav-bar-container{
         font-size: 14px;
     }
@@ -1377,7 +1441,12 @@ main.profile img{
         margin-bottom: 10px;
     }
 
-    /* index */
+    /*          vista: /partials/footer MQ1200px            */
+    footer {
+        font-size: 18px;
+    }
+
+    /*          vista: /index MQ1200px          */
     main.index{
         margin: auto;
         max-width: 75%;
@@ -1408,13 +1477,8 @@ main.profile img{
         width: 100%;
     }
 
-    /* detalle producto  */
-
-    /* footer */
-    footer {
-        font-size: 18px;
-    }
-    /* login */
+    /*          vista: /products/productDetail MQ1200px         */
+    /*           vista: /users/login MQ1200px           */
     main.login form p input{
         height: 50px;
     }
@@ -1431,7 +1495,7 @@ main.profile img{
         font-size: 18px;
     }
 
-    /* register */
+    /*          vista: /users/register MQ1200px         */
     main.register form p input{
         height: 50px;
     }
@@ -1447,7 +1511,7 @@ main.profile img{
         width: 450px;
     }
 
-    /* Carrito de compras */
+    /*          vista: /products/productCart MQ1200px           */
     main.cart{
         font-size: 20px;
         max-width: 1200px;
@@ -1485,7 +1549,7 @@ main.profile img{
         min-width: none;
     }
 
-    /* Creación */
+    /*          vista: /products/productCreate MQ1200px         */
 
     main.crear form p input{
         height: 50px;
@@ -1502,7 +1566,7 @@ main.profile img{
         height: 50px;
     }
 
-    /* Edición */
+    /*          vista: /products/productEdit MQ1200px           */
 
     main.editar form p input{
         height: 50px;
@@ -1522,11 +1586,12 @@ main.profile img{
     footer.admin div.cabeza{
         width: 400px;
     }
-    /*Back*/
-
-
-    /* Error */
+    /*          vista: /products/inventory MQ1200px             */
+    /*          vista: /products/back MQ1200px          */
+    /*          vista: /error404 MQ1200px           */
     main.error img{
         width: 50%;
     }
+
+    /*          vista: /users/profile MQ1200px */
 }
