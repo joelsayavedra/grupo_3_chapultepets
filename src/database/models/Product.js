@@ -57,13 +57,13 @@ module.exports = function(sequelize, dataTypes){
             timestamps: false,
         });
 
-        Product.belongsToMany(models.Invoice,{
-            as: "invoices",
-            through: models.ProductInvoice,
-            foreignKey: "id_product",
-            otherKey: "id_invoice",
-            timestamps: false,
-        });
+        // Product.belongsToMany(models.Invoice,{
+        //     as: "invoices",
+        //     through: models.ProductInvoice,
+        //     foreignKey: "id_product",
+        //     otherKey: "id_invoice",
+        //     timestamps: false,
+        // });
     };
 
     return Product;
