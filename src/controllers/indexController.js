@@ -23,12 +23,16 @@ const controller = {
         //     res.send("error!: "+err);
         // })
 
-        let productos = await db.Product.findAll();
-        let categorias = await db.Category.findAll();
-        
+        let productos = await db.Product.findAll({
+            include: {association: "categories"}
+        });
+        let categorias = await db.Category.findAll({
+            include: {association: "products"}
+        });
+
         res.send({
-            productos: productos,
-            categorias: categorias,
+            productos,
+            categorias,
         });
     },
 };
