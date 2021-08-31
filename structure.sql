@@ -63,7 +63,9 @@ CREATE TABLE `invoices` (
   `received_date` datetime NOT NULL,
   `delivery_rating` float NOT NULL,
   `id_status` varchar(36) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `id_status` (`id_status`),
+  CONSTRAINT `invoices_ibfk_1` FOREIGN KEY (`id_status`) REFERENCES `statuses` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -115,9 +117,12 @@ DROP TABLE IF EXISTS `products_categories`;
 CREATE TABLE `products_categories` (
   `id` varchar(36) NOT NULL,
   `id_product` varchar(36) NOT NULL,
-  `id_invoice` varchar(36) NOT NULL,
-  `sold_price` float NOT NULL,
-  PRIMARY KEY (`id`)
+  `id_category` varchar(36) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `products_categories_ibfk_1_idx` (`id_product`),
+  KEY `products_categories_ibfk_1_idx1` (`id_category`),
+  CONSTRAINT `products_categories_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`),
+  CONSTRAINT `products_categories_ibfk_2` FOREIGN KEY (`id_category`) REFERENCES `categories` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -142,7 +147,11 @@ CREATE TABLE `products_invoices` (
   `id_product` varchar(36) NOT NULL,
   `id_invoice` varchar(36) NOT NULL,
   `sold_price` varchar(36) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `products_invoices_ibfk_2_idx` (`id_invoice`),
+  KEY `products_invoices_ibfk_1_idx` (`id_product`),
+  CONSTRAINT `products_invoices_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`),
+  CONSTRAINT `products_invoices_ibfk_2` FOREIGN KEY (`id_invoice`) REFERENCES `invoices` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -219,4 +228,4 @@ SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-30 10:58:23
+-- Dump completed on 2021-08-31  9:42:54
