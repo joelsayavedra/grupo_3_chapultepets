@@ -59,9 +59,9 @@ CREATE TABLE `invoices` (
   `id_user` varchar(36) NOT NULL,
   `total` float NOT NULL,
   `sale_date` datetime NOT NULL,
-  `delivery_date` datetime NOT NULL,
-  `received_date` datetime NOT NULL,
-  `delivery_rating` float NOT NULL,
+  `delivery_date` datetime,
+  `received_date` datetime,
+  `delivery_rating` float,
   `id_status` varchar(36) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_status` (`id_status`),
@@ -202,9 +202,8 @@ CREATE TABLE `users` (
   `email` varchar(45) NOT NULL,
   `password` varchar(60) NOT NULL,
   `telefono` varchar(12) NOT NULL,
-  `direccion` varchar(100) NOT NULL,
+  `direccion` varchar(100),
   `imagenPerfil` varchar(45) NOT NULL,
-  `userscol` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
