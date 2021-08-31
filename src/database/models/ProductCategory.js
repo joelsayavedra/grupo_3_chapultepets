@@ -1,6 +1,6 @@
 module.exports = function(sequelize, dataTypes){
         
-    let alias = "ProductInvoice";
+    let alias = "ProductCategory";
 
     let cols={
         id: {
@@ -16,22 +16,18 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.STRING(36),
             allowNull: false,
         },
-        sold_price: {
-            type: dataTypes.FLOAT.UNSIGNED,
-            allowNull: false,
-        },
     };
 
     let config = {
-        tableName: "products_invoices",
+        tableName: "products_categories",
         timestamps: false,
         modelName: alias
     }
 
-    let ProductInvoice = sequelize.define(alias,cols,config);
+    let ProductCategory = sequelize.define(alias,cols,config);
 
-    ProductInvoice.prototype.funcionDeInstancia = function () {
+    ProductCategory.prototype.funcionDeInstancia = function () {
     };
 
-    return ProductInvoice;
+    return ProductCategory;
 }
