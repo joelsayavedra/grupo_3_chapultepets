@@ -65,7 +65,9 @@ CREATE TABLE `invoices` (
   `id_status` varchar(36) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_status` (`id_status`),
-  CONSTRAINT `invoices_ibfk_1` FOREIGN KEY (`id_status`) REFERENCES `statuses` (`id`)
+  KEY `invoices_ibfk_2_idx` (`id_user`),
+  CONSTRAINT `invoices_ibfk_1` FOREIGN KEY (`id_status`) REFERENCES `statuses` (`id`),
+  CONSTRAINT `invoices_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -228,4 +230,4 @@ SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-31  9:42:54
+-- Dump completed on 2021-08-31  9:53:28
