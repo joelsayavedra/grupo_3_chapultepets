@@ -16,7 +16,15 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
         timestamps: false,
     }
-    let Statuses = sequelize.define(alias, cols, config);
+    let Status = sequelize.define(alias, cols, config);
+
+    Status.associate = (models) => {
+        Status.belongsToMany(models.Invoice, {
+            as: "invoices",
+            foreignKey: "id_status",
+            timestamps: false
+        });
+    };
     
-    return Statuses;
+    return Status;
 }

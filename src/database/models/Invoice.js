@@ -44,6 +44,29 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
         timestamps: false,
     };
-    const invoice = sequelize.define(alias, cols, config);
-    return invoice;
+    const Invoice = sequelize.define(alias, cols, config);
+    Invoice.associate = (models) => {
+
+        Invoice.hasMany(models.User, {
+            as: "users",
+            foreignKey: "id_user",
+            timestamps: false,
+        });
+
+        Invoice.hasMany(models.Status, {
+            as: "statuses",
+            foreignKey: "id_status",
+            timestamps: false,
+        });
+
+        Invoice.belongsToMany(models.Product,{
+             as: "products",
+             through: models.ProductInvoice,
+             foreignKey: "id_invoice",
+             otherKey: "id_product",
+             timestamps: false,
+        });
+    };
+    
+    return Invoice;    
 }
