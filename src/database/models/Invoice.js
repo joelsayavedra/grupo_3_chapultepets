@@ -4,7 +4,7 @@ module.exports = (sequelize, dataTypes) => {
     let alias = "Invoice";
     let cols = {
         id: {
-            type: dataTypes.STRING(36).UNSIGNED,
+            type: dataTypes.STRING(36),
             primaryKey: true,
             allowNull: false,
         },
@@ -13,7 +13,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
         },
         id_user: {
-            type: dataTypes.STRING(36).UNSIGNED,
+            type: dataTypes.STRING(36),
             allowNull: false,
         },
         total: {
@@ -37,7 +37,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
         },
         id_status:{
-            type: dataTypes.STRING(36).UNSIGNED,
+            type: dataTypes.STRING(36),
             allowNull: false,
         },
     };
