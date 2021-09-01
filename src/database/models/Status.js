@@ -1,7 +1,5 @@
-const { sequelize } = require(".");
-
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Statuses";
+    let alias = "Status";
     let cols = {
         id: {
             type: dataTypes.STRING(36),
@@ -19,7 +17,7 @@ module.exports = (sequelize, dataTypes) => {
     let Status = sequelize.define(alias, cols, config);
 
     Status.associate = (models) => {
-        Status.belongsToMany(models.Invoice, {
+        Status.belongsTo(models.Invoice, {
             as: "invoices",
             foreignKey: "id_status",
             timestamps: false

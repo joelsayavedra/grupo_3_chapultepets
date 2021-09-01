@@ -1,5 +1,3 @@
-const { sequelize } = require(".");
-
 module.exports = (sequelize, dataTypes) => {
     let alias = 'User'
     let cols = {
@@ -47,7 +45,7 @@ module.exports = (sequelize, dataTypes) => {
     const User = sequelize.define(alias, cols, config);
 
     User.associate = (models) => {
-        User.belongsToMany(models.Invoice, {
+        User.belongsTo(models.Invoice, {
             as: "invoices",
             foreignKey: "id_user",
             timestamps: false,
