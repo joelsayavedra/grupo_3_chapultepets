@@ -46,12 +46,21 @@ module.exports = (sequelize, dataTypes) => {
     };
     const Invoice = sequelize.define(alias, cols, config);
     Invoice.associate = (models) => {
+
         Invoice.hasMany(models.User, {
             as: "users",
             foreignKey: "id_user",
             timestamps: false,
         });
-    };
 
+        Invoice.belongsToMany(models.Product,{
+             as: "products",
+             through: models.ProductInvoice,
+             foreignKey: "id_invoice",
+             otherKey: "id_product",
+             timestamps: false,
+        });
+    };
+    
     return Invoice;    
 }
