@@ -53,6 +53,12 @@ module.exports = (sequelize, dataTypes) => {
             timestamps: false,
         });
 
+        Invoice.hasMany(models.Status, {
+            as: "statuses",
+            foreignKey: "id_status",
+            timestamps: false,
+        });
+
         Invoice.belongsToMany(models.Product,{
              as: "products",
              through: models.ProductInvoice,
