@@ -4,11 +4,11 @@ module.exports = (sequelize, dataTypes) => {
     let alias = "Statuses";
     let cols = {
         id: {
-            type: dataTypes.String(36),
+            type: dataTypes.STRING(36),
             allowNull: false,
         },
         name: {
-            type: dataTypes.String(20),
+            type: dataTypes.STRING(20),
             allowNull: false,
         }
     };
