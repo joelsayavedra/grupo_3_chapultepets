@@ -13,19 +13,19 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         apellido: {
-            type: dataTypes.String(20).UNSIGNED,
+            type: dataTypes.STRING(20).UNSIGNED,
             allowNull: false,
         },
         nombrePila: {
-            type: dataTypes.String(20).UNSIGNED,
+            type: dataTypes.STRING(20).UNSIGNED,
             allowNull: false,
         },
         email: {
-            type: dataTypes.String(45).UNSIGNED,
+            type: dataTypes.STRING(45).UNSIGNED,
             allowNull: false,
         },
         password: {
-            type: dataTypes.String(60).UNSIGNED,
+            type: dataTypes.STRING(60).UNSIGNED,
             allowNull: false,
         },
         telefono: {
@@ -36,7 +36,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.String(100).UNSIGNED,
         },
         imagenPerfil: {
-            type: dataTypes.String(45).UNSIGNED,
+            type: dataTypes.STRING(45).UNSIGNED,
             allowNull: false,
         },
     };
@@ -46,4 +46,6 @@ module.exports = (sequelize, dataTypes) => {
 
     const Actor = sequelize.define(alias, cols, config);
     return Actor;
+
+
 }

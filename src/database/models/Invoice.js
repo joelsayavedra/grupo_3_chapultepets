@@ -4,7 +4,7 @@ module.exports = (sequelize, dataTypes) => {
     let alias = "Invoice";
     let cols = {
         id: {
-            type: dataTypes.String(36).UNSIGNED,
+            type: dataTypes.STRING(36).UNSIGNED,
             primaryKey: true,
             allowNull: false,
         },
@@ -13,11 +13,11 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
         },
         id_user: {
-            type: dataTypes.String(36).UNSIGNED,
+            type: dataTypes.STRING(36).UNSIGNED,
             allowNull: false,
         },
         total: {
-            type: dataTypes.float,
+            type: dataTypes.FLOAT,
             allowNull: false,
         },
         sale_date: {
@@ -33,11 +33,11 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         delivery_rating: {
-            type: dataTypes.float,
+            type: dataTypes.FLOAT,
             allowNull: false,
         },
         id_status:{
-            type: dataTypes.String(36).UNSIGNED,
+            type: dataTypes.STRING(36).UNSIGNED,
             allowNull: false,
         },
     };
