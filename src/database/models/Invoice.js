@@ -44,6 +44,14 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
         timestamps: false,
     };
-    const invoice = sequelize.define(alias, cols, config);
-    return invoice;
+    const Invoice = sequelize.define(alias, cols, config);
+    Invoice.associate = (models) => {
+        Invoice.hasMany(models.User, {
+            as: "users",
+            foreignKey: "id_user",
+            timestamps: false,
+        });
+    };
+
+    return Invoice;    
 }

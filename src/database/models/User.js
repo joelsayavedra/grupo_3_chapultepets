@@ -41,11 +41,19 @@ module.exports = (sequelize, dataTypes) => {
         },
     };
     let config = {
-        timestamps:false
+        timestamps: false
     }
 
-    const Actor = sequelize.define(alias, cols, config);
-    return Actor;
+    const User = sequelize.define(alias, cols, config);
+
+    User.associate = (models) => {
+        User.belongsToMany(models.Invoice, {
+            as: "invoices",
+            foreignKey: "id_user",
+            timestamps: false,
+        });
+    };
 
 
+    return User;
 }
