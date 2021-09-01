@@ -5,6 +5,7 @@ module.exports = (sequelize, dataTypes) => {
     let cols = {
         id: {
             type: dataTypes.STRING(36),
+            primaryKey: true,
             allowNull: false,
         },
         name: {

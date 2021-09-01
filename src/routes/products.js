@@ -28,7 +28,6 @@ const validacionesCreacionProducto= [
                 throw new Error(`La extensiones permitidas son ${acceptedExtensions.join(", ")}`);
             }
         }
-        
         return true;
     })
 ];
@@ -59,8 +58,6 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
-
-//Ruta raíz de productos
 
 //  Edición de productos
 router.get('/edit/:id', productsController.edit);

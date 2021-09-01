@@ -1,7 +1,9 @@
 const fs = require('fs');
 const path = require('path');
+
 const { v4: getID } = require("uuid");
 const { validationResult } = require("express-validator");
+const db = require('../database/models/index.js');
 
 const productsFilePath = path.join(__dirname, '../database/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -33,16 +35,15 @@ const controller = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
-            let categories = req.body.category.split(",");
-            for (let i = 0; i < categories.length; i++) {
-                categories[i] = categories[i].trim();
-            }
+            // let categories = req.body.category.split(",");
+            // for (let i = 0; i < categories.length; i++) {
+            //     categories[i] = categories[i].trim();
+            // }
 
             let producto = {
                 id: getID(),
                 name: req.body.name,
                 description: req.body.description,
-                category: categories,
                 rating: 0,
                 reviewsAmount: 0,
                 price: Number(req.body.price),
@@ -50,15 +51,24 @@ const controller = {
             };
 
             if (req.file) {
-                producto.image = req.file.avatarPicture;
+                producto.image = req.file.filename;
             } else {
                 producto.image = "default.png";
             };
 
-            products.push(producto);
-            fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+            // return res.send({...producto});
 
-            res.redirect("/");
+            db.Product.create({
+                ...producto,
+            })
+            .then(resultado=>{
+                res.redirect("/");
+            })
+            .catch(err=>{
+                res.send("error!: "+err)
+            })
+            // products.push(producto);
+            // fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
         } else {
             res.render('products/productCreate', {
                 errors: errors.mapped(),
@@ -122,23 +132,46 @@ const controller = {
 
     },
     product: function (req, res) {
-        res.render('products/inventory', {
-            products: products
+        db.Product.findAll()
+        .then(productos=>{
+            res.render('products/inventory', {
+                products: productos
+            });
+        })
+        .catch(error=>{
+            res.send("Error!: "+error);
         });
+
+        
     },
     productid: function (req, res) {
         let indice = -1;
-        for (let i = 0; i < products.length; i++) {
-            if (req.params.id == products[i].id) {
-                indice = i;
-            }
-        }
-        if (indice >= 0) {
-            res.send(products[indice]);
-        }
-        else {
-            res.send("El producto no está en inventario");
-        }
+
+        db.Product.findByPk(req.params.id,{
+            include:{association:"categories"}
+        })
+        .then(producto=>{
+            res.render('products/productDetail',{
+                product: producto
+            });
+        })
+        .catch(error=>{
+            res.send("Error!: "+error);
+        });
+
+
+
+        // for (let i = 0; i < products.length; i++) {
+        //     if (req.params.id == products[i].id) {
+        //         indice = i;
+        //     }
+        // }
+        // if (indice >= 0) {
+        //     res.send(products[indice]);
+        // }
+        // else {
+        //     res.send("El producto no está en inventario");
+        // }
     },
     erase: function (req, res) {
         var nuevoProducts = products.filter(function (iden) {
