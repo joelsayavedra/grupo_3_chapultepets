@@ -57,5 +57,6 @@ app.use(function(err, req, res, next) {
 
     // render the error page
     res.status(err.status || 500);
-    res.render('error404');
+    // res.render('error404');
+    res.send("Error!:<br/><br/>"+err+"<br/><br/>( Si ves esta página, al programador se le olvidó colocar la vista de error del sitio )")
 });

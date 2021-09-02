@@ -10,15 +10,26 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controller = {
     edit: function (req, res) {
-        let id = req.params.id;
-        let producto = products.find(function (objeto) {
-            return objeto.id == id;
+        db.Product.findByPk(req.params.id)
+        .then(producto=>{
+            // return res.send(producto);
+            res.render('products/productEdit', {
+                producto: producto,
+                id: producto.id
+            });
+        })
+        .catch(error=>{
+            return res.send("Error!: "+error);
         });
+        // let id = req.params.id;
+        // let producto = products.find(function (objeto) {
+        //     return objeto.id == id;
+        // });
 
-        res.render('products/productEdit', {
-            producto: producto,
-            id: id
-        });
+        // res.render('products/productEdit', {
+        //     producto: producto,
+        //     id: id
+        // });
     },
     create: function (req, res) {
         res.render('products/productCreate');
@@ -80,56 +91,46 @@ const controller = {
     update: function (req, res) {
         let errors = validationResult(req);
 
-        if (errors.isEmpty()) {
-            let categories = req.body.category.split(",");
-            for (let i = 0; i < categories.length; i++) {
-                categories[i] = categories[i].trim();
+        db.Product.findByPk(req.params.id)
+        .then(producto=>{
+            if (errors.isEmpty()) {        
+                //Obtención del producto de la base de datos, en forma de objeto
+                let editedProduct = producto;
+    
+                //Sobreescritura de valores de los campos en el objeto recién creado
+                editedProduct.name = req.body.name;
+                editedProduct.price = req.body.price;
+                // editedProduct.category = categories;
+                editedProduct.brand = req.body.brand;
+                editedProduct.description = req.body.description;
+                if (req.file) {
+                    editedProduct.image = req.file.filename;
+                };
+    
+                db.Product.update({
+                    name: editedProduct.name,
+                    price: editedProduct.price,
+                    brand: editedProduct.brand,
+                    description: editedProduct.description,
+                    image: editedProduct.image,
+                },
+                {
+                    where: {id:req.params.id}
+                })
+    
+                res.redirect("/");
+            } else {   
+                res.render('products/productEdit', {
+                    producto: producto,
+                    // id: req.params.id,
+                    errors: errors.mapped(),
+                    old: req.body,
+                });
             }
-
-            //Obtención del id del producto, extraído de la url
-            let id = req.params.id;
-
-            //Obtención del producto de la base de datos, en forma de objeto
-            let editedProduct = products.find(function (objeto) {
-                return objeto.id == id;
-            });
-
-            //Sobreescritura de valores de los campos en el objeto recién creado
-            editedProduct.name = req.body.name;
-            editedProduct.price = req.body.price;
-            editedProduct.category = categories;
-            editedProduct.brand = req.body.brand;
-            editedProduct.description = req.body.description;
-            if (req.file) {
-                editedProduct.image = req.file.filename;
-            };
-
-            //obtención del índice del producto en el array de products.json
-            let productIndex = products.findIndex(object => object.id == id);
-
-            //Edición del array products
-            if (productIndex != -1) {
-                products.splice(productIndex, 1, editedProduct);
-            };
-
-            //Escritura del array modificado en el archivo products.json
-            fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2 /*Para guardar en formato más legible*/));
-
-            res.redirect("/products");
-        } else {
-            let id = req.params.id;
-            let producto = products.find(function (objeto) {
-                return objeto.id == id;
-            });
-
-            res.render('products/productEdit', {
-                producto: producto,
-                id: id,
-                errors: errors.mapped(),
-                old: req.body,
-            });
-        }
-
+        })
+        .catch(error=>{
+            return res.send("Error: " + error);
+        });
     },
     product: function (req, res) {
         db.Product.findAll()
@@ -140,9 +141,7 @@ const controller = {
         })
         .catch(error=>{
             res.send("Error!: "+error);
-        });
-
-        
+        });        
     },
     productid: function (req, res) {
         let indice = -1;
@@ -174,12 +173,15 @@ const controller = {
         // }
     },
     erase: function (req, res) {
-        var nuevoProducts = products.filter(function (iden) {
-            return iden.id != req.params.id;
+        db.Product.destroy({
+            where: {id : req.params.id},
+        })
+        .then(flag=>{
+            res.render("products/back");
+        })
+        .catch(error=>{
+            return res.send("Error: " + error);
         });
-
-        fs.writeFileSync(productsFilePath, JSON.stringify(nuevoProducts, null, 2));
-        res.render("products/back");
     }
 };
 
