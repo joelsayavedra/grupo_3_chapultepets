@@ -4,7 +4,8 @@
         <title>ChapultePets - Detalle del producto</title>
     </head>
 
-    <body>
+    <body class="product-detail">
+        <%- include("../partials/header") %>
 
         <main class="main-product-detail">
             <div class="product-presentation">
@@ -43,63 +44,43 @@
                             <% } %>
                         <% } %>
                     </p>
-                    
-
 
                     <div class="opinions-section">
-                        <h2>Opiniones</h2>
-                        <select name="cantidad" id="">
-                            <option value="1 estrella">1 estrella</option>
-                            <option value="2 estrellas">2 estrellas</option>
-                            <option value="3 estrellas">3 estrellas</option>
-                            <option value="4 estrellas">4 estrellas</option>
-                            <option value="5 estrellas">5 estrellas</option>
-                        </select>
-                        <!-- Opinión 1 -->
-                        <div>
-                            <div>
-                                <img src="Portrait_Placeholder.png" alt="">
-                                <div>
-                                    <h4>Usuario 1</h4>
-                                    <p class="stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </p>
-                                </div>
-                                <p>Fecha</p>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ullam totam nemo libero
-                                facere
-                                fugiat consequuntur nulla, nostrum nesciunt adipisci vitae harum sint ut dignissimos
-                                quam
-                                dolor, deleniti est. Quibusdam.</p>
+                        <div class="opinions-section-title-bar">
+                            <h2>Opiniones</h2>
+                            <select name="cantidad" id="">
+                                <option value="0" selected>Todas</option>
+                                <option value="1 estrella">1 estrella</option>
+                                <option value="2 estrellas">2 estrellas</option>
+                                <option value="3 estrellas">3 estrellas</option>
+                                <option value="4 estrellas">4 estrellas</option>
+                                <option value="5 estrellas">5 estrellas</option>
+                            </select>
                         </div>
 
-                        <!-- Opinión 2 -->
-                        <div>
-                            <div>
-                                <img src="Portrait_Placeholder.png" alt="">
-                                <div>
-                                    <h4>Usuario 2</h4>
-                                    <p class="stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
+                        <!-- Opiniones -->
+                        <% if (product.reviews.length == 0) { %>
+                            <h4>Nadie ha reseñado este producto aún.</h4>
+                        <% } else {%>
+
+                            <% for( let i = 0; i < product.reviews.length; i++ ) { %>
+                                <div class="a-review">
+                                    <img src="/img/users/Portrait_Placeholder.png" alt="">
+                                    <h4><%= product.reviews[i].id_user %></h4>
+                                    <p class="product-rating-stars">
+                                        <%- include("../partials/rating_stars",{ rating : product.reviews[i].rating }) %> 
+                                        <br/>
+                                        <%= product.reviews[i].createdAt %>
                                     </p>
+                                    <p class="the-review"><%= product.reviews[i].review %></p>
                                 </div>
-                                <p>Fecha</p>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ullam totam nemo libero
-                                facere
-                                fugiat consequuntur nulla, nostrum nesciunt adipisci vitae harum sint ut dignissimos
-                                quam
-                                dolor, deleniti est. Quibusdam.</p>
-                        </div>
+                            <% } %>
+                            
+                        <% }%>
+
+                        
+
+
                     </div>
         </main>
 

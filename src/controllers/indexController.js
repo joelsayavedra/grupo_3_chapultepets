@@ -10,7 +10,7 @@ const db = require('../database/models/index.js');
 const controller = {
     index: async function(req,res){
         let productos = await db.Product.findAll({
-            include: {association: "categories"}
+            include: {association: "categories"},
         });
 
         res.render('index',{
@@ -20,10 +20,10 @@ const controller = {
     prueba: async function(req,res){
 
         let productos = await db.Product.findAll({
-            include: {
-                // association: "reviews",
-                association: "categories",
-            }
+            include: [
+                {association: "reviews",},
+                {association: "categories",}
+            ],
         });
         let categorias = await db.Category.findAll({
             include: {association: "products"}

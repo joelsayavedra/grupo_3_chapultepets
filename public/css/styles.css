@@ -443,7 +443,7 @@ body.index article:hover {
 }
 
 .product-presentation-image img{
-    width: 90%;
+    width: 70%;
 }
 
 .product-presentation{
@@ -488,6 +488,48 @@ body.index article:hover {
 .product-detail,
 .opinions-section{
     margin-bottom: 15px;
+}
+
+div.opinions-section{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.opinions-section h2{
+    width: 50%;
+}
+
+.opinions-section-title-bar{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+div.opinions-section img{
+    width: 50px;
+    height: 50px;
+}
+
+div.a-review{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+div.a-review .the-review{
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+}
+
+div.a-review .product-rating-stars{
+    width: 10rem;
+}
+
+div.a-review h4{
+    width: 50%;
 }
 
 /* vista: /users/login SMQ */
@@ -1270,11 +1312,11 @@ main.profile img{
 
     /*          vista: /products/productDetail MQ720px        */
     .product-presentation-image{
-        width: 58%;
+        width: 50%;
     }
 
     .product-presentation-text{
-        width: 38%;
+        width: 50%;
     }
 
     .product-presentation,
@@ -1283,7 +1325,7 @@ main.profile img{
     }
 
     .opinions-section{
-        max-width: 60%;
+        width: 100%;
     }
     
     /*          vista: /users/login MQ720px         */
@@ -1478,6 +1520,12 @@ main.profile img{
     }
 
     /*          vista: /products/productDetail MQ1200px         */
+    main.main-product-detail{
+        margin: auto;
+        max-width: 75%;
+    }
+
+
     /*           vista: /users/login MQ1200px           */
     main.login form p input{
         height: 50px;

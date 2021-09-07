@@ -1,12 +1,12 @@
-const fs = require('fs');
-const path = require('path');
+// const fs = require('fs');
+// const path = require('path');
 
 const { v4: getID } = require("uuid");
 const { validationResult } = require("express-validator");
 const db = require('../database/models/index.js');
 
-const productsFilePath = path.join(__dirname, '../database/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+// const productsFilePath = path.join(__dirname, '../database/products.json');
+// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controller = {
     edit: function(req, res) {
@@ -143,7 +143,10 @@ const controller = {
         let indice = -1;
 
         db.Product.findByPk(req.params.id,{
-            include:{association:"categories"}
+            include:[
+                {association:"categories"},
+                {association:"reviews"},
+            ]
         })
         .then(producto=>{
             // return res.send(producto);
