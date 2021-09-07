@@ -1,8 +1,8 @@
-module.exports = function(sequelize, dataTypes){
-        
+module.exports = function(sequelize, dataTypes) {
+
     let alias = "Product";
 
-    let cols={
+    let cols = {
         id: {
             type: dataTypes.STRING(36),
             primaryKey: true,
@@ -16,23 +16,23 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.STRING,
             allowNull: false,
         },
-        description:{
+        description: {
             type: dataTypes.STRING,
             allowNull: false,
         },
-        rating:{
+        rating: {
             type: dataTypes.FLOAT.UNSIGNED,
             allowNull: false,
         },
-        reviewsAmount:{
+        reviewsAmount: {
             type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false,
         },
-        price:{
+        price: {
             type: dataTypes.FLOAT.UNSIGNED,
             allowNull: false,
         },
-        brand:{
+        brand: {
             type: dataTypes.STRING,
         },
     };
@@ -43,13 +43,12 @@ module.exports = function(sequelize, dataTypes){
         modelName: alias
     }
 
-    let Product = sequelize.define(alias,cols,config);
+    let Product = sequelize.define(alias, cols, config);
 
-    Product.prototype.funcionDeInstancia = function () {
-    };
+    Product.prototype.funcionDeInstancia = function() {};
 
-    Product.associate = function(models){
-        Product.belongsToMany(models.Category,{
+    Product.associate = function(models) {
+        Product.belongsToMany(models.Category, {
             as: "categories",
             through: models.ProductCategory,
             foreignKey: "id_product",
@@ -57,13 +56,13 @@ module.exports = function(sequelize, dataTypes){
             timestamps: false,
         });
 
-        // Product.belongsToMany(models.Invoice,{
-        //     as: "invoices",
-        //     through: models.ProductInvoice,
-        //     foreignKey: "id_product",
-        //     otherKey: "id_invoice",
-        //     timestamps: false,
-        // });
+        Product.belongsToMany(models.Invoice, {
+            as: "invoices",
+            through: models.ProductInvoice,
+            foreignKey: "id_product",
+            otherKey: "id_invoice",
+            timestamps: false,
+        });
     };
 
     return Product;

@@ -9,10 +9,10 @@ const path = require('path');
 const multer = require("multer");
 
 const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
+    destination: function(req, file, cb) {
         cb(null, path.join(__dirname, "../../public/img/users"));
     },
-    filename: function (req, file, cb) {
+    filename: function(req, file, cb) {
         const newFileName = "users_" + Date.now() + path.extname(file.originalname);
         cb(null, newFileName);
     }
@@ -22,20 +22,20 @@ const upload = multer({ storage: storage });
 
 let validacionRegistro = [
     check('nombreUsuario')
-        .notEmpty().withMessage('Escribe un nombre para este sitio.').bail()
-        .isLength({ min: 4 }).withMessage('Debe ser de al menos 4 caracteres'),
+    .notEmpty().withMessage('Escribe un nombre para este sitio.').bail()
+    .isLength({ min: 4 }).withMessage('Debe ser de al menos 4 caracteres'),
     check('nombrePila')
-        .notEmpty().withMessage('Escribe tu nombre'),
+    .notEmpty().withMessage('Escribe tu nombre'),
     check('apellido')
-        .notEmpty().withMessage('Escribe tu apellido'),
+    .notEmpty().withMessage('Escribe tu apellido'),
     check('email')
-        .isEmail().withMessage('Debe ser una dirección de correo válida'),
+    .isEmail().withMessage('Debe ser una dirección de correo válida'),
     check('password')
-        .notEmpty().withMessage('Escribe una constraseña').bail()
-        .isStrongPassword().withMessage('La contraseña debe contener al menos 8 caracteres. Al menos una mayúscula, una mínuscula, un símbolo y un número'),
+    .notEmpty().withMessage('Escribe una constraseña').bail()
+    .isStrongPassword().withMessage('La contraseña debe contener al menos 8 caracteres. Al menos una mayúscula, una mínuscula, un símbolo y un número'),
     check('telefono')
-        .isLength({ min: 9 }).withMessage('Debe contener al menos 10 caracteres numéricos').bail()
-        .isInt().withMessage('Solo se aceptan caracteres numéricos'),
+    .isLength({ min: 9 }).withMessage('Debe contener al menos 10 caracteres numéricos').bail()
+    .isInt().withMessage('Solo se aceptan caracteres numéricos'),
 ];
 
 //Ruta raíz de usuarios
@@ -48,5 +48,7 @@ router.post("/login", upload.single("avatarPicture"), usersController.userLoginP
 
 router.get('/profile', authMiddleware, usersController.profile);
 router.get('/logout', authMiddleware, usersController.logout);
+
+router.get('/prueba', usersController.test);
 
 module.exports = router;
