@@ -34,7 +34,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.FLOAT,
             allowNull: false,
         },
-        id_status:{
+        id_status: {
             type: dataTypes.STRING(36),
             allowNull: false,
         },
@@ -45,26 +45,26 @@ module.exports = (sequelize, dataTypes) => {
     const Invoice = sequelize.define(alias, cols, config);
     Invoice.associate = (models) => {
 
-        Invoice.hasMany(models.User, {
+        Invoice.belongsTo(models.User, {
             as: "users",
             foreignKey: "id_user",
             timestamps: false,
         });
 
-        Invoice.hasMany(models.Status, {
+        Invoice.belongsTo(models.Status, {
             as: "statuses",
             foreignKey: "id_status",
             timestamps: false,
         });
 
-        Invoice.belongsToMany(models.Product,{
-             as: "products",
-             through: models.ProductInvoice,
-             foreignKey: "id_invoice",
-             otherKey: "id_product",
-             timestamps: false,
+        Invoice.belongsToMany(models.Product, {
+            as: "products",
+            through: models.ProductInvoice,
+            foreignKey: "id_invoice",
+            otherKey: "id_product",
+            timestamps: false,
         });
     };
-    
-    return Invoice;    
+
+    return Invoice;
 }

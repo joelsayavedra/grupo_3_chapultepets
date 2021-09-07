@@ -2,31 +2,32 @@ const User = require("../models/User");
 const bcryptjs = require('bcryptjs');
 const fs = require('fs');
 const path = require('path');
-const { v4: getID } = require("uuid");
-const { validationResult} = require("express-validator");
 
-const usersFilePath = path.join(__dirname, '../database/users.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+const { v4: getID } = require("uuid");
+const { validationResult } = require("express-validator");
+const db = require('../database/models');
+
+// const usersFilePath = path.join(__dirname, '../database/users.json');
+// const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const controller = {
-    login: function (req, res) {
+    login: function(req, res) {
         // console.log(req.cookies.testing);
         res.render('users/login');
     },
-    register: function (req, res) {
+    register: function(req, res) {
         // res.cookie("testing", "Put that cookie down!",{maxAge: 1000*300});
         res.render('users/register');
     },
-    profile: function (req, res) {
-        res.render('users/profile', {
-        });
+    profile: function(req, res) {
+        res.render('users/profile', {});
     },
-    logout: function (req, res) {
+    logout: function(req, res) {
         req.session.destroy();
         res.clearCookie("userName");
         return res.redirect("/");
     },
-    userLoginProcess: function (req, res) {
+    userLoginProcess: function(req, res) {
         // res.send(req.body);
 
         let userToLogin = User.findByField("nombreUsuario", req.body.nombreUsuario);
@@ -61,10 +62,11 @@ const controller = {
         };
     },
 
-    userRegister: function (req, res) {
+    userRegister: function(req, res) {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
             const passwordcrypt = bcryptjs.hashSync(req.body.password, 12);
+            db
             let usuario = {
                 id: getID(),
                 nombreUsuario: req.body.nombreUsuario,
@@ -73,25 +75,43 @@ const controller = {
                 email: req.body.email,
                 password: passwordcrypt,
                 telefono: req.body.telefono,
+                direccion: null,
             };
             if (req.file) {
                 usuario.imagenPerfil = req.file.filename;
             } else {
                 usuario.imagenPerfil = "default.png";
             };
+            db.User.create({
+                    ...usuario,
+                })
+                .then(resultado => {
+                    res.send("¡Hay un nuevo entrenador pokemon!")
+                })
+                .catch(err => {
+                    res.send("error!: " + err)
+                })
+                // users.push(usuario);
+                // fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
 
-            users.push(usuario);
-            fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
+            // res.send("¡Hay un nuevo entrenador pokemon!");
+        } else {
+            res.render('users/register', {
+                errors: errors.mapped(),
+                old: req.body
+            });
+        }
 
-            res.send("¡Hay un nuevo entrenador pokemon!");
-        }
-        else {
-            res.render('users/register',
-                {
-                    errors: errors.mapped(),
-                    old: req.body
-                });
-        }
+
+    },
+    test: function(req, res) {
+        db.User.findAll()
+            .then(resultado => {
+                res.send(resultado);
+            })
+            .catch(error => {
+                res.send("Error!: " + error);
+            });
 
     }
 };

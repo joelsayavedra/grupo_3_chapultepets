@@ -17,12 +17,11 @@ module.exports = (sequelize, dataTypes) => {
     let Status = sequelize.define(alias, cols, config);
 
     Status.associate = (models) => {
-        Status.belongsTo(models.Invoice, {
+        Status.hasMany(models.Invoice, {
             as: "invoices",
-            foreignKey: "id_status",
-            timestamps: false
+            foreignKey: "id_status"
         });
     };
-    
+
     return Status;
 }

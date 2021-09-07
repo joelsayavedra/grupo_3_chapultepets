@@ -9,18 +9,18 @@ const productsFilePath = path.join(__dirname, '../database/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controller = {
-    edit: function (req, res) {
+    edit: function(req, res) {
         db.Product.findByPk(req.params.id)
-        .then(producto=>{
-            // return res.send(producto);
-            res.render('products/productEdit', {
-                producto: producto,
-                id: producto.id
+            .then(producto => {
+                // return res.send(producto);
+                res.render('products/productEdit', {
+                    producto: producto,
+                    id: producto.id
+                });
+            })
+            .catch(error => {
+                return res.send("Error!: " + error);
             });
-        })
-        .catch(error=>{
-            return res.send("Error!: "+error);
-        });
         // let id = req.params.id;
         // let producto = products.find(function (objeto) {
         //     return objeto.id == id;
@@ -31,10 +31,10 @@ const controller = {
         //     id: id
         // });
     },
-    create: function (req, res) {
+    create: function(req, res) {
         res.render('products/productCreate');
     },
-    cart: function (req, res) {
+    cart: function(req, res) {
         res.render('products/productCart', {
             user: req.session.userLogged,
         });
@@ -67,16 +67,16 @@ const controller = {
             // return res.send({...producto});
 
             db.Product.create({
-                ...producto,
-            })
-            .then(resultado=>{
-                res.redirect("/");
-            })
-            .catch(err=>{
-                res.send("error!: "+err)
-            })
-            // products.push(producto);
-            // fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+                    ...producto,
+                })
+                .then(resultado => {
+                    res.redirect("/");
+                })
+                .catch(err => {
+                    res.send("error!: " + err)
+                })
+                // products.push(producto);
+                // fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
         } else {
             res.render('products/productCreate', {
                 errors: errors.mapped(),
@@ -85,60 +85,59 @@ const controller = {
             // res.send(errors);
         }
     },
-    update: function (req, res) {
+    update: function(req, res) {
         let errors = validationResult(req);
 
         db.Product.findByPk(req.params.id)
-        .then(producto=>{
-            if (errors.isEmpty()) {        
-                //Obtención del producto de la base de datos, en forma de objeto
-                let editedProduct = producto;
-    
-                //Sobreescritura de valores de los campos en el objeto recién creado
-                editedProduct.name = req.body.name;
-                editedProduct.price = req.body.price;
-                // editedProduct.category = categories;
-                editedProduct.brand = req.body.brand;
-                editedProduct.description = req.body.description;
-                if (req.file) {
-                    editedProduct.image = req.file.filename;
-                };
-    
-                db.Product.update({
-                    name: editedProduct.name,
-                    price: editedProduct.price,
-                    brand: editedProduct.brand,
-                    description: editedProduct.description,
-                    image: editedProduct.image,
-                },
-                {
-                    where: {id:req.params.id}
-                })
-    
-                res.redirect("/");
-            } else {   
-                res.render('products/productEdit', {
-                    producto: producto,
-                    // id: req.params.id,
-                    errors: errors.mapped(),
-                    old: req.body,
-                });
-            }
-        })
-        .catch(error=>{
-            return res.send("Error: " + error);
-        });
-    },
-    product: function (req, res) {
-        db.Product.findAll()
-        .then(productos=>{
-            res.render('products/inventory', {
-                products: productos
+            .then(producto => {
+                if (errors.isEmpty()) {
+                    //Obtención del producto de la base de datos, en forma de objeto
+                    let editedProduct = producto;
+
+                    //Sobreescritura de valores de los campos en el objeto recién creado
+                    editedProduct.name = req.body.name;
+                    editedProduct.price = req.body.price;
+                    // editedProduct.category = categories;
+                    editedProduct.brand = req.body.brand;
+                    editedProduct.description = req.body.description;
+                    if (req.file) {
+                        editedProduct.image = req.file.filename;
+                    };
+
+                    db.Product.update({
+                        name: editedProduct.name,
+                        price: editedProduct.price,
+                        brand: editedProduct.brand,
+                        description: editedProduct.description,
+                        image: editedProduct.image,
+                    }, {
+                        where: { id: req.params.id }
+                    })
+
+                    res.redirect("/");
+                } else {
+                    res.render('products/productEdit', {
+                        producto: producto,
+                        // id: req.params.id,
+                        errors: errors.mapped(),
+                        old: req.body,
+                    });
+                }
+            })
+            .catch(error => {
+                return res.send("Error: " + error);
             });
-        })
-        .catch(error=>{
-            res.send("Error!: "+error);
-        });        
+    },
+    product: function(req, res) {
+        db.Product.findAll()
+            .then(productos => {
+                res.render('products/inventory', {
+                    products: productos
+                });
+            })
+            .catch(error => {
+                res.send("Error!: " + error);
+            });
     },
     detail: function (req, res) {
         let indice = -1;
@@ -152,33 +151,21 @@ const controller = {
                 product: producto
             });
         })
-        .catch(error=>{
-            res.send("Error!: "+error);
+        .catch(error => {
+        res.send("Error!: " + error);
         });
-
-        // for (let i = 0; i < products.length; i++) {
-        //     if (req.params.id == products[i].id) {
-        //         indice = i;
-        //     }
-        // }
-        // if (indice >= 0) {
-        //     res.send(products[indice]);
-        // }
-        // else {
-        //     res.send("El producto no está en inventario");
-        // }
     },
-    erase: function (req, res) {
+    erase: function(req, res) {
         db.Product.destroy({
-            where: {id : req.params.id},
-        })
-        .then(flag=>{
-            res.render("products/back");
-        })
-        .catch(error=>{
-            return res.send("Error: " + error);
-        });
-    }
+                where: { id: req.params.id },
+            })
+            .then(flag => {
+                res.render("products/back");
+            })
+            .catch(error => {
+                return res.send("Error: " + error);
+            });
+    },
 };
 
 module.exports = controller;
