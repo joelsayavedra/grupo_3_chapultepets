@@ -57,6 +57,11 @@ module.exports = function(sequelize, dataTypes){
             timestamps: false,
         });
 
+        Product.hasMany(models.Review,{
+            as: "reviews",
+            foreignKey: "id_product",
+        });
+
         // Product.belongsToMany(models.Invoice,{
         //     as: "invoices",
         //     through: models.ProductInvoice,

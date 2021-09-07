@@ -20,7 +20,10 @@ const controller = {
     prueba: async function(req,res){
 
         let productos = await db.Product.findAll({
-            include: {association: "categories"}
+            include: {
+                // association: "reviews",
+                association: "categories",
+            }
         });
         let categorias = await db.Category.findAll({
             include: {association: "products"}

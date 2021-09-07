@@ -39,9 +39,6 @@ const controller = {
             user: req.session.userLogged,
         });
     },
-    detail: function (req, res) {
-        res.render('products/productDetail');
-    },
     store: function (req, res) {
         let errors = validationResult(req);
 
@@ -143,13 +140,14 @@ const controller = {
             res.send("Error!: "+error);
         });        
     },
-    productid: function (req, res) {
+    detail: function (req, res) {
         let indice = -1;
 
         db.Product.findByPk(req.params.id,{
             include:{association:"categories"}
         })
         .then(producto=>{
+            // return res.send(producto);
             res.render('products/productDetail',{
                 product: producto
             });
@@ -157,8 +155,6 @@ const controller = {
         .catch(error=>{
             res.send("Error!: "+error);
         });
-
-
 
         // for (let i = 0; i < products.length; i++) {
         //     if (req.params.id == products[i].id) {

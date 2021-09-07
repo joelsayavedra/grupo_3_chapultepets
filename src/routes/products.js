@@ -67,11 +67,11 @@ router.get('/create', productsController.create);
 router.post('/create', upload.single("avatar"), validacionesCreacionProducto,productsController.store);
 //  Carrito de compras
 router.get('/cart', productsController.cart);
-//  Detalle del producto
-router.get('/detail', productsController.detail);
 // Listado de productos
 router.get('/', productsController.product);
-router.get('/:id', productsController.productid);
+//  Detalle del producto
+router.get('/:id', productsController.detail);
+//  Eliminación de producto
 router.delete('/:id', productsController.erase);
 
 module.exports = router;

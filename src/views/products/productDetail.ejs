@@ -12,39 +12,38 @@
                     <img src="/img/products/<%= product.image %>" alt="">
                 </div>
                 <div class="product-presentation-text">
-                    <h4>Título</h4>
-                    <p class="product-presentation-rating">
-                        <i class="fas fa-star stars"></i>
-                        <i class="fas fa-star stars"></i>
-                        <i class="fas fa-star-half-alt stars"></i>
-                        <i class="far fa-star stars"></i>
-                        <i class="far fa-star stars"></i>
-                        (19)
+                    <h4><%= product.name %></h4>
+
+
+                    <p class="product-rating-stars">
+                        <%- include("../partials/rating_stars",{ rating : product.rating }) %>
+                        <%= product.rating %>
+                        (<%= product.reviewsAmount %>)
                     </p>
-                    <p class="product-presentation-brand">Marca</p>
-                    <p class="product-presentation-price">$00.00</p>
+
+
+                    <p class="product-presentation-brand"><%= product.brand %></p>
+                    <p class="product-presentation-price">$<%= product.price %></p>
                     <form action="">
                         <label for="cantidad">Cantidad:</label>
-                        <select name="cantidad" id="">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <button>Agregar al carrito</button>
+                        <input type="number" name="cantidad">
+                        <button type="submit">Agregar al carrito</button>
                     </form>
-                    <h4>Resumen del producto</h4>
+                    <h4>Descripción</h4>
                     <div class="product-presentation-resume">
-                        <ul>
-                            <li>Resumen</li>
-                            <li>Resumen</li>
-                            <li>Resumen</li>
-                            <li>Resumen</li>
-                            <li>Resumen</li>
-                            <li>Resumen</li>
-                        </ul>
+                        <p><%= product.description %></p>
                     </div>
+                    <h4>Categorías: </h4>
+                    <p>
+                        <% for( let i = 0; i < product.categories.length; i++ ) { %>
+                            <% if (i==product.categories.length-1) { %>
+                                <%= product.categories[i].name %>. 
+                            <% } else{ %>
+                                <%= product.categories[i].name %>, 
+                            <% } %>
+                        <% } %>
+                    </p>
+                    
 
 
                     <div class="opinions-section">
