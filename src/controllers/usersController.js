@@ -1,4 +1,4 @@
-const User = require("../models/User");
+// const User = require("../models/User");
 const bcryptjs = require('bcryptjs');
 const fs = require('fs');
 const path = require('path');
@@ -30,36 +30,46 @@ const controller = {
     userLoginProcess: function(req, res) {
         // res.send(req.body);
 
-        let userToLogin = User.findByField("nombreUsuario", req.body.nombreUsuario);
-        if (userToLogin) {
-            if (bcryptjs.compareSync(req.body.password, userToLogin.password)) {
-                delete userToLogin.password;
-                req.session.userLogged = userToLogin;
+        // let userToLogin = User.findByField("nombreUsuario", req.body.nombreUsuario);
+        db.User.findOne({
+            where: {
+                nombreUsuario: req.body.nombreUsuario,
+            }
+        }).then(result => {
+            var userToLogin = result;
+            return userToLogin;
+        }).then(userToLogin => {
+            if (userToLogin) {
+                if (bcryptjs.compareSync(req.body.password, userToLogin.password)) {
+                    delete userToLogin.password;
+                    req.session.userLogged = userToLogin;
 
-                if (req.body.recordar) {
-                    res.cookie("userName", req.body.nombreUsuario, { maxAge: 1000 * 60 * 30 });
-                }
+                    if (req.body.recordar) {
+                        res.cookie("userName", req.body.nombreUsuario, { maxAge: 1000 * 60 * 30 });
+                    }
 
-                res.redirect("/users/profile");
+                    res.redirect("/users/profile");
 
+                } else {
+                    res.render('users/login', {
+                        errors: {
+                            password: {
+                                msg: "¡Contraseña incorrecta!"
+                            }
+                        }
+                    });
+                };
             } else {
                 res.render('users/login', {
                     errors: {
-                        password: {
-                            msg: "¡Contraseña incorrecta!"
+                        nombreUsuario: {
+                            msg: "¡Usuario no encontrado!"
                         }
                     }
                 });
             };
-        } else {
-            res.render('users/login', {
-                errors: {
-                    nombreUsuario: {
-                        msg: "¡Usuario no encontrado!"
-                    }
-                }
-            });
-        };
+        });
+
     },
 
     userRegister: function(req, res) {
@@ -80,7 +90,7 @@ const controller = {
             if (req.file) {
                 usuario.imagenPerfil = req.file.filename;
             } else {
-                usuario.imagenPerfil = "default.png";
+                usuario.imagenPerfil = "Portrait_Placeholder.png";
             };
             db.User.create({
                     ...usuario,
@@ -104,8 +114,28 @@ const controller = {
 
 
     },
-    test: function(req, res) {
-        db.User.findAll()
+    edit: function(req, res) {
+        db.User.update({
+                nombreUsuario: req.body.nombreUsuario,
+            }, {
+                where: {
+                    id: req.body.id
+                }
+            })
+            .then(resultado => {
+                res.send(resultado);
+            })
+            .catch(error => {
+                res.send("Error!: " + error);
+            });
+
+    },
+    destroy: function(req, res) {
+        db.User.destroy({
+                where: {
+                    id: req.body.id
+                }
+            })
             .then(resultado => {
                 res.send(resultado);
             })

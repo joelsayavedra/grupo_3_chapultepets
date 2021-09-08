@@ -49,6 +49,7 @@ router.post("/login", upload.single("avatarPicture"), usersController.userLoginP
 router.get('/profile', authMiddleware, usersController.profile);
 router.get('/logout', authMiddleware, usersController.logout);
 
-router.get('/prueba', usersController.test);
+router.put('/profile/edit', usersController.edit);
+router.delete('/profile/edit', usersController.destroy);
 
 module.exports = router;
