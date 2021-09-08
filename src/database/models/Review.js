@@ -1,8 +1,8 @@
-module.exports = function(sequelize, dataTypes){
-        
+module.exports = function(sequelize, dataTypes) {
+
     let alias = "Review";
 
-    let cols={
+    let cols = {
         id: {
             type: dataTypes.STRING(36),
             primaryKey: true,
@@ -16,15 +16,15 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.STRING(36),
             allowNull: false,
         },
-        review:{
+        review: {
             type: dataTypes.STRING,
             allowNull: false,
         },
-        createdAt:{
+        createdAt: {
             type: dataTypes.DATE,
             allowNull: false,
         },
-        rating:{
+        rating: {
             type: dataTypes.INTEGER,
             allowNull: false,
         },
@@ -36,18 +36,17 @@ module.exports = function(sequelize, dataTypes){
         modelName: alias
     }
 
-    let Review = sequelize.define(alias,cols,config);
+    let Review = sequelize.define(alias, cols, config);
 
-    Review.prototype.funcionDeInstancia = function () {
-    };
+    Review.prototype.funcionDeInstancia = function() {};
 
-    Review.associate = function(models){
-        Review.belongsTo(models.User,{
+    Review.associate = function(models) {
+        Review.belongsTo(models.User, {
             as: "user",
             foreignKey: "id_user",
         });
 
-        Review.belongsTo(models.Product,{
+        Review.belongsTo(models.Product, {
             as: "product",
             foreignKey: "id_product",
         });
