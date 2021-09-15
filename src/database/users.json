@@ -1,30 +1,100 @@
 [
   {
     "id": 1,
-    "nombreUsuario": "Lotlux",
-    "nombrePila": "Jolene",
-    "apellido": "Dulson",
-    "email": "jdulson0@amazon.co.jp",
-    "password": "nZq3ndmdtTGE",
+    "nombreUsuario": "jarronbonito",
+    "nombrePila": "Benedicto",
+    "apellido": "Sanchez",
+    "email": "benedicto0@test.com",
+    "password": "Contraseña1+",
     "telefono": "4835448790",
     "imagenPerfil": "Portrait_Placeholder.png"
   },
   {
-    "id": 21,
+    "id": 2,
     "nombreUsuario": "CabaioPan",
     "nombrePila": "Caballo",
     "email": "cabaiopan@mail.com",
-    "password": "pan123456",
+    "password": "Pan123456+",
     "apellido": "Pan",
     "telefono": "5555111122",
     "imagenPerfil": "Portrait_Placeholder.png"
   },
   {
-    "id": 22,
-    "nombreUsuario": "UsuarioDePrueba1",
-    "nombrePila": "Usuario",
-    "apellido": "Deprueba",
-    "password": "$2a$10$WFsj9eBSeP7iFAah0YOaxuegvs4Qk9Vt.WJigtkr79YSJeB3IcZAG",
+    "id": 3,
+    "nombreUsuario": "SeñordeGafas",
+    "nombrePila": "Luis",
+    "apellido": "Medina",
+    "password": "VoyLicoreria1+",
+    "email": "prueba@mail.com",
+    "telefono": "5554444888",
+    "imagenPerfil": "peeper.jpg"
+  },
+  {
+    "id": 4,
+    "nombreUsuario": "SeñoradeGafas",
+    "nombrePila": "Luisa",
+    "apellido": "Medina",
+    "password": "VoyLicoreria1+",
+    "email": "pasamada@mail.com",
+    "telefono": "5689784512",
+    "imagenPerfil": "peeper.jpg"
+  },
+  {
+    "id": 5,
+    "nombreUsuario": "hijoconsentido",
+    "nombrePila": "Federico",
+    "apellido": "andarroza",
+    "password": "pasamontañas1+",
+    "email": "pasada@mail.com",
+    "telefono": "789465130",
+    "imagenPerfil": "peeper.jpg"
+  },
+  {
+    "id": 6,
+    "nombreUsuario": "SeñordeGafas",
+    "nombrePila": "Luis",
+    "apellido": "Medina",
+    "password": "VoyLicoreria1+",
+    "email": "prueba@mail.com",
+    "telefono": "5554444888",
+    "imagenPerfil": "peeper.jpg"
+  },
+  {
+    "id": 7,
+    "nombreUsuario": "SeñordeGafas",
+    "nombrePila": "Luis",
+    "apellido": "Medina",
+    "password": "VoyLicoreria1+",
+    "email": "prueba@mail.com",
+    "telefono": "5554444888",
+    "imagenPerfil": "peeper.jpg"
+  },
+  {
+    "id": 8,
+    "nombreUsuario": "SeñordeGafas",
+    "nombrePila": "Luis",
+    "apellido": "Medina",
+    "password": "VoyLicoreria1+",
+    "email": "prueba@mail.com",
+    "telefono": "5554444888",
+    "imagenPerfil": "peeper.jpg"
+  },
+  {
+    "id": 9,
+    "nombreUsuario": "SeñordeGafas",
+    "nombrePila": "Luis",
+    "apellido": "Medina",
+    "password": "VoyLicoreria1+",
+    "email": "prueba@mail.com",
+    "telefono": "5554444888",
+    "imagenPerfil": "peeper.jpg"
+  },
+  {
+    "id": 10,
+    "nombreUsuario": "SeñordeGafas",
+    "nombrePila": "Luis",
+    "apellido": "Medina",
+    "password": "VoyLicoreria1+",
     "email": "prueba@mail.com",
     "telefono": "5554444888",
     "imagenPerfil": "peeper.jpg"

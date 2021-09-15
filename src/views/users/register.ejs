@@ -70,7 +70,7 @@
                     id=""
                     class=<%=(locals.errors && errors.password) ? "caja-errorr" : "password" %>
                     style=" width: 100%;"
-                        value= "<%= locals.old && old.password ? old.password: ""; %>" >
+                    value= "<%= locals.old && old.password ? old.password: ""; %>" >
                 </p>
                 <%if (locals.errors && errors.password) { %>
                     <p class="errorMessager">
@@ -85,7 +85,8 @@
                     placeholder="Confirmar contraseña"
                     id="" 
                     class=<%=(locals.errors && errors.password) ? "caja-errorr" : "confirmarContraseña" %> 
-                    style="width: 100%;" >
+                    style="width: 100%;" 
+                    value= "<%= locals.old && old.email ? old.email: ""; %>">
                 </p>
 
                 <p>
