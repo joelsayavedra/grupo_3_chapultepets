@@ -4,7 +4,7 @@
         <title>ChapultePets - Detalle del producto</title>
     </head>
 
-    <body class="product-detail">
+    <body class="body-product-detail">
         <%- include("../partials/header") %>
 
         <main class="main-product-detail">
@@ -23,7 +23,7 @@
                     </p>
 
 
-                    <p class="product-presentation-brand"><%= product.brand %></p>
+                    <p class="product-presentation-brand">Marca: <%= product.brand %></p>
                     <p class="product-presentation-price">$<%= product.price %></p>
                     <form action="">
                         <label for="cantidad">Cantidad:</label>
@@ -32,7 +32,7 @@
                     </form>
                     <h4>Descripción</h4>
                     <div class="product-presentation-resume">
-                        <p><%= product.description %></p>
+                        <p class="product-presentation-description"><%= product.description %></p>
                     </div>
                     <h4>Categorías: </h4>
                     <p>
@@ -48,7 +48,7 @@
                     <div class="opinions-section">
                         <div class="opinions-section-title-bar">
                             <h2>Opiniones</h2>
-                            <select name="cantidad" id="">
+                            <select name="cantidad" class="opinions-star-selector">
                                 <option value="0" selected>Todas</option>
                                 <option value="1 estrella">1 estrella</option>
                                 <option value="2 estrellas">2 estrellas</option>

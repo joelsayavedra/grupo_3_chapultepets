@@ -96,7 +96,7 @@
     padding: 0;
 }
 
-body.index{
+body{
     background-color: var(--fondo-body);
 }
 
@@ -431,10 +431,20 @@ body.index article:hover {
 
 /* vista: /products/productDetail SMQ  */
 
+select.opinions-star-selector{
+    height: 1.5rem;
+    margin-top: 15px;
+}
+
+h4,h2{
+    margin-top: 15px;
+}
+
 .main-product-detail{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: var(--fondo-body);
 }
 
 .product-presentation-image{
@@ -469,10 +479,16 @@ body.index article:hover {
     width: 100%;
 }
 
-.product-presentation-text P,
+.product-presentation-text p.product-presentation-price,
+.product-presentation-text p.product-rating-stars,
+.product-presentation-text p.product-presentation-brand,
 .product-presentation-text form{
     text-align: center;
     width: 48%;
+}
+
+.product-presentation-text p.product-presentation-description{
+    text-align: justify;
 }
 
 .product-presentation-resume{
