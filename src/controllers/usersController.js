@@ -76,7 +76,6 @@ const controller = {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
             const passwordcrypt = bcryptjs.hashSync(req.body.password, 12);
-            db
             let usuario = {
                 id: getID(),
                 nombreUsuario: req.body.nombreUsuario,
