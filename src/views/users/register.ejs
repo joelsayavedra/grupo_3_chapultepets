@@ -86,7 +86,7 @@
                     id="" 
                     class=<%=(locals.errors && errors.password) ? "caja-errorr" : "confirmarContraseña" %> 
                     style="width: 100%;" 
-                    value= "<%= locals.old && old.email ? old.email: ""; %>">
+                    >
                 </p>
 
                 <p>
@@ -94,7 +94,8 @@
                     type="email" 
                     name="email" 
                     id="" 
-                    placeholder="Correo electrónico" 
+                    placeholder="Correo electrónico"
+                    value= "<%= locals.old && old.email ? old.email: ""; %>" 
                     class=<%=(locals.errors && errors.email) ? "caja-errorr" : "correo" %>
                         style="width: 100%;" >
                 </p>
