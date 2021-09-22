@@ -68,15 +68,5 @@
     "email": "itsmo@mail.com",
     "telefono": "9999999999",
     "imagenPerfil": "peeper.jpg"
-  },
-  {
-    "id": 8,
-    "nombreUsuario": "SeñordeGafas",
-    "nombrePila": "Luis",
-    "apellido": "Medina",
-    "password": "VoyLicoreria1+",
-    "email": "prueba@mail.com",
-    "telefono": "5554444888",
-    "imagenPerfil": "peeper.jpg"
   }
 ]
