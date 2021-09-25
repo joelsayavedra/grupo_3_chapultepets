@@ -472,9 +472,12 @@ h4,h2{
     justify-content: space-between;
     width: 100%;
     align-self: start;
+    /* border: rgb(196, 196, 196) 1px solid; */
+    border-radius: 20px;
+    padding: 15px;
 }
 
-.product-presentation-text h4{
+.product-presentation-text h1{
     text-align: center;
     width: 100%;
 }
@@ -509,6 +512,9 @@ h4,h2{
 div.opinions-section{
     display: flex;
     flex-wrap: wrap;
+    /* border: rgb(196, 196, 196) 1px solid; */
+    border-radius: 20px;
+    padding: 15px;
 }
 
 div.opinions-section h2{
@@ -531,7 +537,11 @@ div.a-review{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     margin-bottom: 15px;
+    border: rgb(196, 196, 196) 1px solid;
+    border-radius: 20px;
+    padding: 15px;
 }
 
 div.a-review .the-review{
