@@ -146,7 +146,7 @@ header A{
 }
 
 .upper-nav-bar-container{
-    width: 60%;
+    width: 80%;
     font-size: 12px;
     background-color: var(--fondo-header);
     padding: 17px;
@@ -473,7 +473,8 @@ h4,h2{
     width: 100%;
     align-self: start;
     /* border: rgb(196, 196, 196) 1px solid; */
-    border-radius: 20px;
+    /* background-color: white; */
+    /* border-radius: 20px; */
     padding: 15px;
 }
 
@@ -496,6 +497,10 @@ h4,h2{
 
 .product-presentation-resume{
     margin-left: 15px;
+    width: 100%;
+}
+
+.product-presentation-text form input{
     width: 100%;
 }
 
@@ -539,8 +544,9 @@ div.a-review{
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 15px;
-    border: rgb(196, 196, 196) 1px solid;
-    border-radius: 20px;
+    /* border: rgb(196, 196, 196) 1px solid; */
+    background-color: white;
+    /* border-radius: 20px; */
     padding: 15px;
 }
 
@@ -551,11 +557,10 @@ div.a-review .the-review{
 }
 
 div.a-review .product-rating-stars{
-    width: 10rem;
+    width: 100%;
 }
 
 div.a-review h4{
-    width: 50%;
 }
 
 /* vista: /users/login SMQ */
@@ -1145,6 +1150,14 @@ main.profile img{
     /*      vista: /index MQ400px       */
     /*      vista: /products/productDetail MQ400px       */
 
+    div.a-review .product-rating-stars{
+        max-width: 50%;
+    }
+    
+    div.a-review h4{
+        max-width: 40%;
+    }
+
     /* vista: /users/login MQ400px */
 
     main.login form{
@@ -1549,6 +1562,15 @@ main.profile img{
     main.main-product-detail{
         margin: auto;
         max-width: 75%;
+    }
+
+    div.a-review .product-rating-stars{
+        max-width: 60%;
+        width: fit-content;
+    }
+    
+    div.a-review h4{
+        max-width: 30%;
     }
 
 
