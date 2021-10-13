@@ -11,9 +11,17 @@ const validacionesCreacionProducto= [
     check("category")
         .notEmpty().withMessage("Debes colocar una categoría"),
     check("brand")
-        .notEmpty().withMessage("Debes colocar la marca"),
+        .notEmpty().withMessage("Debes colocar la marca del producto (o 'genérico' si no tiene)"),
     check("price")
-        .notEmpty().withMessage("Debes colocar un precio"),
+        // .notEmpty().withMessage("Debes colocar un precio").bail()
+        .custom((value, {req})=>{
+            if(!value){
+                throw new Error("Debes colocar un precio");
+            }else if(parseFloat(value)<0){
+                throw new Error("No nos podemos costear regalar dinero");
+            }
+            return true;
+        }),
     check("description")
         .notEmpty().withMessage("Debes colocar una descripción").bail()
         .isLength({ min: 20 }).withMessage("La descripción debe tener al menos 20 caracteres"),
@@ -41,9 +49,10 @@ const validacionesEdicionProducto= [
     check("category")
         .notEmpty().withMessage("Debes colocar una categoría"),
     check("brand")
-        .notEmpty().withMessage("Debes colocar la marca"),
+        .notEmpty().withMessage("Debes colocar la marca del producto (o 'genérico' si no tiene)"),
     check("price")
-        .notEmpty().withMessage("Debes colocar un precio"),
+        .notEmpty().withMessage("Debes colocar un precio").bail()
+        .isFloat({min:0}).withMessage("No nos podemos costear poner ese precio"),
     check("description")
         .notEmpty().withMessage("Debes colocar una descripción").bail()
         .isLength({ min: 20 }).withMessage("La descripción debe tener al menos 20 caracteres"),

@@ -109,6 +109,17 @@ main{
     color: var(--estrellas);
 }
 
+input:focus,
+textarea:focus{
+    outline: rgb(202, 202, 202) solid 2px;
+}
+
+.caja-ok{
+    margin-top: 10px;
+    border: rgb(0, 172, 0) solid 2px;
+    border-radius: 5px;
+}
+
 /* vista: /partials/header SMQ */
 header{
     background-color: var(--fondo-header);
@@ -658,11 +669,7 @@ input.caja-error{
     border: red solid 2px;
     border-radius: 5px;
 }
-input.caja-ok{
-    margin-top: 10px;
-    border: rgb(0, 172, 0) solid 2px;
-    border-radius: 5px;
-}
+
 p.errorMessager{
     color: red;
     margin-bottom:10px;

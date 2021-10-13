@@ -2,13 +2,14 @@
 
     <head>
         <title>ChapultePets - Registrar Producto</title>
+        <script src="/js/productCreate.js"></script>
     </head>
 
     <body class="editar">
 
         <!-- Configuración del main -->
         <main class="editar">
-            <form action="/products/edit/<%=producto.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form action="/products/edit/<%=producto.id%>?_method=PUT" method="POST" enctype="multipart/form-data" autocomplete="off">
                 <div class="logo-container">
                     <a href="/">
                         <img src="/img/logo_mobile.png" alt="" class="main-logo">
@@ -24,29 +25,35 @@
                 <p>
                     <input 
                     type="text" 
-                    name="name" 
+                    name="name"
+                    id="name"
                     placeholder="Cambiar nombre" 
                     class="nombreArt <%=(locals.errors && errors.name) ? "caja-error" : "" %>"
                     style="width: 100%;"
                     value="<%= locals.old && old.name ? old.name : producto.name; %>"
                     >
-                    <% if (locals.errors && errors.name) { %>
-                        <p class="errorMessage"><%= errors.name.msg %> </p>                 
-                    <% } %>
+                    <p id="name" class="errorMessage">
+                        <% if (locals.errors && errors.name) { %>
+                            <%= errors.name.msg %>         
+                        <% } %>
+                    </p>
                 </p>
 
                 <p>
                     <label for="category">Categoría: </label>
                     <input 
                     type="text" 
-                    name="category" 
+                    name="category"
+                    id="category" 
                     placeholder=" Cambiar Categoría artículo"
                     class="categoriaArt <%=(locals.errors && errors.category) ? "caja-error" : "" %>" 
                     style="width: 100%;"
                     >
-                    <% if (locals.errors && errors.category) { %>
-                        <p class="errorMessage"><%= errors.category.msg %> </p>                 
-                    <% } %>
+                    <p id="category" class="errorMessage">
+                        <% if (locals.errors && errors.category) { %>
+                            <%= errors.category.msg %>         
+                        <% } %>
+                    </p>
                 </p>
 
                 <p>
@@ -54,16 +61,18 @@
                     <input 
                     type="number" 
                     name="price" 
-                    min="0" 
+                    id="price"
                     step="0.01"
                     placeholder="Cambiar Precio" 
                     class="precio <%=(locals.errors && errors.price) ? "caja-error" : "" %>"
                     style="height: 30px; width: 100%;"
                     value=<%= locals.old && old.price ? old.price : producto.price; %>
                     >
-                    <% if (locals.errors && errors.price) { %>
-                        <p class="errorMessage"><%= errors.price.msg %> </p>                 
-                    <% } %>
+                    <p id="price" class="errorMessage">
+                        <% if (locals.errors && errors.price) { %>
+                            <%= errors.price.msg %>         
+                        <% } %>
+                    </p>
                 </p>
 
                 <p>
@@ -71,45 +80,33 @@
                     <input 
                     type="text" 
                     name="brand" 
+                    id="brand"
                     placeholder=" Cambiar marca del artículo"
                     class="categoriaArt <%=(locals.errors && errors.brand) ? "caja-error" : "" %>" 
                     style="width: 100%;"
                     value="<%= locals.old && old.brand ? old.brand : producto.brand; %>"
                     >
-                    <% if (locals.errors && errors.brand) { %>
-                        <p class="errorMessage"><%= errors.brand.msg %> </p>                 
-                    <% } %>
+                    <p id="brand" class="errorMessage">
+                        <% if (locals.errors && errors.brand) { %>
+                            <%= errors.brand.msg %>         
+                        <% } %>
+                    </p>
                 </p>
-
-                <!-- <label for="CategoriaAnimal">Cambiar categoría Animal:</label>
-                <select name="CategoriaAnimal"
-                style="width: 100%;"
-                >
-                    <option value="perro">Perro</option>
-                    <option value="gato">Gato</option>
-                    <option value="ave">Ave</option>
-                    <option value="roedor">Roedor</option>
-                    <option value="reptil">Reptil</option>
-                </select>
-
-                <label for="CategoriaTamaño">Cambiar tamaño:</label>
-                <select name="CategoriaTamaño" id="" style="width: 100%;">
-                    <option value="pequeño">Pequeño</option>
-                    <option value="mediano">Mediano</option>
-                    <option value="grande">Grande</option>
-                </select> -->
 
                 <p>
                     <label for="description">Descripción del artículo: </label>
                     <textarea 
                     name="description" 
+                    id="description"
                     placeholder="Descripción nueva" 
                     class="<%=(locals.errors && errors.description) ? "caja-error" : "" %>" 
                     style="width: 100%;"
                     ><%= locals.old && old.description ? old.description : producto.description; %></textarea>
-                    <% if (locals.errors && errors.description) { %>
-                        <p class="errorMessage"><%= errors.description.msg %> </p>                 
-                    <% } %>
+                    <p id="description" class="errorMessage">
+                        <% if (locals.errors && errors.description) { %>
+                            <%= errors.description.msg %>         
+                        <% } %>
+                    </p>
 
                 </p>
 
@@ -124,8 +121,17 @@
 
                 <p class="foto">
                     <label for="avatar">Cambiar Foto del artículo: </label>
-                    <input type="file" name="avatar" accept=".jpg" multiple placeholder="Foto" style="width: 100%;"
+                    <input type="file"
+                    name="avatar"
+                    id="avatar"
+                    placeholder="Foto" 
+                    style="width: 100%;"
                     >
+                    <p id="avatar" class="errorMessage">
+                        <% if (locals.errors && errors.avatar) { %>
+                            <%= errors.avatar.msg %>         
+                        <% } %>
+                    </p>
                 </p>
 
                 <p>
