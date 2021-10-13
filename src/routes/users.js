@@ -22,20 +22,44 @@ const upload = multer({ storage: storage });
 
 let validacionRegistro = [
     check('nombreUsuario')
-    .notEmpty().withMessage('Escribe un nombre para este sitio.').bail()
-    .isLength({ min: 4 }).withMessage('Debe ser de al menos 4 caracteres'),
+        .notEmpty().withMessage('Escribe un nombre de usuario para este sitio.').bail()
+        .isLength({ min: 4 }).withMessage('Debe ser de al menos 4 caracteres'),
     check('nombrePila')
-    .notEmpty().withMessage('Escribe tu nombre'),
+        .notEmpty().withMessage('Escribe tu nombre').bail()
+        .isLength({ min: 2 }).withMessage('Debe ser de al menos 2 caracteres'),
     check('apellido')
-    .notEmpty().withMessage('Escribe tu apellido'),
+        .notEmpty().withMessage('Escribe tu apellido').bail()
+        .isLength({ min: 2 }).withMessage('Debe ser de al menos 2 caracteres'),
     check('email')
-    .isEmail().withMessage('Debe ser una dirección de correo válida'),
+        .notEmpty().withMessage('Escribe una dirección de correo electrónico.').bail()
+        .isEmail().withMessage('Debe ser una dirección de correo válida'),
     check('password')
-    .notEmpty().withMessage('Escribe una constraseña').bail()
-    .isStrongPassword().withMessage('La contraseña debe contener al menos 8 caracteres. Al menos una mayúscula, una mínuscula, un símbolo y un número'),
+        .notEmpty().withMessage('Escribe una constraseña').bail()
+        .isStrongPassword().withMessage('La contraseña debe contener al menos 8 caracteres. Al menos una mayúscula, una mínuscula, un símbolo y un número'),
+    check('confirmacionPassword').custom((value, { req }) => {
+        if (value !== req.body.password) {
+            throw new Error('¡Las contraseñas no coinciden!');
+        }
+        return true;
+    }),
     check('telefono')
-    .isLength({ min: 9 }).withMessage('Debe contener al menos 10 caracteres numéricos').bail()
-    .isInt().withMessage('Solo se aceptan caracteres numéricos'),
+        .isLength({ min: 9 }).withMessage('Debe contener al menos 10 caracteres numéricos').bail()
+        .isInt().withMessage('Solo se aceptan caracteres numéricos'),
+    check("avatarPicture").custom((value, {req})=>{
+        let file = req.file;
+        let acceptedExtensions=[".jpg",".png",".gif"];
+
+        if (!file){
+            throw new Error("Debes agregar una imagen de producto!");
+        } else{
+            let fileExtension = path.extname(file.originalname);
+
+            if(!acceptedExtensions.includes(fileExtension)){
+                throw new Error(`La extensiones permitidas son ${acceptedExtensions.join(", ")}`);
+            }
+        }
+        return true;
+    })
 ];
 
 //Ruta raíz de usuarios

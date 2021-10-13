@@ -70,13 +70,13 @@
                     id=""
                     class=<%=(locals.errors && errors.password) ? "caja-errorr" : "password" %>
                     style=" width: 100%;"
-                    value= "<%= locals.old && old.password ? old.password: ""; %>" >
+                    value= "" >
                 </p>
                 <%if (locals.errors && errors.password) { %>
                     <p class="errorMessager">
                         *<%= errors.password.msg%>
                     </p>
-                    <% } %>
+                <% } %>
 
                 <p>
                     <input 
@@ -88,6 +88,11 @@
                     style="width: 100%;" 
                     >
                 </p>
+                <%if (locals.errors && errors.confirmacionPassword) { %>
+                    <p class="errorMessager">
+                        *<%= errors.confirmacionPassword.msg%>
+                    </p>
+                <% } %>
 
                 <p>
                     <input 
@@ -125,6 +130,9 @@
                     <input type="file" name="avatarPicture" id="" class="avatarPicture"
                         style="height: 30px; width: 100%;">
                 </p>
+                <% if (locals.errors && errors.avatarPicture) { %>
+                    <p class="errorMessage"><%= errors.avatarPicture.msg %> </p>                 
+                <% } %>
 
                 <p>
                     <button type="submit" class="" style="width: 100%;">Registrar</button>

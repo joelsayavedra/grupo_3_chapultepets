@@ -6,7 +6,8 @@ const {check} = require("express-validator");
 
 const validacionesCreacionProducto= [
     check("name")
-        .notEmpty().withMessage("Debes colocar un nombre"),
+        .notEmpty().withMessage("Debes colocar un nombre").bail()
+        .isLength({ min: 5 }).withMessage("El nombre debe tener al menos 5 caracteres"),
     check("category")
         .notEmpty().withMessage("Debes colocar una categoría"),
     check("brand")
@@ -14,7 +15,8 @@ const validacionesCreacionProducto= [
     check("price")
         .notEmpty().withMessage("Debes colocar un precio"),
     check("description")
-        .notEmpty().withMessage("Debes colocar una descripción"),
+        .notEmpty().withMessage("Debes colocar una descripción").bail()
+        .isLength({ min: 20 }).withMessage("La descripción debe tener al menos 20 caracteres"),
     check("avatar").custom((value, {req})=>{
         let file = req.file;
         let acceptedExtensions=[".jpg",".png",".gif"];
@@ -34,7 +36,8 @@ const validacionesCreacionProducto= [
 
 const validacionesEdicionProducto= [
     check("name")
-        .notEmpty().withMessage("Debes colocar un nombre"),
+        .notEmpty().withMessage("Debes colocar un nombre").bail()
+        .isLength({ min: 5 }).withMessage("El nombre debe tener al menos 5 caracteres"),
     check("category")
         .notEmpty().withMessage("Debes colocar una categoría"),
     check("brand")
@@ -42,7 +45,23 @@ const validacionesEdicionProducto= [
     check("price")
         .notEmpty().withMessage("Debes colocar un precio"),
     check("description")
-        .notEmpty().withMessage("Debes colocar una descripción")
+        .notEmpty().withMessage("Debes colocar una descripción").bail()
+        .isLength({ min: 20 }).withMessage("La descripción debe tener al menos 20 caracteres"),
+    check("avatar").custom((value, {req})=>{
+        let file = req.file;
+        let acceptedExtensions=[".jpg",".png",".gif"];
+
+        if (!file){
+            throw new Error("Debes agregar una imagen de producto!");
+        } else{
+            let fileExtension = path.extname(file.originalname);
+
+            if(!acceptedExtensions.includes(fileExtension)){
+                throw new Error(`La extensiones permitidas son ${acceptedExtensions.join(", ")}`);
+            }
+        }
+        return true;
+    })
 ];
 
 const productsController = require('../controllers/productsController.js');

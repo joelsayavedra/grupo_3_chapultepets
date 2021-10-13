@@ -2,6 +2,8 @@
 
     <head>
         <title>ChapultePets - Registrar Producto</title>
+        <script src="/js/validator.min.js"></script>
+        <script src="/js/productCreate.js"></script>
     </head>
 
     <body class="crear">
@@ -18,7 +20,8 @@
                 <p>
                     <input 
                     type="text" 
-                    name="name" 
+                    name="name"
+                    id="name"
                     placeholder="Nombre del Artículo" 
                     class="nombreArt <%=(locals.errors && errors.name) ? "caja-error" : "" %>"
                     style="width: 100%;"
@@ -27,6 +30,7 @@
                     <% if (locals.errors && errors.name) { %>
                         <p class="errorMessage"><%= errors.name.msg %> </p>                 
                     <% } %>
+                    <p id="name" class="errorMessage"></p>
                 </p>
 
                 <p>
@@ -98,8 +102,6 @@
                     <input 
                     type="file" 
                     name="avatar" 
-                    accept=".jpg" 
-                    multiple 
                     placeholder="Foto" 
                     style="width: 100%;"
                     >

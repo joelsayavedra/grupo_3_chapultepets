@@ -653,9 +653,14 @@ footer.for div div.redes{
 }
 
 /* vista: /users/register SMQ */
-input.caja-errorr{
+input.caja-error{
     margin-top: 10px;
     border: red solid 2px;
+    border-radius: 5px;
+}
+input.caja-ok{
+    margin-top: 10px;
+    border: rgb(0, 172, 0) solid 2px;
     border-radius: 5px;
 }
 p.errorMessager{
