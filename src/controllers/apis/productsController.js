@@ -34,46 +34,38 @@ const controller = {
 
                 if(page==1){
                     return res.json({
-                        meta: {
-                            total: data.length,
-                            resultsPerPage: articlesPerPage,
-                            page:req.query.page,
-                            next:"/api/people/?page="+(parseFloat(req.query.page)+1),
-                            url: "api/products",
-                        },
-                        data: paginatedData
+                        total: data.length,
+                        resultsPerPage: articlesPerPage,
+                        page:req.query.page,
+                        next:"/api/people/?page="+(parseFloat(req.query.page)+1),
+                        url: "api/products",
+                        products: paginatedData
                     });
                 }else if(page==pagesNumber){
                     return res.json({
-                        meta: {
-                            total: data.length,
-                            resultsPerPage: articlesPerPage,
-                            page:req.query.page,
-                            previous:"/api/people/?page="+(parseFloat(req.query.page)-1),
-                            url: "api/products",
-                        },
-                        data: paginatedData
+                        total: data.length,
+                        resultsPerPage: articlesPerPage,
+                        page:req.query.page,
+                        previous:"/api/people/?page="+(parseFloat(req.query.page)-1),
+                        url: "api/products",
+                        products: paginatedData
                     });
                 }else{
                     return res.json({
-                        meta: {
-                            total: data.length,
-                            resultsPerPage: articlesPerPage,
-                            page:req.query.page,
-                            previous:"/api/people/?page="+(parseFloat(req.query.page)-1),
-                            next:"/api/people/?page="+(parseFloat(req.query.page)+1),
-                            url: "api/products",
-                        },
-                        data: paginatedData
+                        total: data.length,
+                        resultsPerPage: articlesPerPage,
+                        page:req.query.page,
+                        previous:"/api/people/?page="+(parseFloat(req.query.page)-1),
+                        next:"/api/people/?page="+(parseFloat(req.query.page)+1),
+                        url: "api/products",
+                        products: paginatedData
                     });
                 }
             }else if(!req.query.page){
                 return res.json({
-                    meta: {
-                        total: data.length,
-                        url: "api/products",
-                    },
-                    data: data
+                    total: data.length,
+                    url: "api/products",
+                    products: data
                 });
             }else{
                 return res.json({
