@@ -2,14 +2,27 @@ const db = require("../../database/models/index.js")
 
 const controller = {
     products: function(req,res){
-        db.Product.findAll({
+
+        let promesaCategoria = db.Category.findAll({
+            include: {
+                association: "products",
+            },
+        });
+
+        let promesaProductos = db.Product.findAll({
             include: {association:"categories"}
-        })
-        .then(function(data){
+        });
+
+        Promise.all([promesaCategoria, promesaProductos])
+        .then(function([categoriesData,data]){
+
+            let cantidadProductos = data.length;
+            let productosSinCategoria = 0;
 
             let page = parseFloat(req.query.page);    
             let articlesPerPage = 10;
-            let pagesNumber = Math.ceil(data.length/articlesPerPage);   
+            let pagesNumber = Math.ceil(data.length/articlesPerPage);
+            let countByCategory = {};
             
             for (let i = 0; i < data.length; i++) {
                 data[i]={
@@ -17,6 +30,24 @@ const controller = {
                     detail:"/api/products/"+data[i].id,
                     // num:i+1,
                 };
+            }
+
+            for (let i = 0; i < categoriesData.length; i++) {
+                countByCategory={
+                    ...countByCategory,
+                    [categoriesData[i].name]: categoriesData[i].products.length 
+                }
+            }
+
+            for (let i = 0; i < data.length; i++) {
+                if(data[i].categories.length==0){
+                    productosSinCategoria+=1;
+                }
+            }
+
+            countByCategory={
+                ...countByCategory,
+                "WithoutCategory": productosSinCategoria
             }
 
             if(Number.isInteger(page) && page<=pagesNumber){
@@ -34,7 +65,7 @@ const controller = {
 
                 if(page==1){
                     return res.json({
-                        total: data.length,
+                        count: data.length,
                         resultsPerPage: articlesPerPage,
                         page:req.query.page,
                         next:"/api/people/?page="+(parseFloat(req.query.page)+1),
@@ -43,7 +74,7 @@ const controller = {
                     });
                 }else if(page==pagesNumber){
                     return res.json({
-                        total: data.length,
+                        count: data.length,
                         resultsPerPage: articlesPerPage,
                         page:req.query.page,
                         previous:"/api/people/?page="+(parseFloat(req.query.page)-1),
@@ -52,7 +83,7 @@ const controller = {
                     });
                 }else{
                     return res.json({
-                        total: data.length,
+                        count: data.length,
                         resultsPerPage: articlesPerPage,
                         page:req.query.page,
                         previous:"/api/people/?page="+(parseFloat(req.query.page)-1),
@@ -63,7 +94,8 @@ const controller = {
                 }
             }else if(!req.query.page){
                 return res.json({
-                    total: data.length,
+                    count: data.length,
+                    countByCategory: countByCategory,
                     url: "api/products",
                     products: data
                 });
@@ -73,9 +105,7 @@ const controller = {
                         detail: "Not found",
                     },
                 });
-            }
-
-
+            }            
         })
         .catch(error=>{
             return res.json({
@@ -98,6 +128,43 @@ const controller = {
                     },
                     data: data
                 });
+        })
+        .catch(error=>{
+            return res.json({
+                meta: {
+                    status: "error",
+                },
+                data: error
+            })
+        });
+    },
+    prueba: function(req,res){
+
+        let cantidadProductos = 25;
+        let productosConCategoria = 0;
+        
+        db.Category.findAll({
+            include: {
+                association: "products",
+            },
+        })
+        .then(function(categoriesData){
+            let countByCategory = {};
+            for (let i = 0; i < categoriesData.length; i++) {
+                productosConCategoria+=categoriesData[i].products.length;
+                countByCategory={
+                    ...countByCategory,
+                    [categoriesData[i].name]: categoriesData[i].products.length 
+                }
+            }
+            countByCategory={
+                ...countByCategory,
+                "WithoutCategory": cantidadProductos-productosConCategoria
+            }
+
+            return res.json({
+                countByCategory: countByCategory
+            });
         })
         .catch(error=>{
             return res.json({

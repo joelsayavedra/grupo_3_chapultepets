@@ -7,6 +7,7 @@ const productsController = require("../../controllers/apis/productsController.js
 router.get('/', productsController.products);
 router.get('/categories', productsController.categories);
 router.get('/invoices', productsController.invoices);
+router.get('/prueba', productsController.prueba);
 router.get('/:id', productsController.productDetail);
 
 module.exports = router;
