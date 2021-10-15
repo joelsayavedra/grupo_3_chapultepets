@@ -28,10 +28,7 @@ const controller = {
             let pagesNumber = Math.ceil(data.length/articlesPerPage);
             let countByCategory = {};
 
-
-            
             for (let i = 0; i < data.length; i++) {
-
                 //Se sobreescriben los valores de rating y reviewsAmount, de acuerdo a la base de datos
                 let ratingSum=0;
                 for (let j = 0; j < data[i].reviews.length; j++) {
@@ -138,6 +135,33 @@ const controller = {
     },
     categories: function(req,res){
         db.Category.findAll({
+            include: {association:"products"}
+        })
+        .then(function(data){
+            return res.json({
+                    meta: {
+                        status: "200",
+                        total: data.length,
+                        url: "api/categories",
+                    },
+                    data: data
+                });
+        })
+        .catch(error=>{
+            return res.json({
+                meta: {
+                    status: "error",
+                },
+                data: error
+            })
+        });
+    },
+    categoriesId: function(req,res){
+        db.Category.findByPk(req.params.id,{
+            include: {
+                association:"products",
+                include: {association: "reviews"}
+            }
         })
         .then(function(data){
             return res.json({
@@ -292,6 +316,7 @@ const controller = {
         }else if(req.query.selector=="categorias") {
             db.Category.findAll({
                 include: {association: "products"},
+                order:[["name","ASC"]]
             })
             .then(data=>{
 

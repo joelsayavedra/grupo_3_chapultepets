@@ -32,6 +32,7 @@
         vista: /partials/footer SMQ
         vista: /index SMQ
         vista: /products/productDetail SMQ
+        vista: /products/list SMQ
         vista: /users/login SMQ
         vista: /users/register SMQ
         vista: /products/productCart SMQ
@@ -90,6 +91,13 @@
 */
 
 /*          Sin media query (SMQ)           */
+
+
+@keyframes breath{
+    0% {transform:scale(1)}
+    100%{transform:scale(1.2);color: var(--icono-categoria-hover);}
+}
+
 
 /*           Configuraciones generales SMQ            */
 *{
@@ -368,7 +376,8 @@ body.index h1{
 }
 
 .home-logo-bar h4:hover{
-    color: var(--icono-categoria-hover);
+    /* color: var(--icono-categoria-hover); */
+    animation:breath .1s linear both;
 }
 
 .home-logo-bar p{
@@ -582,6 +591,11 @@ div.a-review .product-rating-stars{
 }
 
 div.a-review h4{
+}
+
+/* vista: /products/list SMQ */
+body.products-list main{
+    background-color: var(--fondo-body);
 }
 
 /* vista: /users/login SMQ */

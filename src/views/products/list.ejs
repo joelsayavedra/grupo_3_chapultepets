@@ -1,0 +1,42 @@
+<%- include("../partials/head") %>
+
+    <head>
+        <title>ChapultePets - Búsqueda por: </title>
+    </head>
+
+    <body class="products-list">
+
+        <%- include("../partials/header") %>
+
+        <main>
+
+            
+            <%
+            for (let i = 0; i < abecedario.length; i++) {
+                let palabras = [];
+                for (let j = 0; j < data.data.length; j++) {
+                    if(data.data[j].name.toUpperCase()[0]==abecedario[i]){
+                        palabras.push(data.data[j]);
+                    }
+                }
+                if (palabras.length>0) {%>
+                    <h1><%= abecedario[i] %> </h1>
+
+                    <% for( let j = 0; j < palabras.length; j++ ) { %>
+                        <a href="/products/categories/<%= palabras[j].id %>">
+                            <p><%= palabras[j].name %> (<%= palabras[j].productsAmount %>) </p>
+                        </a> 
+                    <% } %>
+
+                <%}
+            }    
+            %> 
+
+        </main>
+
+        <!-- Configuración del Pie de página -->
+        <%- include("../partials/footer") %>
+
+    </body>
+
+    </html>
