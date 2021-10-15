@@ -70,13 +70,13 @@
                     id=""
                     class=<%=(locals.errors && errors.password) ? "caja-errorr" : "password" %>
                     style=" width: 100%;"
-                    value= "<%= locals.old && old.password ? old.password: ""; %>" >
+                    value= "" >
                 </p>
                 <%if (locals.errors && errors.password) { %>
                     <p class="errorMessager">
                         *<%= errors.password.msg%>
                     </p>
-                    <% } %>
+                <% } %>
 
                 <p>
                     <input 
@@ -88,6 +88,11 @@
                     style="width: 100%;" 
                     >
                 </p>
+                <%if (locals.errors && errors.confirmacionPassword) { %>
+                    <p class="errorMessager">
+                        *<%= errors.confirmacionPassword.msg%>
+                    </p>
+                <% } %>
 
                 <p>
                     <input 
@@ -120,6 +125,7 @@
                         *<%= errors.telefono.msg%>
                     </p>
                     <% } %>
+<<<<<<< HEAD
 
                 <div class="div_file">
                     <p class="texto">Subir Foto</p>
@@ -128,6 +134,15 @@
                 
                 <% if (locals.errors && errors.avatarPicture) { %>
                     <p class="errorMessager"><%= errors.avatarPicture.msg %> </p>                 
+=======
+                <p class="avatarPicture">
+                    <label name="avatarPicture">Foto de perfil:</label>
+                    <input type="file" name="avatarPicture" id="" class="avatarPicture"
+                        style="height: 30px; width: 100%;">
+                </p>
+                <% if (locals.errors && errors.avatarPicture) { %>
+                    <p class="errorMessage"><%= errors.avatarPicture.msg %> </p>                 
+>>>>>>> beaf65669b09f20abecaeba26921c1b90f6492e1
                 <% } %>
 
                 <p>

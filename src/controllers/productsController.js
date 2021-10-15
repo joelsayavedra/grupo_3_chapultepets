@@ -144,8 +144,13 @@ const controller = {
 
         db.Product.findByPk(req.params.id,{
             include:[
-                {association:"categories"},
-                {association:"reviews"},
+                {
+                    association:"categories"
+                },
+                {
+                    association:"reviews",
+                    include: {association:"user"}
+                },
             ]
         })
         .then(producto=>{

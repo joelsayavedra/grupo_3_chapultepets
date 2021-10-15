@@ -1,28 +1,24 @@
 <%- include("../partials/head") %>
-
     <head>
         <title>ChapultePets - Detalle del producto</title>
     </head>
-
     <body class="body-product-detail">
         <%- include("../partials/header") %>
 
         <main class="main-product-detail">
+
+            <!-- Sección de presentación del producto -->
             <div class="product-presentation">
                 <div class="product-presentation-image">
                     <img src="/img/products/<%= product.image %>" alt="">
                 </div>
                 <div class="product-presentation-text">
-                    <h4><%= product.name %></h4>
-
-
+                    <h1><%= product.name %></h1>
                     <p class="product-rating-stars">
                         <%- include("../partials/rating_stars",{ rating : product.rating }) %>
                         <%= product.rating %>
                         (<%= product.reviewsAmount %>)
                     </p>
-
-
                     <p class="product-presentation-brand">Marca: <%= product.brand %></p>
                     <p class="product-presentation-price">$<%= product.price %></p>
                     <form action="">
@@ -44,44 +40,42 @@
                             <% } %>
                         <% } %>
                     </p>
+                </div>
+            </div>
 
-                    <div class="opinions-section">
-                        <div class="opinions-section-title-bar">
-                            <h2>Opiniones</h2>
-                            <select name="cantidad" class="opinions-star-selector">
-                                <option value="0" selected>Todas</option>
-                                <option value="1 estrella">1 estrella</option>
-                                <option value="2 estrellas">2 estrellas</option>
-                                <option value="3 estrellas">3 estrellas</option>
-                                <option value="4 estrellas">4 estrellas</option>
-                                <option value="5 estrellas">5 estrellas</option>
-                            </select>
+            <!-- Sección de opiniones -->
+            <div class="opinions-section">
+                <div class="opinions-section-title-bar">
+                    <h2>Opiniones</h2>
+                    <select name="cantidad" class="opinions-star-selector">
+                        <option value="0" selected>Todas</option>
+                        <option value="1 estrella">1 estrella</option>
+                        <option value="2 estrellas">2 estrellas</option>
+                        <option value="3 estrellas">3 estrellas</option>
+                        <option value="4 estrellas">4 estrellas</option>
+                        <option value="5 estrellas">5 estrellas</option>
+                    </select>
+                </div>
+                <!-- Opiniones -->
+                <% if (product.reviews.length == 0) { %>
+                    <h4>Nadie ha reseñado este producto aún.</h4>
+                <% } else {%>
+
+                    <% for( let i = 0; i < product.reviews.length; i++ ) { %>
+                        <div class="a-review">
+                            <img src="/img/users/<%= product.reviews[i].user.imagenPerfil %>" alt="">
+                            <h4><%= product.reviews[i].user.nombreUsuario %></h4>
+                            <p class="product-rating-stars">
+                                <%- include("../partials/rating_stars",{ rating : product.reviews[i].rating }) %> 
+                                <br>
+                                <%= product.reviews[i].createdAt %>
+                            </p>
+                            <p class="the-review"><%= product.reviews[i].review %></p>
                         </div>
+                    <% } %>
+                <% }%>
+            </div>
 
-                        <!-- Opiniones -->
-                        <% if (product.reviews.length == 0) { %>
-                            <h4>Nadie ha reseñado este producto aún.</h4>
-                        <% } else {%>
-
-                            <% for( let i = 0; i < product.reviews.length; i++ ) { %>
-                                <div class="a-review">
-                                    <img src="/img/users/Portrait_Placeholder.png" alt="">
-                                    <h4><%= product.reviews[i].id_user %></h4>
-                                    <p class="product-rating-stars">
-                                        <%- include("../partials/rating_stars",{ rating : product.reviews[i].rating }) %> 
-                                        <br/>
-                                        <%= product.reviews[i].createdAt %>
-                                    </p>
-                                    <p class="the-review"><%= product.reviews[i].review %></p>
-                                </div>
-                            <% } %>
-                            
-                        <% }%>
-
-                        
-
-
-                    </div>
         </main>
 
         <!-- Pie de página -->

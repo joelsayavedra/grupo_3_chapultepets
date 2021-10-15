@@ -6,10 +6,13 @@ const cookies = require('cookie-parser');
 
 const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware');
 
-//Require de los ruteadores
+    //Require de los ruteadores
 const indexRouter=require('./src/routes/index.js');
 const usersRouter=require('./src/routes/users.js');
 const productsRouter=require('./src/routes/products.js');
+//Routes API
+const productsRouterApi = require('./src/routes/apis/products');
+const usersRouterApi = require('./src/routes/apis/users');
 
 const app = express();
 
@@ -39,10 +42,13 @@ app.listen(process.env.PORT || 3000,()=>{
     console.log("corriendo servidor en el puerto 3000");
 });
 
-//Implementación de los ruteadores
+    //Implementación de los ruteadores
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
+//Rutas API
+app.use('/api/products', productsRouterApi);
+app.use('/api/users', usersRouterApi);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -58,5 +64,5 @@ app.use(function(err, req, res, next) {
     // render the error page
     res.status(err.status || 500);
     // res.render('error404');
-    res.send("Error!:<br/><br/>"+err+"<br/><br/>( Si ves esta página, al programador se le olvidó colocar la vista de error del sitio )")
+    res.send("Error!:<br/><br/>"+err+"<br/><br/>( Si ves esta página, al programador se le olvidó colocar la vista de error del sitio )");
 });
