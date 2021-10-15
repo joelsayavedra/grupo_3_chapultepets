@@ -18,6 +18,8 @@
     --formularioValido: lightgreen;
     --formularioNoValido: #ff7f7f;
     --fondoTransiciones: #0022AA;
+    --icono-categoria: rgb(0, 189, 63);
+    --icono-categoria-hover: rgb(0, 117, 39);
 }
 
 /*
@@ -345,6 +347,8 @@ body.index h1{
     list-style-type: none;
     margin: 15px 0px;
     background-color: var(--fondo-body);
+    /* background-color: white; */
+    max-height: 100vw;
 }
 
 .home-logo-bar li{
@@ -357,8 +361,14 @@ body.index h1{
     color: black;
 }
 
-.home-logo-bar img{
-    width: 100%;
+.home-logo-bar h4{
+    font-size: 8vw;
+    /* width: 100%; */
+    color: var(--icono-categoria);
+}
+
+.home-logo-bar h4:hover{
+    color: var(--icono-categoria-hover);
 }
 
 .home-logo-bar p{
