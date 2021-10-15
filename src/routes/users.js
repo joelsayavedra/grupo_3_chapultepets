@@ -25,9 +25,11 @@ let validacionRegistro = [
     .notEmpty().withMessage('Escribe un nombre para este sitio.').bail()
     .isLength({ min: 4 }).withMessage('Debe ser de al menos 4 caracteres'),
     check('nombrePila')
-    .notEmpty().withMessage('Escribe tu nombre'),
+    .notEmpty().withMessage('Escribe tu nombre').bail()
+    .isLength({ min: 4 }).withMessage('Debe ser de al menos 4 caracteres'),
     check('apellido')
-    .notEmpty().withMessage('Escribe tu apellido'),
+    .notEmpty().withMessage('Escribe tu apellido').bail()
+    .isLength({ min: 4 }).withMessage('Debe ser de al menos 4 caracteres'),
     check('email')
     .isEmail().withMessage('Debe ser una dirección de correo válida'),
     check('password')
@@ -36,6 +38,19 @@ let validacionRegistro = [
     check('telefono')
     .isLength({ min: 9 }).withMessage('Debe contener al menos 10 caracteres numéricos').bail()
     .isInt().withMessage('Solo se aceptan caracteres numéricos'),
+    check("avatarPicture").custom((value, {req})=>{
+        let file = req.file;
+        let acceptedExtensions=[".jpg",".jpeg",".png",".gif"];
+
+        if (file){
+            let fileExtension = path.extname(file.originalname);
+
+            if(!acceptedExtensions.includes(fileExtension)){
+                throw new Error(`*Formato inválido. Extensiones permitidas: ${acceptedExtensions.join(", ")}`);
+            }
+        }
+        return true;
+    })
 ];
 
 //Ruta raíz de usuarios

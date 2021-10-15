@@ -667,9 +667,6 @@ body.register{
 main.register{
     background-color: var(--contrasteLogin);
 }
-/* main.register form p{
-    margin: 30px 30px;
-} */
 
 main.register div.logo-container{
     width: 100%;
@@ -734,6 +731,39 @@ main.register input.caja-error{
     border: red solid 2px;
     border-radius: 5px;
 }
+
+/*file Customize*/
+main.register form div.div_file p.texto{
+    position: relative;
+    top:5px;
+    text-align: center;
+}
+
+main.register form div.div_file{
+    margin-top: 25px;
+    width: 100%;
+    height: 30px;
+    background-color: var(--contrasteLogin);
+    border:  solid #E1E1E1 1px; 
+    border-radius:5px;
+}
+
+main.register form div.div_file input#btn_enviar{
+    position: relative;
+    top: -14px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+main.register form div.div_file:hover{
+    transition: all .5s;
+    background-color: #0022AA;
+    border:solid #0022AA 1px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
 
 /* main.register form input.contraseña:invalid{
     transition: initial;
@@ -1181,11 +1211,11 @@ main.profile img{
     }
     /* vista: /products/productCart MQ400px */
     main.cart{
-        font-size: 16px;
+        font-size: 14px;
     }
 
     main.cart .resumen{
-        font-size: 16px;
+        font-size: 14px;
     }
 
     main.cart .logo_cart{
@@ -1296,7 +1326,7 @@ main.profile img{
 
     /*          vista: /partials/footer MQ720px         */
     footer {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     /*          vista: /index MQ720px            */
@@ -1355,12 +1385,12 @@ main.profile img{
 
     main.login form{
         width: 300px;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     main.login div.reg{
         width: 300px;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     footer.for div.cabeza{
@@ -1377,7 +1407,7 @@ main.profile img{
     }
     main.register form{
         width: 425px;
-        font-size: 16px;
+        font-size: 14px;
     }
     footer.formulario div.cabeza{
         width: 450px;
@@ -1385,10 +1415,10 @@ main.profile img{
 
     /*          vista: /products/productCart MQ720px            */
     main.cart{
-        font-size: 18px;
+        font-size: 16px;
     }
     main.cart .resumen{
-        font-size: 18px;
+        font-size: 16px;
     }
     main.cart .desyres{
         align-self: flex-start;
@@ -1426,7 +1456,7 @@ main.profile img{
     }
     main.crear form{
         width: 425px;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     main.crear textarea{
@@ -1448,7 +1478,7 @@ main.profile img{
     }
     main.editar form{
         width: 425px;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     main.editar textarea{
@@ -1501,7 +1531,7 @@ main.profile img{
 
     /*          vista: /partials/footer MQ1200px            */
     footer {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     /*          vista: /index MQ1200px          */
@@ -1552,11 +1582,11 @@ main.profile img{
     }
 
     main.login form{
-        font-size: 18px;
+        font-size: 16px;
     }
 
     main.login div.reg{
-        font-size: 18px;
+        font-size: 16px;
     }
 
     /*          vista: /users/register MQ1200px         */
@@ -1569,7 +1599,7 @@ main.profile img{
     }
 
     main.register form{
-        font-size: 18px;
+        font-size: 16px;
     }
     footer.formulario div.cabeza{
         width: 450px;
@@ -1624,7 +1654,7 @@ main.profile img{
     }
 
     main.crear form{
-        font-size: 18px;
+        font-size: 16px;
     }
     main.crear select{
         height: 50px;
@@ -1641,7 +1671,7 @@ main.profile img{
     }
 
     main.editar form{
-        font-size: 18px;
+        font-size: 16px;
     }
     main.editar select{
         height: 50px;
