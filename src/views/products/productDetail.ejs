@@ -31,12 +31,12 @@
                         <p class="product-presentation-description"><%= product.description %></p>
                     </div>
                     <h4>Categorías: </h4>
-                    <p>
+                    <p class="categories">
                         <% for( let i = 0; i < product.categories.length; i++ ) { %>
                             <% if (i==product.categories.length-1) { %>
-                                <%= product.categories[i].name %>. 
+                                <a class="linkCategoria" href="/products/categories/<%= product.categories[i].id %>"><%= product.categories[i].name %></a>. 
                             <% } else{ %>
-                                <%= product.categories[i].name %>, 
+                                <a class="linkCategoria" href="/products/categories/<%= product.categories[i].id %>"><%= product.categories[i].name %></a>, 
                             <% } %>
                         <% } %>
                     </p>
