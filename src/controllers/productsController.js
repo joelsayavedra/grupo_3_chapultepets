@@ -177,7 +177,7 @@ const controller = {
     },
     list: function (req,res) {
         if(req.query.selector){
-            fetch("http://localhost:3000/api/products/lists?selector="+req.query.selector)
+            fetch("https://chapultepets.herokuapp.com/api/products/lists?selector="+req.query.selector)
             .then(response=>response.json())
             .then(data=>{
                 let abecedario=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -195,7 +195,7 @@ const controller = {
         }
     },
     categoriesId: function (req,res) {
-        fetch("http://localhost:3000/api/products/categories/"+req.params.id)
+        fetch("https://chapultepets.herokuapp.com/api/products/categories/"+req.params.id)
         .then(response=>response.json())
         .then(data=>{
 

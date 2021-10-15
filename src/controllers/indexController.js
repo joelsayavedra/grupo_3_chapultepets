@@ -16,7 +16,7 @@ const controller = {
         //     include: {association: "categories"},
         // });
 
-        fetch("http://localhost:3000/api/products")
+        fetch("https://chapultepets.herokuapp.com/api/products")
         .then(response=>response.json())
         .then(productos=>{
             // return res.send(productos.products);
