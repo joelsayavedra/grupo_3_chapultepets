@@ -2,13 +2,14 @@
 
     <head>
         <title>ChapultePets - Registro</title>
+        <script src="/js/registerValidation.js"></script>
     </head>
 
     <body class="register">
 
         <!-- Configuración del main -->
         <main class="register">
-            <form action="/users/register" method="POST" enctype="multipart/form-data">
+            <form id="formulario" action="/users/register" method="POST" enctype="multipart/form-data">
                 <div class="logo-container">
                     <a href="/">
                         <img src="/img/logo_mobile.png" alt="" class="main-logo">
@@ -20,124 +21,133 @@
                 <p>
                     <input 
                     type="text" 
+                    id="nombreUsuario"
                     name="nombreUsuario" 
                     placeholder="Nombre de usuario"  
                     style="width: 100%;"
-                    class=<%=(locals.errors && errors.nombreUsuario) ? "caja-errorr" : "nombreUsuario" %> 
+                    class=<%=(locals.errors && errors.nombreUsuario) ? "caja-error" : "nombreUsuario" %> 
                     value= "<%= locals.old && old.nombreUsuario ? old.nombreUsuario: ""; %>">
                 </p>
-                <%if (locals.errors && errors.nombreUsuario) { %>
-                    <p class="errorMessager">
-                        *<%= errors.nombreUsuario.msg%>
-                    </p>
+                <p class="errorMessager" id="usuarioError">
+                    <%if (locals.errors && errors.nombreUsuario) { %>
+                        <%= errors.nombreUsuario.msg%>                   
                     <% } %>
+                </p>
+                    
                 <p>
                     <input 
-                    type="text" 
+                    type="text"
+                    id="nombrePila"  
                     name="nombrePila" 
                     placeholder="Nombre(s)" 
-                    class=<%=(locals.errors && errors.nombrePila) ? "caja-errorr" : "nombrePila" %>
+                    class=<%=(locals.errors && errors.nombrePila) ? "caja-error" : "nombrePila" %>
                     style="width: 100%;" 
                     value= "<%= locals.old && old.nombrePila ? old.nombrePila: ""; %>">
                 </p>
-                <%if (locals.errors && errors.nombrePila) { %>
-                    <p class="errorMessager">
-                        *<%= errors.nombrePila.msg%>
-                    </p>
+                <p class="errorMessager" id="pilaError">
+                    <%if (locals.errors && errors.nombrePila) { %>
+                        <%= errors.nombrePila.msg%>
                     <% } %>
-
+                </p>                
+                    
                 <p>
                     <input 
                     type="text" 
                     name="apellido" 
-                    id="" 
+                    id="apellido" 
                     placeholder="Apellido(s)" 
-                    class=<%=(locals.errors && errors.apellido) ? "caja-errorr" : "apellido" %> 
+                    class=<%=(locals.errors && errors.apellido) ? "caja-error" : "apellido" %> 
                     style="width: 100%;"
                     value= "<%= locals.old && old.apellido ? old.apellido: "";%>">
                 </p>
-                <%if (locals.errors && errors.apellido) { %>
-                    <p class="errorMessager">
-                        *<%= errors.apellido.msg%>
-                    </p>
+                <p class="errorMessager" id="apellidoError">
+                    <%if (locals.errors && errors.apellido) { %>                    
+                        <%= errors.apellido.msg%>                    
                     <% } %>
-
+                </p>
+                    
                 <p>
                     <input 
                     type="password" 
-                    name="password" 
+                    name="password"
+                    id="password" 
                     placeholder="Contraseña" 
-                    id=""
-                    class=<%=(locals.errors && errors.password) ? "caja-errorr" : "password" %>
+                    class=<%=(locals.errors && errors.password) ? "caja-error" : "password" %>
                     style=" width: 100%;"
                     value= "" >
                 </p>
-                <%if (locals.errors && errors.password) { %>
-                    <p class="errorMessager">
-                        *<%= errors.password.msg%>
-                    </p>
-                <% } %>
-
+                <p class="errorMessager" id="passwordError">
+                    <%if (locals.errors && errors.password) { %>                    
+                        <%= errors.password.msg%>                    
+                    <% } %>
+                </p>
+                    
                 <p>
                     <input 
                     type="password" 
-                    name="confirmacionPassword"  
-                    placeholder="Confirmar contraseña"
-                    id="" 
-                    class=<%=(locals.errors && errors.password) ? "caja-errorr" : "confirmarContraseña" %> 
+                    name="confirmacionPassword"
+                    id="confirmacionPassword"  
+                    placeholder="Confirmar contraseña"                    
+                    class=<%=(locals.errors && errors.confirmacionPassword) ? "caja-error" : "confirmarContraseña" %> 
                     style="width: 100%;" 
+                    value= ""
                     >
                 </p>
-                <%if (locals.errors && errors.confirmacionPassword) { %>
-                    <p class="errorMessager">
-                        *<%= errors.confirmacionPassword.msg%>
-                    </p>
-                <% } %>
-
+                <p class="errorMessager" id="confirmarError">
+                    <%if (locals.errors && errors.confirmacionPassword) { %>                    
+                        <%= errors.confirmacionPassword.msg%>                    
+                    <% } %>             
+                </p>   
+                   
                 <p>
                     <input 
                     type="email" 
                     name="email" 
-                    id="" 
+                    id="email" 
                     placeholder="Correo electrónico"
                     value= "<%= locals.old && old.email ? old.email: ""; %>" 
-                    class=<%=(locals.errors && errors.email) ? "caja-errorr" : "correo" %>
+                    class=<%=(locals.errors && errors.email) ? "caja-error" : "correo" %>
                         style="width: 100%;" >
                 </p>
-                <%if (locals.errors && errors.email) { %>
-                    <p class="errorMessager">
-                        *<%= errors.email.msg%>
-                    </p>
+                <p class="errorMessager" id="emailError">
+                    <%if (locals.errors && errors.email) { %>                
+                        <%= errors.email.msg%>                    
                     <% } %>
-
+                </p>
+                    
                 <p>
                     <input 
                     type="number" 
                     name="telefono" 
-                    id=""  
+                    id="telefono"  
                     placeholder="Numéro Telefónico (10 Dígitos)"
-                    class=<%=(locals.errors && errors.telefono) ? "caja-errorr" : "tel" %>
+                    class=<%=(locals.errors && errors.telefono) ? "caja-error" : "tel" %>
                     style="height: 30px; width: 100%;"
                         value= "<%= locals.old && old.telefono ? old.telefono: "";%>">
                 </p>
-                <%if (locals.errors && errors.telefono) { %>
-                    <p class="errorMessager">
-                        *<%= errors.telefono.msg%>
-                    </p>
+                <p class="errorMessager" id="telefonoError">
+                    <%if (locals.errors && errors.telefono) { %>                    
+                        <%= errors.telefono.msg%>                    
                     <% } %>
+                </p>                             
 
-                <div class="div_file">
+                <div class="div_file" id="avatarPicture">
                     <p class="texto">Subir Foto</p>
-                    <input type="file" name="avatarPicture" id="btn_enviar">
+                    <input 
+                    type="file" 
+                    name="avatarPicture" 
+                    id="btn_enviar">
                 </div>
-                
-                <% if (locals.errors && errors.avatarPicture) { %>
-                    <p class="errorMessager"><%= errors.avatarPicture.msg %> </p>                 
-                <% } %>
+                <p class="errorMessager" id="avatarError">
+                    <% if (locals.errors && errors.avatarPicture) { %>
+                        <%= errors.avatarPicture.msg %>               
+                    <% } %>
+                </p>    
 
                 <p>
                     <button type="submit" class="" style="width: 100%;">Registrar</button>
                 </p>
+                <p class="errorMessager" id="errorSubmit"></p>
 
             </form>
         </main>

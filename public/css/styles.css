@@ -571,9 +571,6 @@ div.a-review .product-rating-stars{
     width: 100%;
 }
 
-div.a-review h4{
-}
-
 /* vista: /users/login SMQ */
 
 body.login{
@@ -611,7 +608,6 @@ main.login form p.contra{
     text-align: center;
 }
 
-
 main.login form{
     font-size: 14px;
     width: 225px;
@@ -620,7 +616,6 @@ main.login form{
     border:  solid #E1E1E1 1px;
     border-radius: 5px;
     padding: 17px;
-    
 }
 
 main.login div.reg{
@@ -670,9 +665,15 @@ input.caja-error{
     border-radius: 5px;
 }
 
+/* .caja-ok{
+    margin-top: 10px;
+    border: rgb(0, 172, 0) solid 2px;
+    border-radius: 5px;
+} */
+
 p.errorMessager{
     color: red;
-    margin-bottom:10px;
+    margin-bottom:5px;
     font-size: 14px;
 }
 
@@ -685,8 +686,9 @@ input.correo,
 input.tel,
 p.avatarPicture,
 main.register button{
-    margin-top:30px;
+    margin-top:15px;
 }
+
 
 body.register{
     background-color: var(--contrasteLogin);
@@ -716,47 +718,12 @@ main.register form{
     padding: 17px;
 }
 
-/* main.register form p input.nombreDeUsuario:valid{
-    transition: all 1s;
-    border-radius: 5px;
-    border: solid var(--formularioValido) 2px;
-}
-
-main.register form input.contraseña:valid{
-    transition: all 1s;
-    border-radius: 5px;
-    border: solid var(--formularioValido) 2px;
-} */
-
-/* main.register form input.confirmarContraseña:valid{
-    transition: all 1s;
-    border-radius: 5px;
-    border: solid var(--formularioValido) 2px;
-}
-
-main.register form input.correo:valid{
-    transition: all 1s;
-    border-radius: 5px;
-    border: solid var(--formularioValido) 2px;
-}
-
-main.register form input.tel:valid{
-    transition: all 1s;
-    border-radius: 5px;
-    border: solid var(--formularioValido) 2px;
-} */
-
 main.register form button:hover{
     transition: all .5s;
     background-color: #0022AA;
     border:solid #0022AA 1px;
     border-radius: 5px;
     color: #ffffff;
-}
-
-main.register input.caja-error{
-    border: red solid 2px;
-    border-radius: 5px;
 }
 
 /*file Customize*/

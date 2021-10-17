@@ -68,5 +68,25 @@
     "email": "itsmo@mail.com",
     "telefono": "9999999999",
     "imagenPerfil": "peeper.jpg"
+  },
+  {
+    "id": 8,
+    "nombreUsuario": "AMML",
+    "nombrePila": "Anton",
+    "apellido": "halarido",
+    "password": "Camara1+",
+    "email": "AMM@mail.com",
+    "telefono": "9999999999",
+    "imagenPerfil": "history.jpg"
+  },
+  {
+    "id": 9,
+    "nombreUsuario": "Garza",
+    "nombrePila": "Graciela",
+    "apellido": "Carcajada",
+    "password": "Canallin1+",
+    "email": "cara@mail.com",
+    "telefono": "9999999999",
+    "imagenPerfil": "garza.jpg"
   }
 ]
