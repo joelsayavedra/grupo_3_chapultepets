@@ -1,0 +1,80 @@
+<%- include("../partials/head") %>
+
+    <head>
+        <title>ChapultePets - Inicio</title>
+    </head>
+
+    <body class="productList">
+
+        <%- include("../partials/header") %>
+
+        <main class="productList">
+
+            <!-- div para todo lo que va debajo del carrusel :v -->
+            <div class="div-principal">
+
+
+                
+                <!-- Div de muestra de artículos -->
+                
+                <div class="product-window">
+                    <% if (products.length>0) { %>
+                        <h1>¡Todos nuestros productos en la categoría "<%= category %>"!</h1>
+                    <% }else{ %>
+                        <h1>¡No hay productos en la categoría "<%= category %>"!</h1>
+                    <% } %>
+
+                    <% for(let i=0;i<products.length;i++){ %>
+                            
+                        <a href="/products/<%= products[i].id %>">
+                            <article>
+                                <img src="/img/products/<%= products[i].image %> " alt="">
+                                <h4>
+                                    <%= products[i].name %>
+                                </h4>
+                                <!-- casillero de estrellas -->
+                                <p class="product-rating-stars">
+                                    <%- include("../partials/rating_stars",{ rating : products[i].rating }) %>
+                                        <%= products[i].rating %>
+                                            (<%= products[i].reviewsAmount %> )
+                                </p>
+                                <p class="product-price">$<%= products[i].price %>
+                                </p>
+                                <p class="product-brand">
+                                    <%= products[i].brand %>
+                                </p>
+                            </article>
+                        </a>
+                        <% } %>
+                </div>
+
+                <!-- div de recomendaciones -->
+                
+                <div class="recommendation-bar">
+                    <h1>Nuestras recomendaciones</h1>
+                    <img src="/img/general_placeholder.png" alt="">
+                    <img src="/img/general_placeholder.png" alt="">
+                    <img src="/img/general_placeholder.png" alt="">
+                    <img src="/img/general_placeholder.png" alt="">
+                    <img src="/img/general_placeholder.png" alt="">
+                </div>
+
+                <!-- div de cambio de página -->
+                <div class="page-changer">
+                    <a href=""><i class="fas fa-arrow-left"></i> Anterior </a>
+                    <a href="">1 </a>
+                    <a href="">2 </a>
+                    <a href="">3 </a>
+                    <a href="">4 </a>
+                    <a href="">5 </a>
+                    <a href="">Siguiente <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </main>
+
+        <!-- Configuración del Pie de página -->
+        <%- include("../partials/footer") %>
+
+    </body>
+
+    </html>

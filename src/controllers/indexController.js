@@ -1,4 +1,7 @@
 const session = require('express-session');
+const fetch = require("node-fetch");
+// import fetch from "node-fetch";
+
 // const fs = require('fs');
 // const path = require('path');
 
@@ -9,12 +12,20 @@ const db = require('../database/models/index.js');
 
 const controller = {
     index: async function(req,res){
-        let productos = await db.Product.findAll({
-            include: {association: "categories"},
-        });
+        // let productos = await db.Product.findAll({
+        //     include: {association: "categories"},
+        // });
 
-        res.render('index',{
-            products:productos,
+        fetch("https://chapultepets.herokuapp.com/api/products")
+        .then(response=>response.json())
+        .then(productos=>{
+            // return res.send(productos.products);
+            return res.render('index',{
+                products:productos.products,
+            });
+        })
+        .catch(error=>{
+            return error;
         });
     },
     prueba: async function(req,res){

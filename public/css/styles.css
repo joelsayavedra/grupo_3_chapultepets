@@ -18,6 +18,8 @@
     --formularioValido: lightgreen;
     --formularioNoValido: #ff7f7f;
     --fondoTransiciones: #0022AA;
+    --icono-categoria: rgb(0, 189, 63);
+    --icono-categoria-hover: rgb(0, 117, 39);
 }
 
 /*
@@ -30,6 +32,8 @@
         vista: /partials/footer SMQ
         vista: /index SMQ
         vista: /products/productDetail SMQ
+        vista: /products/lists SMQ
+        vista: /products/productList SMQ
         vista: /users/login SMQ
         vista: /users/register SMQ
         vista: /products/productCart SMQ
@@ -88,6 +92,13 @@
 */
 
 /*          Sin media query (SMQ)           */
+
+
+@keyframes breath{
+    0% {transform:scale(1)}
+    100%{transform:scale(1.2);color: var(--icono-categoria-hover);}
+}
+
 
 /*           Configuraciones generales SMQ            */
 *{
@@ -345,6 +356,8 @@ body.index h1{
     list-style-type: none;
     margin: 15px 0px;
     background-color: var(--fondo-body);
+    /* background-color: white; */
+    max-height: 100vw;
 }
 
 .home-logo-bar li{
@@ -357,8 +370,15 @@ body.index h1{
     color: black;
 }
 
-.home-logo-bar img{
-    width: 100%;
+.home-logo-bar h4{
+    font-size: 8vw;
+    /* width: 100%; */
+    color: var(--icono-categoria);
+}
+
+.home-logo-bar h4:hover{
+    /* color: var(--icono-categoria-hover); */
+    animation:breath .1s linear both;
 }
 
 .home-logo-bar p{
@@ -515,6 +535,19 @@ h4,h2{
     width: 100%;
 }
 
+.product-presentation-text a.linkCategoria{
+    background-color: rgba(9, 255, 0, 0.212);
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    border-radius: 2px;
+    margin-top: 15px;
+}
+
+.product-presentation-text p.categories{
+    margin-top: 10px;
+}
+
 .product-presentation-price{
     color: var(--presio);
 }
@@ -569,6 +602,50 @@ div.a-review .the-review{
 
 div.a-review .product-rating-stars{
     width: 100%;
+}
+
+/* vista: /products/list SMQ */
+body.products-list main{
+    background-color: var(--fondo-body);
+}
+
+/* vista: /products/productList SMQ */
+
+main.productList{
+    background-color: var(--fondo-body);
+}
+
+main.productList div{
+    background-color: var(--fondo-body);
+}
+
+body.productList h1{
+    margin-left: 2vw;
+}
+
+main.productList .product-window{
+    background-color: var(--fondo-body);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    width: 80%;
+    margin: auto;
+}
+
+main.productList .product-window article{
+    margin: auto;
+}
+
+main.productList .product-window a{
+    width: 21%;
+    margin: 2%;
+    text-decoration: none;
+    color: black;
+}
+
+main.productList article:hover {
+    box-shadow: 0px 0px 15px rgb(100, 100, 100);
+    transition: all 1s;
 }
 
 /* vista: /users/login SMQ */

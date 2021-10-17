@@ -4,6 +4,7 @@
 const { v4: getID } = require("uuid");
 const { validationResult } = require("express-validator");
 const db = require('../database/models/index.js');
+const fetch = require("node-fetch");
 
 // const productsFilePath = path.join(__dirname, '../database/products.json');
 // const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -174,6 +175,61 @@ const controller = {
                 return res.send("Error: " + error);
             });
     },
+    list: function (req,res) {
+        if(req.query.selector){
+            fetch("https://chapultepets.herokuapp.com/api/products/lists?selector="+req.query.selector)
+            .then(response=>response.json())
+            .then(data=>{
+                let abecedario=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+                return res.render('products/list',{
+                    abecedario,
+                    data,
+                });
+            })
+            .catch(error=>{
+                return error;
+            });
+        }
+        else{
+            return res.send("error");
+        }
+    },
+    categoriesId: function (req,res) {
+        fetch("https://chapultepets.herokuapp.com/api/products/categories/"+req.params.id)
+        .then(response=>response.json())
+        .then(data=>{
+
+            // return res.send(data.data.products);
+
+            // for (let i = 0; i < data.data.products.length; i++) {
+            //     //Se sobreescriben los valores de rating y reviewsAmount, de acuerdo a la base de datos
+            //     let ratingSum=0;
+            //     for (let j = 0; j < data.data.products[i].reviews.length; j++) {
+            //         ratingSum+= data.data.products[i].reviews[j].rating;
+            //     }
+            //     if(data.data.products[i].reviews.length!=0){
+            //         data.data.products[i].rating=ratingSum/data.data.products[i].reviews.length;
+            //     }else{
+            //         data.data.products[i].rating=0;
+            //     }
+            //     data[i].reviewsAmount=data[i].reviews.length;
+
+            //     data.data.products[i]={
+            //         ...data.data.products[i].dataValues,
+            //         detail:"/api/products/"+data.data.products[i].id,
+            //         // num:i+1,
+            //     };
+            // }
+
+            return res.render('products/productList',{
+                category: data.data.name,
+                products: data.data.products,
+            });
+        })
+        .catch(error=>{
+            return error;
+        });
+    }
 };
 
 module.exports = controller;

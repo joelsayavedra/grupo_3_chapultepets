@@ -95,11 +95,15 @@ router.get('/create', productsController.create);
 router.post('/create', upload.single("avatar"), validacionesCreacionProducto,productsController.store);
 //  Carrito de compras
 router.get('/cart', productsController.cart);
-// Listado de productos
+// Listados de productos
 router.get('/', productsController.product);
+router.get("/lists",productsController.list)
 //  Detalle del producto
 router.get('/:id', productsController.detail);
 //  Eliminación de producto
 router.delete('/:id', productsController.erase);
+//Productos por categoría
+router.get('/categories/:id', productsController.categoriesId);
+
 
 module.exports = router;
