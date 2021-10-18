@@ -2,6 +2,7 @@
 
     <head>
         <title>ChapultePets - Login</title>
+        <script src="/js/loginValidation.js"></script>
     </head>
 
     <body class="login">
@@ -9,7 +10,7 @@
 
         <!-- Configuración del main -->
         <main class="login">
-            <form class="formulario" method="POST" action="/users/login" enctype="multipart/form-data">
+            <form id="formulario" class="formulario" method="POST" action="/users/login" enctype="multipart/form-data">
                 <div class="logo-container">
                     <a href="/">
                         <img src="/img/logo_mobile.png" alt="" class="main-logo">
@@ -17,19 +18,23 @@
                 </div>
 
                 <p>
-                    <input type="text" name="nombreUsuario" id="" placeholder="Nombre de Usuario" class="nombre"
-                        style="width: 100%;" required>
-                    <% if (locals.errors && errors.nombreUsuario) { %>
-                        <p class="errorMessage"><%= errors.nombreUsuario.msg %> </p>
-                    <% } %>
+                    <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Nombre de Usuario" class="nombre"
+                        style="width: 100%;">
+                    <p class="errorMessage" id="usuarioError">
+                        <% if (locals.errors && errors.nombreUsuario) { %>
+                            <%= errors.nombreUsuario.msg %> 
+                        <% } %>
+                    </p>
                 </p>
 
                 <p>
-                    <input type="password" name="password" id="" class="contraseña" placeholder="Contraseña"
-                        style="width: 100%;" required>
-                    <% if (locals.errors && errors.password) { %>
-                        <p class="errorMessage"><%= errors.password.msg %> </p>
-                    <% } %>
+                    <input type="password" name="password" id="password" class="contraseña" placeholder="Contraseña"
+                        style="width: 100%;">
+                    <p class="errorMessage" id="passwordError">
+                        <% if (locals.errors && errors.password) { %>
+                            <%= errors.password.msg %> 
+                        <% } %>
+                    </p>
                 </p>
 
                 <p>
@@ -44,6 +49,7 @@
                 <p>
                     <button type="submit" class="" style="width: 100%;">Iniciar Sesión</button>
                 </p>
+                <p class="errorMessage" id="errorSubmit"></p>
             </form>
 
             <div class="reg">

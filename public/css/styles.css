@@ -659,11 +659,11 @@ main.login{
 
 main.login div.logo-container{
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 main.login form.formulario p input{
-    margin-bottom: 20px;
+    margin-top: 20px;
     height: 30px;
 }
 

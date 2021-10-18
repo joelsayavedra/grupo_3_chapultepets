@@ -40,7 +40,7 @@ window.addEventListener('load', ()=>{
             input.classList.replace("caja-error", "caja-ok");
         }
     }
-    /* Clicks y blur sobre el formulario */
+    /* Clicks sobre el formulario */
     nombreUsuario.addEventListener("input",(e)=>{
         if (nombreUsuario.value==""){
             error[0]=1;
@@ -288,7 +288,7 @@ window.addEventListener('load', ()=>{
         console.log(error)
         for (let i=0; i<error.length; i++){
             if(error[i]==1){
-                mensaje= "¡Faltan datos por llenar!";
+                mensaje= "¡Faltan datos por llenar o corregir!";
                 cambioMensaje(errorSubmit, mensaje)
                 e.preventDefault();
                 return
@@ -296,5 +296,5 @@ window.addEventListener('load', ()=>{
             else{    
             }
         }    
-    })
+    });
 }); /*Fin del load*/
