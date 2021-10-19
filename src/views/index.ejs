@@ -2,23 +2,55 @@
 
     <head>
         <title>ChapultePets - Inicio</title>
+
+        <script language="JavaScript" type="text/javascript" src="/js/jquery-3.6.0.js"></script>
+        <script src="/js/index.js"></script>
+
+
     </head>
 
     <body class="index">
 
+
         <%- include("./partials/header") %>
 
         <main class="index">
-            <div class="carousel">
-                <img src="img/banner_placeholder.png" alt="">
-                <button class="carousel-left-button">
-                    <i class="fas fa-arrow-left"></i>
-                </button>
-                <button class="carousel-right-button">
-                    <i class="fas fa-arrow-right"></i>
-                </button>
+
+
+
+
+            <div id="carrousel">
+                <div id="slide1" class="slide">
+                    <div class="visu"><img src="https://dummyimage.com/4400x1100/ffe100/000000.jpg&text=Imagen+de+prueba" alt="Slide1"></div>
+                </div>
+                <div id="slide2" class="slide">
+                    <div class="visu"><img src="https://dummyimage.com/4400x1100/00ff0d/000000.jpg&text=Imagen+de+prueba" alt="Slide2"></div>
+                </div>
+                <div id="slide3" class="slide">
+                    <div class="visu"><img src="https://dummyimage.com/4400x1100/ff8a8a/000000.jpg&text=Imagen+de+prueba" alt="Slide3"></div>
+                </div>
+
+                <div id="carrousel-nav">
+                    <div class="prev">
+                        <button class="carousel-left-button">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                    <div class="next">
+                        <button class="carousel-right-button">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
                 <p>Descripción del carrusel</p>
             </div>
+
+
+
+
+
+
+
 
             <!-- div para todo lo que va debajo del carrusel :v -->
             <div class="div-principal">
