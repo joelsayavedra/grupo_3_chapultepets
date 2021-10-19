@@ -36,17 +36,36 @@ const controller = {
         });
     },
     "userByID" : function (req, res){
-        User.findByPk(req.params.id)
+        User.findByPk(req.params.id, {
+            include:[
+                 {association: "reviews"},
+                {association: "invoices"},
+            ]
+        })
         .then(usuario => {
+            let datosPublicos = {
+                    id: usuario.id,
+                    profilePicture: "/img/users/"+ usuario.imagenPerfil,
+                    reviews: usuario.reviews,
+                    invoices: usuario.invoices 
+           };
             let respuesta = {
                 meta: {
                     status: 200,
                     total: usuario.length,
                     url: '/api/actor/:id'
                 },
-                data: actor
+                data: datosPublicos
             }
             res.json(respuesta);
+        })
+        .catch(error=>{
+            return res.json({
+                meta: {
+                    status: "error",
+                },
+                data: error
+            })
         });
     }
 
