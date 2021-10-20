@@ -65,12 +65,10 @@ window.addEventListener("load", e => {
 		do{
 			let random=Math.floor(Math.random()*data.count);
 			let comparacion = ids.findIndex(el=>el==random);
-			console.log("Comparación: "+comparacion);
 			if(comparacion==-1){
 				ids.push(random);
 			}
 		}while(ids.length!=5);
-		console.log(ids);
 
 		let recImg = document.querySelectorAll("div.recommendation-bar img");
 		let recA = document.querySelectorAll("div.recommendation-bar a");
