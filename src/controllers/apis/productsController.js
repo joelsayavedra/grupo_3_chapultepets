@@ -85,7 +85,7 @@ const controller = {
                         count: data.length,
                         resultsPerPage: articlesPerPage,
                         page:req.query.page,
-                        next:"/api/people/?page="+(parseFloat(req.query.page)+1),
+                        next:"/api/products/?page="+(parseFloat(req.query.page)+1),
                         url: "api/products",
                         products: paginatedData
                     });
@@ -94,7 +94,7 @@ const controller = {
                         count: data.length,
                         resultsPerPage: articlesPerPage,
                         page:req.query.page,
-                        previous:"/api/people/?page="+(parseFloat(req.query.page)-1),
+                        previous:"/api/products/?page="+(parseFloat(req.query.page)-1),
                         url: "api/products",
                         products: paginatedData
                     });
@@ -103,8 +103,8 @@ const controller = {
                         count: data.length,
                         resultsPerPage: articlesPerPage,
                         page:req.query.page,
-                        previous:"/api/people/?page="+(parseFloat(req.query.page)-1),
-                        next:"/api/people/?page="+(parseFloat(req.query.page)+1),
+                        previous:"/api/products/?page="+(parseFloat(req.query.page)-1),
+                        next:"/api/products/?page="+(parseFloat(req.query.page)+1),
                         url: "api/products",
                         products: paginatedData
                     });

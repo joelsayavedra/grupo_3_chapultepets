@@ -16,17 +16,31 @@ const controller = {
         //     include: {association: "categories"},
         // });
 
-        fetch("https://chapultepets.herokuapp.com/api/products")
-        .then(response=>response.json())
-        .then(productos=>{
-            // return res.send(productos.products);
-            return res.render('index',{
-                products:productos.products,
+        if(req.query.page){
+            fetch("https://chapultepets.herokuapp.com/api/products?page="+req.query.page)
+            .then(response=>response.json())
+            .then(productos=>{
+                // return res.send(productos.products);
+                return res.render('index',{
+                    products:productos.products,
+                });
+            })
+            .catch(error=>{
+                return error;
             });
-        })
-        .catch(error=>{
-            return error;
-        });
+        }else{
+            fetch("https://chapultepets.herokuapp.com/api/products?page=1")
+            .then(response=>response.json())
+            .then(productos=>{
+                // return res.send(productos.products);
+                return res.render('index',{
+                    products:productos.products,
+                });
+            })
+            .catch(error=>{
+                return error;
+            });
+        }
     },
     prueba: async function(req,res){
 

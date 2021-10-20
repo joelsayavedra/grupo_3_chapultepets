@@ -306,16 +306,19 @@ body.index h1{
     margin-left: 2vw;
 }
 
+body.index div.page-changer a{
+    padding: 10px;
+    margin: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-decoration: none;
+    color: gray;
+}
 
+body.index div.page-changer a.accesible{
+    color: blue;
+}
 
-
-
-
-
-
-
-
-/*carrousel*/
 #carrousel {
 	width:100%;
 	height:24.5vw;
@@ -407,18 +410,6 @@ button.carousel-right-button{
 
 #carrousel-nav .prev:hover,#carrousel-nav .next:hover {opacity: 1;}
 
-
-
-
-
-
-
-
-
-
-
-
-
 .carousel{
     position: relative;
 }
@@ -426,11 +417,6 @@ button.carousel-right-button{
 .carousel img{
     width: 100%;
 }
-
-
-
-
-
 
 .recommendation-bar h1,
 .home-logo-bar h1,
@@ -487,19 +473,11 @@ button.carousel-right-button{
     margin-bottom: 15px;
     text-decoration: none;
     color: black;
+    align-self: top;
 }
 
-.product-window a:link{
-    text-decoration: none;
-}
-.product-window a:visited{
-    text-decoration: none;
-}
-.product-window a:hover{
-    text-decoration: none;
-}
-.product-window a:active {
-    text-decoration: none;
+.product-window h1{
+    max-height: 40px;
 }
 
 .product-window article{
@@ -536,8 +514,13 @@ button.carousel-right-button{
     margin: 15px 0;
 }
 
-.recommendation-bar img{
+.recommendation-bar a{
     width: 18%;
+}
+.recommendation-bar img{
+    width: 100%;
+    height: 15vw;
+    object-fit: contain;
 }
 
 .page-changer{
@@ -1511,12 +1494,24 @@ main.profile img{
         display: block;
     }
 
+    .product-window{
+        justify-content: flex-start;
+        margin-top: 15px;
+    }
+    
     .product-window a{
-        width: 22.5%;
+        width: 25%;
+        margin-bottom: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+        align-self: top;
     }
 
-    .recommendation-bar img{
+    .recommendation-bar a{
         width: 15%;
+    }
+    .recommendation-bar img{
+        width: 100%;
     }
 
     .product-window img{
