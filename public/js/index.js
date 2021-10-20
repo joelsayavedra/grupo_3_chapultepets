@@ -73,8 +73,10 @@ window.addEventListener("load", e => {
 		console.log(ids);
 
 		let recImg = document.querySelectorAll("div.recommendation-bar img");
+		let recA = document.querySelectorAll("div.recommendation-bar a");
 		for (let i = 0; i < 5; i++) {
 			recImg[i].src="/img/products/"+data.products[ids[i]].image;
+			recA[i].href="/products/"+data.products[ids[i]].id;
 		}
 	})
 	.catch(error=>{
