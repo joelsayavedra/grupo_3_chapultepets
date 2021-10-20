@@ -473,12 +473,8 @@ button.carousel-right-button{
     margin-bottom: 15px;
     text-decoration: none;
     color: black;
-    align-self: top;
 }
 
-.product-window h1{
-    max-height: 40px;
-}
 
 .product-window article{
     display: flex;
@@ -516,6 +512,7 @@ button.carousel-right-button{
 
 .recommendation-bar a{
     width: 18%;
+    background-color: white;
 }
 .recommendation-bar img{
     width: 100%;
@@ -709,9 +706,9 @@ main.productList .product-window article{
 }
 
 main.productList .product-window a{
-    width: 21%;
-    margin: 2%;
     text-decoration: none;
+    padding-left:10px;
+    padding-right:10px;
     color: black;
 }
 
