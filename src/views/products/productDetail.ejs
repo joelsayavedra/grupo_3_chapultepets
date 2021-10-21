@@ -26,8 +26,9 @@
                     <p class="product-presentation-price">$<%= product.price %></p>
                     <form action="">
                         <label for="cantidad">Cantidad:</label>
-                        <input type="number" name="cantidad">
-                        <button type="submit">Agregar al carrito</button>
+                        <input type="number" name="cantidad" id="AgregarAlCarrito">
+                        <p id="AgregarAlCarrito" class="errorMessage"></p>
+                        <button type="submit" id="AgregarAlCarrito">Agregar al carrito</button>
                     </form>
                     <h4>Descripción</h4>
                     <div class="product-presentation-resume">
