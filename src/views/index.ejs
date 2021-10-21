@@ -14,7 +14,10 @@
 
         <%- include("./partials/header") %>
 
-        <main class="index">
+        <main class="index" style="position:relative">
+
+            <!-- Div para ocultar el sobrante de la imagen del header -->
+            <div style="position:absolute; width:150vw; left:-15vw; top:-15px; bottom:0px; background-color: var(--fondo-body); z-index: -5;" ></div>
 
             <!-- Carrusel -->
             <div id="carrousel">

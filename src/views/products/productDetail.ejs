@@ -1,11 +1,14 @@
 <%- include("../partials/head") %>
     <head>
         <title>ChapultePets - Detalle del producto</title>
+        <script src="/js/productDetail.js"></script>
     </head>
     <body class="body-product-detail">
         <%- include("../partials/header") %>
 
-        <main class="main-product-detail">
+        <main class="main-product-detail" style="position:relative">
+            <!-- Div para ocultar el sobrante de la imagen del header -->
+            <div style="position:absolute; width:150vw; left:-15vw; top:-15px; bottom:0px; background-color: var(--fondo-body); z-index: -5;" ></div>
 
             <!-- Sección de presentación del producto -->
             <div class="product-presentation">

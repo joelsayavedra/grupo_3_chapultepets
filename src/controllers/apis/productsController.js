@@ -245,15 +245,31 @@ const controller = {
         db.Product.findByPk(req.params.id,{
             include:[
                 {association:"categories"},
-                {association:"reviews"}
+                {
+                    association:"reviews",
+                    include: {association:"user"}
+                }
             ]
         })
         .then(function(data){
 
             
+            let ratingSum=0;
+            for (let j = 0; j < data.reviews.length; j++) {
+                ratingSum+= data.reviews[j].rating;
+            }
+            if(data.reviews.length!=0){
+                data.rating=ratingSum/data.reviews.length;
+            }else{
+                data.rating=0;
+            }
+            data.reviewsAmount=data.reviews.length;
+
             data={
                 urlImage: "/img/products/"+data.image,
                 ...data.dataValues,
+                detail:"/api/products/"+data.id,
+                // num:i+1,
             };
 
             return res.json({
