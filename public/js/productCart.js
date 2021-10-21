@@ -67,7 +67,7 @@ window.addEventListener("load",e=>{
                     }else{
                         carrito.splice(i, 1);
                         sessionStorage.setItem("carrito",JSON.stringify(carrito));
-                        window.location.href = "http://localhost:3000/products/cart";
+                        window.location.href = "https://chapultepets.herokuapp.com//products/cart";
 
                     }
                     console.log("eliminar "+ carrito[i].amount+" "+data.data.name);
@@ -77,7 +77,7 @@ window.addEventListener("load",e=>{
                         console.log("cambiando "+ input.value+" "+data.data.name);
                         carrito[i].amount=input.value;
                         sessionStorage.setItem("carrito",JSON.stringify(carrito));
-                        window.location.href = "http://localhost:3000/products/cart";
+                        window.location.href = "https://chapultepets.herokuapp.com/products/cart";
                     }else{
                         console.log("ingresa un entero");
                         warning.innerHTML="¡Ingresa un número entero!";

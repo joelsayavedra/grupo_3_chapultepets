@@ -26,7 +26,7 @@ window.addEventListener("load",e=>{
             }
             carrito.push(newItem);
             sessionStorage.setItem("carrito",JSON.stringify(carrito));
-            window.location.href = "http://localhost:3000/products/cart";
+            window.location.href = "https://chapultepets.herokuapp.com/products/cart";
 
         }else{
             warning.innerHTML ="¡Debes ingresar un entero!";
