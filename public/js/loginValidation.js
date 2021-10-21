@@ -20,7 +20,8 @@ window.addEventListener("load",()=>{
             input.classList.remove("caja-ok");
         }
         else {
-            input.classList.replace("caja-error", "caja-ok");
+            input.classList.add("caja-ok");
+            input.classList.remove("caja-error");
         }
     }
     nombreUsuario.addEventListener("input",(e)=>{

@@ -37,7 +37,8 @@ window.addEventListener('load', ()=>{
             input.classList.remove("caja-ok");
         }
         else {
-            input.classList.replace("caja-error", "caja-ok");
+            input.classList.add("caja-ok");
+            input.classList.remove("caja-error");
         }
     }
     /* Clicks sobre el formulario */
@@ -63,7 +64,7 @@ window.addEventListener('load', ()=>{
                 cambioMensaje(usuarioError, mensaje)
                 cambioColor(nombreUsuario, true);
             }
-            else if (nombreUsuario.value==result.nombreUsuario.toLowerCase()){
+            else if ((nombreUsuario.value.toLowerCase()==result.nombreUsuario.toLowerCase())){
                 error[0]=1;
                 console.log(error);
                 mensaje= "Lo sentimos, este nombre ya se encuentra en uso."

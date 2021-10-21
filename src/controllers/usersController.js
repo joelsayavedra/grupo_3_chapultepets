@@ -94,8 +94,43 @@ const controller = {
             db.User.create({
                     ...usuario,
                 })
-                .then(resultado => {
-                    res.send("¡Hay un nuevo entrenador pokemon!")
+                .then(result => {
+                    return db.User.findOne({
+                        where: {
+                            nombreUsuario: result.nombreUsuario,}})
+                }).then(result => {
+                    var userToLogin = result;
+                    return userToLogin;
+                }).then(userToLogin => {
+                    if (userToLogin) {
+                        if (bcryptjs.compareSync(req.body.password, userToLogin.password)) {
+                            delete userToLogin.password;
+                            req.session.userLogged = userToLogin;
+        
+                            if (req.body.recordar) {
+                                res.cookie("userName", req.body.nombreUsuario, { maxAge: 1000 * 60 * 30 });
+                            }
+        
+                            res.redirect("/users/profile");
+        
+                        } else {
+                            res.render('users/login', {
+                                errors: {
+                                    password: {
+                                        msg: "¡Contraseña incorrecta!"
+                                    }
+                                }
+                            });
+                        };
+                    } else {
+                        res.render('users/login', {
+                            errors: {
+                                nombreUsuario: {
+                                    msg: "¡Usuario no encontrado!"
+                                }
+                            }
+                        });
+                    };
                 })
                 .catch(err => {
                     res.send("error!: " + err)
