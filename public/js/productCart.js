@@ -1,8 +1,4 @@
 window.addEventListener("load",e=>{
-        //variables para la suma de precios
-    let suma = 0;
-    let porcentajeDeImpuestos = 0.17;
-
     //banderas
     let banderaEliminar = 0;
 
@@ -21,8 +17,10 @@ window.addEventListener("load",e=>{
     let etiquetaPrecioTotal = document.querySelector("p.etiquetaPrecioTotal");
     let cantidadProducto = document.querySelector("input#cantidadProducto");
 
-        //obtención del contenedor dónde hacer el appendchild de los artículos
-    let productList = document.querySelector("div#productList");
+        
+    let productList = document.querySelector("div#productList"); //obtención del contenedor dónde hacer el appendchild de los artículos
+    let botonComprar = document.querySelector("button#comprar"); //Botón de comprar ahora
+
 
         //obtención de la variable carrito de sessionStorage
     let carrito = [];
@@ -33,6 +31,9 @@ window.addEventListener("load",e=>{
 
         //Creación de una función asíncrona para que cada fetch se realice en orden.
     async function datos(){
+            //variables para la suma de precios
+        let suma = 0;
+        let porcentajeDeImpuestos = 0.17;
 
             //ciclo para la creación de un artículo por cada elemento en el array carrito
         for (let i = 0; i < carrito.length; i++) {
@@ -55,7 +56,6 @@ window.addEventListener("load",e=>{
                 productList.appendChild(newClone);
 
                     //Creación de eventos para el clon
-                console.log(newClone.childNodes[3].childNodes[1]);
                 let boton = newClone.querySelector("div.botonEliminar button");
                 let input = newClone.querySelector("form#form input#cantidadProducto");
                 let warning = newClone.querySelector("p#errorMessage");
@@ -95,4 +95,9 @@ window.addEventListener("load",e=>{
         articulo.remove();
     };
     datos();
+
+    botonComprar.addEventListener("click", e=>{
+        e.preventDefault();
+        console.log("compra!!!!");
+    })
 });

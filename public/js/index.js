@@ -18,7 +18,7 @@ window.addEventListener("load", e => {
 		let changer=document.querySelector("div.page-changer");
 
 		let prev = document.createElement("a");
-		prev.innerHTML="<i class='fas fa-arrow-left'></i> Anterior ";
+		prev.innerHTML="<i class='fas fa-arrow-left'></i>";
 		if(data.previous){
 			prev.href="/?page="+(parseInt(data.page)-1);
 		}
@@ -41,7 +41,7 @@ window.addEventListener("load", e => {
 		}
 
 		let next = document.createElement("a");
-		next.innerHTML=' Siguiente <i class="fas fa-arrow-right"></i>';
+		next.innerHTML='<i class="fas fa-arrow-right"></i>';
 		if(data.next){
 			next.href="/?page="+(parseInt(data.page)+1);
 		}

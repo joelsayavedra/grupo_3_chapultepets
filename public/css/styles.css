@@ -337,6 +337,7 @@ body.index div.page-changer a{
     border-radius: 5px;
     text-decoration: none;
     color: gray;
+    margin-top: 20px;
 }
 
 body.index div.page-changer a.accesible{
@@ -490,6 +491,7 @@ button.carousel-right-button{
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 15px;
+    margin-bottom: 25px;
 }
 
 .product-window a{
@@ -967,7 +969,7 @@ body.cart{
 main.cart{
     font-size: 14px;
     margin: auto;
-    background-color: white;
+    background-color: var(--fondo-body);
     padding: 15px;
 }
 main.cart .resumen{
@@ -990,13 +992,25 @@ main.cart div.leyenda{
     width: 100%;
     max-width: 325px;
     min-width: 250px;
+    max-height: 400px;
 }
+
+ main.cart .logo_cart img{
+    max-height: 400px;
+ }
 
 main.cart .detalles{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 5px;
+}
+
+main.cart div.articulo{
+    background-color: white;
+    padding:15px 15px 15px 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
 }
 
 main.cart .detallesCant{
@@ -1022,7 +1036,7 @@ main.cart .resumen{
     font-size: 14px;
     width: 100%;
     max-width: 325px;
-    min-width: 250px;
+    /* min-width: 250px; */
     background-color: var(--contrasteLogin);
     margin: 0 auto;
     border:  solid #E1E1E1 1px;
@@ -1279,9 +1293,20 @@ main.profile{
     text-align: center;
 }
 
-main.profile img{
+main.profile div.imagen{
+    margin: auto;
+    text-align: center;
+    /* border: 2px solid red; */
     max-width: 300px;
-    border-radius: 50%;
+    width: 80vw;
+    max-height: 300px;
+    height: 80vw;
+}
+
+main.profile img{
+    width: 100%;
+    /* object-fit: fill; */
+    border-radius: 50px;
 }
 
 /*          Media query 400px           */
@@ -1395,6 +1420,7 @@ main.profile img{
         margin: 10px;
     }
     main.cart .articulo{
+
         display:flex;
         align-items: center;
         justify-content: space-around;
@@ -1639,14 +1665,10 @@ main.profile img{
     main.cart .articulo{
         display: flex;
         justify-content: space-between;
-        width: 70%;
-        max-width: 600px;
-        min-width: 520px;
+        width: 100%;
+        /* max-width: 600px; */
+        /* min-width: 520px; */
         margin-right: 20px;
-    }
-
-    main.cart .resumen{
-        min-width: 300px;
     }
 
     /*          vista: /products/productCreate MQ720px          */
@@ -1828,7 +1850,7 @@ main.profile img{
         max-width: 1200px;
     }
     main.cart .resumen{
-        min-width: 350px;
+        /* min-width: 350px; */
     }
     main.cart .botonEliminar button{
         width: 70%;

@@ -9,7 +9,11 @@
     <%- include("../partials/header") %>
 
     <!-- Configuración del main -->
-    <main class="cart">
+    <main class="cart" style="position:relative">
+
+        <!-- Div para ocultar el sobrante de la imagen del header -->
+        <div style="position:absolute; width:150vw; left:-15vw; top:-15px; bottom:0px; background-color: var(--fondo-body); z-index: -5;" ></div>
+
         <h2>Carrito de Compras</h2>
         <div>
             <div class="leyenda">
@@ -27,7 +31,7 @@
                     <!-- Artículo -->
                     <div class="articulo">
                         <div class="logo_cart">  
-                            <img src="" width="100%">
+                            <img src="">
                         </div>
                         <div class="info">
                             <p id="errorMessage" class="errorMessage"></p>
@@ -75,7 +79,7 @@
                             <p class="valor">$0.00</p>
                         </div>
 
-                        <button type="submit" style="width: 100%;">Comprar Ahora</button>
+                        <button type="submit" style="width: 100%;" id="comprar">Comprar Ahora</button>
                     </div>
                 </div>
             </article>
