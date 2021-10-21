@@ -39,13 +39,14 @@ window.addEventListener("load",()=>{
     });
     password.addEventListener("input",(e)=>{
         if (password.value==""){
-            error[0]=1;
+            error[1]=1;
             mensaje= "Escribe tu contraseña";
             cambioMensaje(passwordError, mensaje)
             cambioColor(password, true);
         }
         else{      
-            error[0]=0;   
+            error[1]=0;
+            console.log(error)   
             mensaje= ""
             cambioMensaje(passwordError, mensaje)
             cambioColor(password, false);
