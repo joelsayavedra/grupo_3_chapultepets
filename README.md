@@ -8,9 +8,11 @@
     <p>https://trello.com/b/XFFnpXX3/grupo-3-sprint-2</p>
     <li>Sprint 3</li>
     <p>https://trello.com/b/ugjV8SPt/grupo-3-sprint-3</p>
-    <li>Sprint 4 y 5</li>
+    <li>Sprint 4 en adelante</li>
     <p>https://trello.com/b/LnlNPn4x/grupo-3-sprint-4</p>
 </ul>
+
+<p>El sitio se encuentra montado en una app de heroku: <a>https://chapultepets.herokuapp.com/</a></p>
 
 <h2>Sprint 1</h2>
 
