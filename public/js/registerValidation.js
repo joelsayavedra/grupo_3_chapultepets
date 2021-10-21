@@ -43,7 +43,7 @@ window.addEventListener('load', ()=>{
     }
     /* Clicks sobre el formulario */
     nombreUsuario.addEventListener("input",(e)=>{
-        let link= "http://localhost:3000/api/users/usuario/"+nombreUsuario.value;
+        let link= "/api/users/usuario/"+nombreUsuario.value;
         fetch(link)
         .then(result=>{
             return result.json();
@@ -135,7 +135,7 @@ window.addEventListener('load', ()=>{
         }
     });
     email.addEventListener("input",()=>{
-        let link= "http://localhost:3000/api/users/email/"+email.value;
+        let link= "/api/users/email/"+email.value;
         fetch(link)
         .then(result=>{
             return result.json();
