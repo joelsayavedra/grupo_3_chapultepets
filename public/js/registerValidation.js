@@ -42,27 +42,50 @@ window.addEventListener('load', ()=>{
     }
     /* Clicks sobre el formulario */
     nombreUsuario.addEventListener("input",(e)=>{
-        if (nombreUsuario.value==""){
-            error[0]=1;
-            console.log(error);
-            mensaje= "Escribe un nombre de usuario para este sitio."
-            cambioMensaje(usuarioError, mensaje)
-            cambioColor(nombreUsuario, true);
-        }
-        else if (nombreUsuario.value.length<4){
-            error[0]=1;
-            console.log(error);
-            mensaje= "Debe ser de al menos 4 caracteres."
-            cambioMensaje(usuarioError, mensaje)
-            cambioColor(nombreUsuario, true);
-        }   
-        else{      
-            error[0]=0;
-            console.log(error);    
-            mensaje= ""
-            cambioMensaje(usuarioError, mensaje)
-            cambioColor(nombreUsuario, false);
-        }
+        let link= "http://localhost:3000/api/users/usuario/"+nombreUsuario.value;
+        fetch(link)
+        .then(result=>{
+            return result.json();
+        })
+        .then(result=>{
+            console.log(result);
+            if (nombreUsuario.value==""){
+                error[0]=1;
+                console.log(error);
+                mensaje= "Escribe un nombre de usuario para este sitio."
+                cambioMensaje(usuarioError, mensaje)
+                cambioColor(nombreUsuario, true);
+            }
+            else if (nombreUsuario.value.length<4){
+                error[0]=1;
+                console.log(error);
+                mensaje= "Debe ser de al menos 4 caracteres."
+                cambioMensaje(usuarioError, mensaje)
+                cambioColor(nombreUsuario, true);
+            }
+            else if (nombreUsuario.value==result.nombreUsuario.toLowerCase()){
+                error[0]=1;
+                console.log(error);
+                mensaje= "Lo sentimos, este nombre ya se encuentra en uso."
+                cambioMensaje(usuarioError, mensaje)
+                cambioColor(nombreUsuario, true);
+            } 
+            else{      
+                error[0]=0;
+                console.log(error);    
+                mensaje= ""
+                cambioMensaje(usuarioError, mensaje)
+                cambioColor(nombreUsuario, false);
+            }
+        })
+        .catch(error=>{
+            return res.json({
+                meta: {
+                    status: "error",
+                },
+                data: error
+            })
+        });        
     });
     nombrePila.addEventListener("input",()=>{
         if (nombrePila.value==""){       
@@ -111,27 +134,50 @@ window.addEventListener('load', ()=>{
         }
     });
     email.addEventListener("input",()=>{
-        if (email.value==""){      
-            error[3]=1;
-            console.log(error);       
-            mensaje= "Escribe una dirección de correo electrónico."
-            cambioMensaje(emailError, mensaje)
-            cambioColor(email, true);
-        }
-        else if (!email.value.includes("@")){
-            error[3]=1;
-            console.log(error);
-            mensaje= "Debe ser una dirección de correo válida."
-            cambioMensaje(emailError, mensaje)
-            cambioColor(email, true);
-        }   
-        else{         
-            error[3]=0;
-            console.log(error); 
-            mensaje= "";
-            cambioMensaje(emailError, mensaje)
-            cambioColor(email, false);
-        }
+        let link= "http://localhost:3000/api/users/email/"+email.value;
+        fetch(link)
+        .then(result=>{
+            return result.json();
+        })
+        .then(result=>{
+            console.log(result)
+            if (email.value==""){      
+                error[3]=1;
+                console.log(error);       
+                mensaje= "Escribe una dirección de correo electrónico."
+                cambioMensaje(emailError, mensaje)
+                cambioColor(email, true);
+            }
+            else if (!email.value.includes("@")){
+                error[3]=1;
+                console.log(error);
+                mensaje= "Debe ser una dirección de correo válida."
+                cambioMensaje(emailError, mensaje)
+                cambioColor(email, true);
+            }
+            else if (email.value==result.email){
+                error[3]=1;
+                console.log(error);
+                mensaje= "Lo sentimos, este correo ya se encuentra en uso."
+                cambioMensaje(emailError, mensaje)
+                cambioColor(email, true);
+            } 
+            else{         
+                error[3]=0;
+                console.log(error); 
+                mensaje= "";
+                cambioMensaje(emailError, mensaje)
+                cambioColor(email, false);
+            }
+        })
+        .catch(error=>{
+            return res.json({
+                meta: {
+                    status: "error",
+                },
+                data: error
+            })
+        });   
     });
     password.addEventListener("input",()=>{
         let simbolo=["!", "#", "$" ,"%", "&", "*", "+","_"];

@@ -67,6 +67,58 @@ const controller = {
                 data: error
             })
         });
+    },
+    'userCheck' : function (req,res){
+        User.findOne({
+            where: 
+            {
+                nombreUsuario: req.params.userName,
+            }
+        })
+        .then((resultado)=>{
+            let result={nombreUsuario:""}
+            if (resultado==null){
+                result.nombreUsuario="empty"
+            }
+            else{
+                result.nombreUsuario=resultado.nombreUsuario
+            }
+            res.json(result);
+        })
+        .catch(error=>{
+            return res.json({
+                meta: {
+                    status: "error",
+                },
+                data: error
+            })
+        });
+    },
+    'emailCheck' : function (req,res){
+        User.findOne({
+            where: 
+            {
+                email: req.params.email,
+            }
+        })
+        .then((resultado)=>{
+            let result={email:""}
+            if (resultado==null){
+                result.email="empty"
+            }
+            else{
+                result.email=resultado.email
+            }
+            res.json(result);
+        })
+        .catch(error=>{
+            return res.json({
+                meta: {
+                    status: "error",
+                },
+                data: error
+            })
+        });
     }
 };
 
