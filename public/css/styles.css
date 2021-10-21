@@ -3,6 +3,7 @@
     --Azul: #0064E1;
     --Rosa: #e10064; */
 
+    /* --fondo-header: rgba(68, 0, 23, 0.6); */
     --fondo-header: rgba(209, 155, 38, 0.8);
     --sombreado-header: #79009194;
     /* --sombreado-header: #11d10094; */
@@ -109,6 +110,7 @@
     box-sizing:border-box;
     margin: 0;
     padding: 0;
+    /* font-family:  !important; */
 }
 
 body{
