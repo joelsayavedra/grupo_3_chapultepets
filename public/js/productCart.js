@@ -67,27 +67,25 @@ window.addEventListener("load",e=>{
                     }else{
                         carrito.splice(i, 1);
                         sessionStorage.setItem("carrito",JSON.stringify(carrito));
-                        window.location.href = "https://chapultepets.herokuapp.com//products/cart";
+                        window.location.href = "/products/cart";
 
                     }
                     console.log("eliminar "+ carrito[i].amount+" "+data.data.name);
                 });
                 input.addEventListener("change",e=>{
-                    if(Number.isInteger(parseFloat(input.value))){
+                    if(Number.isInteger(parseFloat(input.value)) && parseFloat(input.value)>0){
                         console.log("cambiando "+ input.value+" "+data.data.name);
                         carrito[i].amount=input.value;
                         sessionStorage.setItem("carrito",JSON.stringify(carrito));
-                        window.location.href = "https://chapultepets.herokuapp.com/products/cart";
+                        window.location.href = "/products/cart";
                     }else{
-                        console.log("ingresa un entero");
-                        warning.innerHTML="¡Ingresa un número entero!";
+                        warning.innerHTML="¡Ingresa un número entero positivo!";
                     }
                 })
             }).catch(error=>{
                 console.log(error);
             })        
         }
-
             //cambio de valores del resumen en etiquetas html
         subtotal.innerHTML="$"+(suma*(1-porcentajeDeImpuestos)).toFixed(2);
         impuestos.innerHTML="$"+(suma*porcentajeDeImpuestos).toFixed(2);
