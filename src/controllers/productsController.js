@@ -141,23 +141,13 @@ const controller = {
             });
     },
     detail: function (req, res) {
-        let indice = -1;
 
-        db.Product.findByPk(req.params.id,{
-            include:[
-                {
-                    association:"categories"
-                },
-                {
-                    association:"reviews",
-                    include: {association:"user"}
-                },
-            ]
-        })
+        fetch("https://chapultepets.herokuapp.com/api/products/"+req.params.id)
+        .then(response=>response.json())
         .then(producto=>{
-            // return res.send(producto);
+            // return res.send(producto.data);
             res.render('products/productDetail',{
-                product: producto
+                product: producto.data
             });
         })
         .catch(error => {

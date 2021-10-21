@@ -1,11 +1,14 @@
 <%- include("../partials/head") %>
     <head>
         <title>ChapultePets - Detalle del producto</title>
+        <script src="/js/productDetail.js"></script>
     </head>
     <body class="body-product-detail">
         <%- include("../partials/header") %>
 
-        <main class="main-product-detail">
+        <main class="main-product-detail" style="position:relative">
+            <!-- Div para ocultar el sobrante de la imagen del header -->
+            <div style="position:absolute; width:150vw; left:-15vw; top:-15px; bottom:0px; background-color: var(--fondo-body); z-index: -5;" ></div>
 
             <!-- Sección de presentación del producto -->
             <div class="product-presentation">
@@ -23,8 +26,9 @@
                     <p class="product-presentation-price">$<%= product.price %></p>
                     <form action="">
                         <label for="cantidad">Cantidad:</label>
-                        <input type="number" name="cantidad">
-                        <button type="submit">Agregar al carrito</button>
+                        <input type="number" name="cantidad" id="AgregarAlCarrito">
+                        <p id="AgregarAlCarrito" class="errorMessage"></p>
+                        <button type="submit" id="AgregarAlCarrito">Agregar al carrito</button>
                     </form>
                     <h4>Descripción</h4>
                     <div class="product-presentation-resume">
