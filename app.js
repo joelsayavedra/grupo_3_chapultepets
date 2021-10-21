@@ -3,6 +3,8 @@ const path=require('path');
 const methodOverride=require("method-override");
 const session = require('express-session');
 const cookies = require('cookie-parser');
+const cors = require('cors');
+
 
 const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware');
 
@@ -23,6 +25,9 @@ app.set("views", "./src/views")
 //Configuración de la carpeta pública "public"
 const publicPath = path.resolve(__dirname,'./public');
 app.use(express.static(publicPath));
+
+//configuración de cors para las apis
+app.use(cors());
 
 //configuración de middlewares varios
 app.use(express.urlencoded({ extended: false })); //URL encode  - Para que nos pueda llegar la información desde el formulario al req.body 
