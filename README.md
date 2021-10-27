@@ -1,5 +1,7 @@
 <h1>grupo_3_chapultepets</h1>
 
+<h2>Enlace a repo del dashboard: </h2><a href="https://github.com/joelsayavedra/chapultepets-grupo3-react-dashboard">https://github.com/joelsayavedra/chapultepets-grupo3-react-dashboard</a>
+
 <h2>Enlaces de Trello</h2>
 <ul>
     <li>Sprint 1</li>
